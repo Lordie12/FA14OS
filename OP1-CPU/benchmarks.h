@@ -17,7 +17,11 @@ void measure_procCallOverhead(vector<longVar> &result);
 longVar measure_sysCallOverhead();
 longVar measure_processOverhead();
 longVar measure_threadOverhead();
+longVar measure_threadContextSwitchOverhead();
+longVar measure_processContextSwitchOverhead();
+longVar measure_threadContextSwitchOverhead();
 
 #define NUM_ITERATIONS 250000
+#define NUM_THREAD_SWITCHES 500
 
 #endif

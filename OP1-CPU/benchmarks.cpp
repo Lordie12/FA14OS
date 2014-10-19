@@ -212,6 +212,11 @@ longVar measure_sysCallOverhead()
 	start = mach_absolute_time();
 	for (i = 0; i < 1; i++)
 	{
+		/*---------------------------------------------------------------------
+		Why only one? There seems to be syscall caching of idempotent system
+		calls, so every subsequent call to getpid() is a cache hit and not an 
+		OS Trap, not sure how to get around this mess
+		---------------------------------------------------------------------*/
 		getpid();
 	}
 	end = mach_absolute_time();
@@ -226,7 +231,6 @@ longVar measure_processOverhead()
 	static mach_timebase_info_data_t sTimebaseInfo;
 	longVar start = 0;
 	longVar end = 0;
-	longVar tot;
 	pid_t pid;
 	int status;
 
@@ -244,8 +248,7 @@ longVar measure_processOverhead()
 		waitpid(pid, &status, 0);
 		end = mach_absolute_time();
 	}
-	tot = ((end - start) / 1000) * (sTimebaseInfo.numer / sTimebaseInfo.denom);
-	return tot;
+	return ((end - start) / 1000) * (sTimebaseInfo.numer / sTimebaseInfo.denom);
 }
 
 void* dummy_func(void* dummy_arg)
@@ -272,4 +275,87 @@ longVar measure_threadOverhead()
 		return 0;
 	}
 	return (end - start) * sTimebaseInfo.numer / sTimebaseInfo.denom;
+}
+
+longVar measure_processContextSwitchOverhead()
+{
+	static mach_timebase_info_data_t sTimebaseInfo;
+	longVar start;
+	longVar end;
+	longVar tot = 0;
+	int fd[4];
+	pipe(fd);
+	pipe(&fd[2]);
+	pid_t pid;
+
+	mach_timebase_info(&sTimebaseInfo);	
+	pid = fork();
+	if (pid == 0)
+	{
+		int switchCount = 0;
+		//Child executing here
+		for (; switchCount < NUM_THREAD_SWITCHES; switchCount++)
+		{
+			start = mach_absolute_time();
+			write(fd[1], &start, sizeof(start));
+			read(fd[2], &end, sizeof(end));
+			tot += mach_absolute_time() - end;
+		}
+		exit(0);
+	}
+	else
+	{
+		int switchCount = 0;
+		//Parent executing here
+		for(; switchCount < NUM_THREAD_SWITCHES; switchCount++)
+		{
+			read(fd[0], &start, sizeof(start));
+			end = mach_absolute_time();
+			tot += end - start;
+			write(fd[3], &end, sizeof(end));
+		}
+		return (tot / NUM_THREAD_SWITCHES) * sTimebaseInfo.numer / sTimebaseInfo.denom;
+	}
+	return 0;
+}
+
+void* thread_dummy(void* dummy_arg)
+{
+	int switchCount;
+	for (switchCount = 0; switchCount < NUM_THREAD_SWITCHES; switchCount++)
+	{
+		/*-----------------------------------------------------------------
+		We keep switching between this new thread and the main thread using
+		the scheduler yield function, but we context switch 2 * NUM_THREAD_
+		SWITCHES TIMES and hence we divide by twice that value in return
+		-----------------------------------------------------------------*/
+		sched_yield();
+	}
+}
+
+longVar measure_threadContextSwitchOverhead()
+{
+	static mach_timebase_info_data_t sTimebaseInfo;
+	longVar start = 0;
+	longVar end = 0;
+	pthread_t thread;
+	int iret = 0;
+	int switchCount;
+
+	mach_timebase_info(&sTimebaseInfo);
+	/*----------------------------------------------------------------------
+	We do not consider thread creation to be a part of the thread context 
+	switch time and hence we start the timer after calling pthread_create 
+	and not before
+	----------------------------------------------------------------------*/
+	pthread_create(&thread, NULL, thread_dummy, (void *)&iret);
+	start = mach_absolute_time();
+	for(switchCount = 0; switchCount < NUM_THREAD_SWITCHES; switchCount++)
+	{
+		sched_yield();
+	}
+	pthread_join(thread, NULL);
+	end = mach_absolute_time();
+
+	return ((end - start) / (2 * NUM_THREAD_SWITCHES)) * sTimebaseInfo.numer / sTimebaseInfo.denom;
 }
