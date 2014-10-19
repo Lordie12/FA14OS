@@ -34,7 +34,7 @@ longVar measure_loopOverhead()
 	longVar end;
 	longVar total = 0;
 	static mach_timebase_info_data_t sTimebaseInfo;
-	int i, j = 0;
+	int i;
 
 	mach_timebase_info(&sTimebaseInfo);
 
@@ -43,7 +43,7 @@ longVar measure_loopOverhead()
 	by branch prediction and extensive loop unrolling
 	-------------------------------------------------------------*/
 	start = mach_absolute_time();
-	for (j = 0; j < NUM_ITERATIONS; j++);
+	for (i = 0; i < NUM_ITERATIONS; i++);
 	end = mach_absolute_time();
 	
 	total = end - start;
@@ -204,8 +204,7 @@ longVar measure_sysCallOverhead()
 	longVar loopOverhead = measure_loopOverhead();
 	longVar start;
 	longVar end;
-	longVar tot;
-	int i, j;
+	int i;
 
 	mach_timebase_info(&sTimebaseInfo);
 
@@ -221,9 +220,7 @@ longVar measure_sysCallOverhead()
 	}
 	end = mach_absolute_time();
 
-	tot = (end - start) / 1;
-	tot -= loopOverhead;
-	return tot;
+	return (end - start) - loopOverhead;
 }
 
 longVar measure_processOverhead()
@@ -331,6 +328,7 @@ void* thread_dummy(void* dummy_arg)
 		-----------------------------------------------------------------*/
 		sched_yield();
 	}
+	return 0;
 }
 
 longVar measure_threadContextSwitchOverhead()
