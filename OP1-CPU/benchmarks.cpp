@@ -221,7 +221,8 @@ longVar measure_sysCallOverhead()
 	}
 	end = mach_absolute_time();
 
-	return (end - start) / (float)(NUM_ITERATIONS) - loopOverhead;
+	return (((end - start) / (float)(NUM_ITERATIONS)) * sTimebaseInfo.numer / sTimebaseInfo.denom)
+		 - loopOverhead;
 }
 
 longVar measure_processOverhead()
