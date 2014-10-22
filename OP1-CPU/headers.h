@@ -14,8 +14,10 @@ Header files
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <string>
 #include <mach/mach_time.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 /*-----------------
 Typedefs

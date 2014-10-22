@@ -204,23 +204,24 @@ longVar measure_sysCallOverhead()
 	longVar loopOverhead = measure_loopOverhead();
 	longVar start;
 	longVar end;
+	struct stat fileStat;
 	int i;
 
 	mach_timebase_info(&sTimebaseInfo);
 
 	start = mach_absolute_time();
-	for (i = 0; i < 1; i++)
+	for (i = 0; i < NUM_ITERATIONS; i++)
 	{
 		/*---------------------------------------------------------------------
 		Why only one? There seems to be syscall caching of idempotent system
 		calls, so every subsequent call to getpid() is a cache hit and not an 
 		OS Trap, not sure how to get around this mess
 		---------------------------------------------------------------------*/
-		getpid();
+		stat("/Users/Lanfear/Desktop/FA14OS/README.md", &fileStat);
 	}
 	end = mach_absolute_time();
 
-	return (end - start) - loopOverhead;
+	return (end - start) / (float)(NUM_ITERATIONS) - loopOverhead;
 }
 
 longVar measure_processOverhead()

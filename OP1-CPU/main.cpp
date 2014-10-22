@@ -35,7 +35,7 @@ int main()
 	          			 Overhead for system call
 	-----------------------------------------------------------------*/
 	longVar syscallOverhead = measure_sysCallOverhead();
-	cout<<"Overhead for system call getpid(), over "<<1<<" iteration: "<<syscallOverhead<<" ns"<<endl;
+	cout<<"Overhead for system call stat(), over "<<NUM_ITERATIONS<<" iteration: "<<syscallOverhead<<" ns"<<endl;
 
 	/*-----------------------------------------------------------------
 	          Overhead for a single process creation and run
