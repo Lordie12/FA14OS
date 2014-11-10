@@ -5,7 +5,6 @@ LDFLAGS =
 
 OBJECTS = benchmarks.o
           
-CFLAGS = -Wall -O0 -std=c++11 -Wno-c++11-extensions
 CXXFLAGS = -Wall -O0 -std=c++11 -Wno-c++11-extensions
 
 all: main

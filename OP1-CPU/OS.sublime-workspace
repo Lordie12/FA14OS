@@ -1,0 +1,263 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"curr",
+				"currPair"
+			],
+			[
+				"aj",
+				"adjMatrix"
+			],
+			[
+				"Flo",
+				"FloydWarshallShortestPath"
+			],
+			[
+				"edg",
+				"edgePair"
+			],
+			[
+				"flo",
+				"FloydWarshallCost"
+			],
+			[
+				"get",
+				"getCost"
+			],
+			[
+				"MST",
+				"MSTCost"
+			],
+			[
+				"cur",
+				"currVertexPair"
+			],
+			[
+				"adj",
+				"adjMatrix"
+			],
+			[
+				"f",
+				"first"
+			],
+			[
+				"Un",
+				"UndirectedGraph"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 182.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Lanfear/Desktop/FA14OS/OP1-CPU/headers.h",
+		"/Users/Lanfear/Desktop/FA14OS/OP1-CPU/benchmarks.cpp",
+		"/Users/Lanfear/Desktop/FA14OS/OP1-CPU/benchmarks.h",
+		"/Users/Lanfear/Desktop/FA14OS/OP1-CPU/main.cpp",
+		"/Users/Lanfear/Desktop/FA14OS/OP1-CPU/OS.sublime-project",
+		"/Users/Lanfear/Desktop/Research/Scripts/__init__.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/CA.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/ProcessScenes.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/script_parser.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/ScriptVector.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/SDB Scripts/__init__.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/SDB Scripts/GeneCluster-Cosine.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/SDB Scripts/GeneticAlgo.py",
+		"/Users/Lanfear/Desktop/Research/Scripts/SDB Scripts/GetGeneInfo.py",
+		"/Users/Lanfear/Library/Application Support/Sublime Text 3/Packages/User/Projects/MastersProject.sublime-project",
+		"/Users/Lanfear/Desktop/FA14OS/OP1-CPU/Makefile",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/helper.cpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/helper.hpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/UndirectedGraph.hpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/UndirectedGraph.cpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/netplan.cpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/Makefile",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/helpers.cpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/helpers.hpp",
+		"/Users/Lanfear/Desktop/PA3-kkalyana/headers.hpp",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/netplan.cpp",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/UndirectedGraph.hpp",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/UndirectedGraph.cpp",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/infile.txt",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/Makefile",
+		"/Users/Lanfear/Desktop/sample.cpp",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/generator.py",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/GraphBase.cpp",
+		"/Users/Lanfear/Desktop/pa3-kkalyana-psubbara/GraphBase.hpp",
+		"/Users/Lanfear/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Lanfear/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sampledict",
+			"edgepair",
+			"inputpair",
+			"using",
+			"INT_MAX",
+			"INT)MIN",
+			"INT_MIN",
+			"cout",
+			"vvii",
+			"vii",
+			"vi",
+			"typedef",
+			"vi"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"typedef"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 237.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "OS.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 202.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

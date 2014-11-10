@@ -5,7 +5,7 @@
 Kaushik Kalyanaraman, kkalyana@eng.ucsd.edu
 Priyanka Ganapathy, pganapat@eng.ucsd.edu
 
-Essential benchmarking unction prorotypes and constants declared
+Essential benchmarking function prorotypes and constants declared
 here for easy access
 ---------------------------------------------------------------*/
 
