@@ -18,6 +18,10 @@ Header files
 #include <mach/mach_time.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <math.h>
+#include <stdlib.h>
+#include <unordered_map>
+#include <iomanip>
 
 /*-----------------
 Typedefs
@@ -30,5 +34,10 @@ Namespace import
 using std::vector;
 using std::cout;
 using std::endl;
+using std::unordered_map;
+using std::string;
+using std::setw;
+using std::left;
+using std::max_element;
 
 #endif

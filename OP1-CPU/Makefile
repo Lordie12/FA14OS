@@ -5,7 +5,7 @@ LDFLAGS =
 
 OBJECTS = benchmarks.o
           
-CXXFLAGS = -Wall -O0 -std=c++11 -Wno-c++11-extensions
+CXXFLAGS = -Wall -O0 -std=c++11 -Wno-c++11-extensions -Wno-deprecated --save-temps --pedantic
 
 all: main
  
@@ -19,3 +19,4 @@ $(OBJECTS): Makefile
 
 clean:
 	rm *.o main
+	rm main

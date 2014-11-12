@@ -7,7 +7,7 @@ Priyanka Ganapathy, pganapat@eng.ucsd.edu
 The primary driver program to test all benchmarks
 ---------------------------------------------------------------*/
 
-int main()
+int sample()
 {
 	/*-----------------------------------------------------------------
 					     Overhead in measuring time
@@ -60,4 +60,37 @@ int main()
 	-----------------------------------------------------------------*/
 	longVar threadContextSwitchOverhead = measure_threadContextSwitchOverhead();
 	cout<<"Overhead for thread context switch is: "<<threadContextSwitchOverhead<<" ns"<<endl;
+
+	return 0;
+}
+
+int main()
+{
+	/*-----------------------------------------------------------------
+						Measuring memory latency
+	-----------------------------------------------------------------*/
+	/*vector<vector<longVar>> result = measure_memLatency();
+	vector<string> strides {"8K", "16K", "64K", "512K", "2M", "16M", "64M"};
+	vector<int> arrSizes {8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+							21, 22, 23, 24, 25, 26, 27, 28};
+
+	cout<<left<<setw(8)<<"LogArr";
+	for (auto it: arrSizes)
+		cout<<left<<setw(8)<<it;
+
+	cout<<endl<<endl;
+	for (int i = 0; i < result.size(); i++)
+	{
+		cout<<left<<setw(8)<<strides[i];
+		for (auto it1: result[i])
+			cout<<left<<setw(8)<<it1;
+		cout<<endl;
+	}*/
+
+	vector<longVar> totBWWrite = measure_memWriteBandwidth();
+	cout<<"DRAM write bandwidth: "<<*max_element(totBWWrite.begin(), totBWWrite.end())<<" GiB/s"<<endl;
+
+	vector<longVar> totBWRead = measure_memReadBandwidth();
+	cout<<"DRAM read bandwidth: "<<*max_element(totBWRead.begin(), totBWRead.end())<<" GiB/s"<<endl;
+	return 0;
 }

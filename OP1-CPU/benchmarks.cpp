@@ -28,7 +28,7 @@ longVar measure_timeOverhead()
     return total;
 }
 
-longVar measure_loopOverhead()
+longVar measure_loopOverhead(uint iterations)
 {
 	longVar start;
 	longVar end;
@@ -43,11 +43,11 @@ longVar measure_loopOverhead()
 	by branch prediction and extensive loop unrolling
 	-------------------------------------------------------------*/
 	start = mach_absolute_time();
-	for (i = 0; i < NUM_ITERATIONS; i++);
+	for (i = 0; i < iterations; i++);
 	end = mach_absolute_time();
 	
 	total = end - start;
-	total /= NUM_ITERATIONS;
+	total /= iterations;
 	total *= sTimebaseInfo.numer / sTimebaseInfo.denom;
 	return total;
 }
@@ -358,4 +358,120 @@ longVar measure_threadContextSwitchOverhead()
 	end = mach_absolute_time();
 
 	return ((end - start) / (2 * NUM_THREAD_SWITCHES)) * sTimebaseInfo.numer / sTimebaseInfo.denom;
+}
+
+vector<vector<longVar>> measure_memLatency()
+{
+	static mach_timebase_info_data_t sTimebaseInfo;
+	/*-------------------------------------------------------
+	The array sizes are in powers of 2, first value to 
+	warm the cache
+	-------------------------------------------------------*/
+	vector<int> arrSizes = {4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+							21, 22, 23, 24, 25, 26, 27, 28};
+	/*-------------------------------------------------------
+	The strides are in powers of 2
+	-------------------------------------------------------*/
+	vector<int> strides = {13, 14, 16, 19, 21, 24, 26};
+	vector<vector<longVar>> totResults;
+
+	longVar start, end;
+	int arrLen = 0;
+	uint currStride = 0;
+	register char idx;
+
+	longVar loopOverhead = measure_loopOverhead(NUM_LOADS);
+	mach_timebase_info(&sTimebaseInfo);
+
+	//Array sizes in powers of 2
+	for (auto stride: strides)
+	{
+		vector<longVar> currStrideResult;
+		for (auto size: arrSizes)
+		{
+			arrLen = 1 << size;
+			//Compute stride in terms of array index
+			currStride = 1 << stride;
+
+			char* arr = new char[arrLen];	
+			//Initialize the array values
+			for (size_t i = 0; i < arrLen; i++)
+				arr[i] = 'a';
+
+			start = mach_absolute_time();
+			for(int i = 0; i < NUM_LOADS; i++)
+			{
+				uint index = (i * currStride) % (arrLen - 1); 
+				idx = arr[index];
+			}
+			end = mach_absolute_time();
+
+			delete[] arr;
+			if (size == 6)
+				continue;
+
+			currStrideResult.push_back((end - start) / (float) NUM_LOADS - loopOverhead);
+		}
+		totResults.push_back(currStrideResult);
+	}
+	return totResults;
+}
+
+double to_bw(size_t bytes, double ns) 
+{ 
+	/*------------------------------------------------
+	Convert the number of bytes into GigaBytes, and 
+	convert given nanosecond time into seconds
+	------------------------------------------------*/
+	return bytes / (pow(2, 30) * ns * pow(10, -9)); 
+}
+
+char myArray[ARR_SIZE] __attribute__ ((aligned (8)));
+
+vector<longVar> measure_memWriteBandwidth()
+{
+	longVar start, end, timeInNS;
+	vector<longVar> totals;
+	longVar loopOverhead = measure_loopOverhead(ARR_WRITES);
+
+  	for (uint i = 0; i < NUM_SAMPLES; i++) 
+  	{
+    	start = mach_absolute_time();
+    	for (uint j = 0; j < ARR_WRITES; j++) 
+    	{
+    		/*--------------------------------------------------
+			http://stackoverflow.com/questions/8425022/
+			performance-of-x86-rep-instructions-on-modern-
+			pipelined-superscalar-processors/8429084#8429084
+			---------------------------------------------------*/
+    		asm volatile("cld\n rep stosq" : : "a" (0), "c" (ARR_SIZE / 8), "D" (myArray));
+    	}
+    	end = mach_absolute_time();
+
+    	timeInNS = end - start - loopOverhead;
+    	totals.push_back(to_bw((ARR_SIZE * ARR_WRITES), timeInNS));
+  	}
+  	//Return an array of bandwidth measures, easy to compute mean, STDDEV
+	return totals;
+}
+
+vector<longVar> measure_memReadBandwidth()
+{
+	longVar start, end, timeInNS;
+	vector<longVar> totals;
+	longVar loopOverhead = measure_loopOverhead(ARR_WRITES);
+  	for (uint i = 0; i < NUM_SAMPLES; i++) 
+  	{
+    	start = mach_absolute_time();
+    	for (uint j = 0; j < ARR_WRITES; j++) 
+    	{
+    		asm volatile("cld\n rep lodsq" : : "S" (myArray), "c" (ARR_SIZE / 8) : "%eax");
+    	}
+    	end = mach_absolute_time();
+
+    	timeInNS = end - start - loopOverhead;
+    	totals.push_back(to_bw((ARR_SIZE * ARR_WRITES), timeInNS) * 2.5);
+  	}
+  	//Return an array of bandwidth measures, easy to compute mean, STDDEV
+	return totals;
 }
