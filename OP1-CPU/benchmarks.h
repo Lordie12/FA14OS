@@ -13,7 +13,7 @@ here for easy access
 
 #define NUM_ITERATIONS 250000
 #define NUM_THREAD_SWITCHES 500
-#define NUM_LOADS 100000
+#define NUM_LOADS 100
 #define NUM_SAMPLES 10
 #define ARR_WRITES 10
 #define ARR_SIZE 1024*1024*1024LL

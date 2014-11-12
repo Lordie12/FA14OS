@@ -64,33 +64,82 @@ int sample()
 	return 0;
 }
 
+void measure_mem()
+{
+	//L3 Cache
+	const int stride = 16 * 1024LL;
+	const int samples = 1000;
+	uint64_t size = 2 * 1024LL * 1024LL;
+	uint count = floor(size / stride);
+
+	char *p = new char[size];
+	register char temp;
+	longVar start, end, total = 0.0;
+
+	for(uint i = 0; i < size; i++)
+	{
+		p[i] = 'a';
+	}
+
+	for(uint sample = 0; sample < samples; sample++)
+	{
+		start = mach_absolute_time();
+		for(uint i = 0; i < size - stride; i += stride)
+		{
+			temp = p[i];
+		}
+		end = mach_absolute_time();
+		total += end - start;
+	}
+
+	cout<<total / (count * samples)<<endl;
+}
+
+
+void measure_mem1()
+{
+	//L1 Cache
+	char p = 'a';
+	longVar start, end;
+	register char temp;
+
+	start = mach_absolute_time();
+	for(int i = 0; i < 100000; i++)
+		temp = p;
+	end = mach_absolute_time();
+
+	cout<<(end-start) / 100000<<endl;
+}
+
 int main()
 {
 	/*-----------------------------------------------------------------
 						Measuring memory latency
 	-----------------------------------------------------------------*/
-	/*vector<vector<longVar>> result = measure_memLatency();
-	vector<string> strides {"8K", "16K", "64K", "512K", "2M", "16M", "64M"};
-	vector<int> arrSizes {8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
-							21, 22, 23, 24, 25, 26, 27, 28};
+	measure_memLatency();
+	// vector<vector<longVar>> result = measure_memLatency();
+	// vector<string> strides {"8K", "16K", "64K", "512K", "2M", "16M", "64M"};
+	// vector<int> arrSizes {8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+	// 						21, 22, 23, 24, 25, 26, 27, 28};
+	// // measure_mem();
 
-	cout<<left<<setw(8)<<"LogArr";
-	for (auto it: arrSizes)
-		cout<<left<<setw(8)<<it;
+	// cout<<left<<setw(8)<<"LogArr";
+	// for (auto it: arrSizes)
+	// 	cout<<left<<setw(8)<<it;
 
-	cout<<endl<<endl;
-	for (int i = 0; i < result.size(); i++)
-	{
-		cout<<left<<setw(8)<<strides[i];
-		for (auto it1: result[i])
-			cout<<left<<setw(8)<<it1;
-		cout<<endl;
-	}*/
+	// cout<<endl<<endl;
+	// for (int i = 0; i < result.size(); i++)
+	// {
+	// 	cout<<left<<setw(8)<<strides[i];
+	// 	for (auto it1: result[i])
+	// 		cout<<left<<setw(8)<<it1;
+	// 	cout<<endl;
+	// }
 
-	vector<longVar> totBWWrite = measure_memWriteBandwidth();
-	cout<<"DRAM write bandwidth: "<<*max_element(totBWWrite.begin(), totBWWrite.end())<<" GiB/s"<<endl;
+	// vector<longVar> totBWWrite = measure_memWriteBandwidth();
+	// cout<<"DRAM write bandwidth: "<<*max_element(totBWWrite.begin(), totBWWrite.end())<<" GiB/s"<<endl;
 
-	vector<longVar> totBWRead = measure_memReadBandwidth();
-	cout<<"DRAM read bandwidth: "<<*max_element(totBWRead.begin(), totBWRead.end())<<" GiB/s"<<endl;
+	// vector<longVar> totBWRead = measure_memReadBandwidth();
+	// cout<<"DRAM read bandwidth: "<<*max_element(totBWRead.begin(), totBWRead.end())<<" GiB/s"<<endl;
 	return 0;
 }

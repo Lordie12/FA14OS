@@ -364,55 +364,66 @@ vector<vector<longVar>> measure_memLatency()
 {
 	static mach_timebase_info_data_t sTimebaseInfo;
 	/*-------------------------------------------------------
-	The array sizes are in powers of 2, first value to 
-	warm the cache
+	The array sizes are in powers of 2
 	-------------------------------------------------------*/
-	vector<int> arrSizes = {4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+	vector<int> arrSizes = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
 							21, 22, 23, 24, 25, 26, 27, 28};
 	/*-------------------------------------------------------
 	The strides are in powers of 2
 	-------------------------------------------------------*/
-	vector<int> strides = {13, 14, 16, 19, 21, 24, 26};
+	vector<int> strides = {9, 10, 11, 13, 16, 18, 19};
 	vector<vector<longVar>> totResults;
 
 	longVar start, end;
 	int arrLen = 0;
-	uint currStride = 0;
-	register char idx;
+	uint64_t stride;
 
-	longVar loopOverhead = measure_loopOverhead(NUM_LOADS);
 	mach_timebase_info(&sTimebaseInfo);
 
 	//Array sizes in powers of 2
-	for (auto stride: strides)
+	for (auto cstride: strides)
 	{
 		vector<longVar> currStrideResult;
 		for (auto size: arrSizes)
 		{
 			arrLen = 1 << size;
-			//Compute stride in terms of array index
-			currStride = 1 << stride;
+			//Compute stride in terms of array index, re-scale by 8
 
-			char* arr = new char[arrLen];	
-			//Initialize the array values
-			for (size_t i = 0; i < arrLen; i++)
-				arr[i] = 'a';
+			stride = 1 << cstride;
+
+			uint64_t* arr = new uint64_t[arrLen];
+			memset(arr, 0x00, arrLen * sizeof(uint64_t));
+			unordered_map<int, bool> index;
+
+			uint j = 0;
+			for(uint64_t i = 0; i < stride * arrLen; i += stride)
+			{
+				if (index[(i + stride) % arrLen] == false)
+				{
+					/*---------------------------------------------------------
+					Pointer chasing, create a list of pointers and reinterpret
+					case it to the same type so that we can chase it later
+					---------------------------------------------------------*/
+					arr[j] = reinterpret_cast<uint64_t>(arr + (i + stride) % arrLen);
+					j = (i + stride) % arrLen;
+				}
+				index[(i + stride) % arrLen] = true;
+			}
 
 			start = mach_absolute_time();
-			for(int i = 0; i < NUM_LOADS; i++)
+			for (uint sample = 0; sample < NUM_LOADS; sample++)
 			{
-				uint index = (i * currStride) % (arrLen - 1); 
-				idx = arr[index];
+				uint64_t *p = arr;
+				for(int i = 0; i < arrLen; i++)
+				{
+					p = reinterpret_cast<uint64_t*>(*p);
+				}
 			}
 			end = mach_absolute_time();
 
 			delete[] arr;
-			if (size == 6)
-				continue;
-
-			currStrideResult.push_back((end - start) / (float) NUM_LOADS - loopOverhead);
+			cout<<"SIZE: "<<(arrLen * 8) / (1024)<<"K STRIDE: "<<stride / 128<<"K TIME: "<<(end - start) / (float)(arrLen * NUM_LOADS)<<"ns"<<endl;
 		}
-		totResults.push_back(currStrideResult);
 	}
 	return totResults;
 }
