@@ -415,7 +415,7 @@ vector<vector<longVar>> measure_memLatency()
 			start = mach_absolute_time();
 			for (uint sample = 0; sample < NUM_LOADS; sample++)
 			{
-				uint64_t *p = arr;
+				uint64_t* p = arr;
 				for(int i = 0; i < arrLen; i++)
 				{
 					//Chase pointer

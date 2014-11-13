@@ -69,7 +69,7 @@ int main()
 	/*-----------------------------------------------------------------
 						Measuring memory latency
 	-----------------------------------------------------------------*/
-	measure_memLatency();
+	// measure_memLatency();
 
 	// vector<longVar> totBWWrite = measure_memWriteBandwidth();
 	// cout<<"DRAM write bandwidth: "<<*max_element(totBWWrite.begin(), totBWWrite.end())<<" GiB/s"<<endl;

@@ -375,7 +375,7 @@ Chipset
 
 Northbridge			Intel Haswell-ULT rev. 09
 Southbridge			Intel ID9C43 rev. 04
-Memory Type			DDR3
+D Type			DDR3
 Memory Size			4006 MBytes
 Channels			Dual
 Memory Frequency		799.9 MHz (1:6)
