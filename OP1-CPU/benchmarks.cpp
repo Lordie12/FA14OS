@@ -366,13 +366,15 @@ vector<vector<longVar>> measure_memLatency()
 	/*-------------------------------------------------------
 	The array sizes are in powers of 2
 	-------------------------------------------------------*/
-	vector<int> arrSizes = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
-							21, 22, 23, 24, 25, 26, 27, 28};
+	vector<int> arrSizes = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
 	/*-------------------------------------------------------
 	The strides are in powers of 2
 	-------------------------------------------------------*/
-	vector<int> strides = {9, 10, 11, 13, 16, 18, 19};
+	vector<int> strides = {9, 10, 11, 13, 15, 16, 18, 19};
 	vector<vector<longVar>> totResults;
+
+	fstream f;
+	f.open("/Users/Lanfear/Desktop/Output.txt", fstream::out | fstream::in);
 
 	longVar start, end;
 	int arrLen = 0;
@@ -416,19 +418,28 @@ vector<vector<longVar>> measure_memLatency()
 				uint64_t *p = arr;
 				for(int i = 0; i < arrLen; i++)
 				{
+					//Chase pointer
 					p = reinterpret_cast<uint64_t*>(*p);
 				}
 			}
 			end = mach_absolute_time();
 
 			delete[] arr;
-			cout<<"SIZE: "<<(arrLen * 8) / (1024)<<"K STRIDE: "<<stride / 128<<"K TIME: "<<(end - start) / (float)(arrLen * NUM_LOADS)<<"ns"<<endl;
+			string sSize = to_string((arrLen * 8) / 1024) + 'K';
+			string sStride = to_string(stride/128) + 'K';
+			cout<<left<<setw(4)<<"SIZE: "<<left<<setw(8)<<sSize;
+			cout<<left<<setw(4)<<" STRIDE: "<<left<<setw(2)<<sStride;
+			cout<<left<<setw(4)<<" TIME: "<<left<<setw(4)<<(end - start) / (float)(arrLen * NUM_LOADS)<<" ns"<<endl;
+
+			f << (end - start) / (float)(arrLen * NUM_LOADS) << ',';
 		}
+		f << '\n';
 	}
+	f.close();
 	return totResults;
 }
 
-double to_bw(size_t bytes, double ns) 
+inline double to_bw(size_t bytes, double ns) 
 { 
 	/*------------------------------------------------
 	Convert the number of bytes into GigaBytes, and 
@@ -485,4 +496,50 @@ vector<longVar> measure_memReadBandwidth()
   	}
   	//Return an array of bandwidth measures, easy to compute mean, STDDEV
 	return totals;
+}
+
+longVar measure_pageFaultTime()
+{
+	const char* fileURL = "/Users/Lanfear/Desktop/FA14OS/References/MemSystems.pdf";
+	const uint pagesize = getpagesize();
+	const uint chunkSize = CHUNK_SIZE;
+	uint offset = 0, numChunks, numChunkPages;
+	register char temp;
+
+	struct stat statBuf;
+	int fd = open(fileURL, O_RDONLY);
+	void* memMapFile;
+	longVar start, end, total = 0.0, PFT;
+
+	//Do not cache contents of the file in main memory
+	fcntl(fd, F_NOCACHE, 1);
+	stat(fileURL, &statBuf);
+
+	const uint fileSize = statBuf.st_size;
+	
+	numChunks = floor(fileSize / chunkSize);
+	numChunkPages = floor(chunkSize / pagesize);
+
+	while (offset <= fileSize - CHUNK_SIZE)
+	{
+		//Lets mmap the filedesc fd with the offset
+		memMapFile = mmap(0, chunkSize, PROT_READ, MAP_PRIVATE, fd, offset);
+		if (memMapFile == MAP_FAILED)
+			return -1;
+               
+		offset += chunkSize;
+
+		start = mach_absolute_time();
+		for(uint i = 0; i <= chunkSize - pagesize; i += pagesize)
+		{
+			temp = *(reinterpret_cast<char *>(memMapFile) + i);
+		}
+		end = mach_absolute_time();
+		total += end - start;
+
+		munmap(memMapFile, chunkSize);
+	}
+
+	PFT = total / (float)(numChunkPages * numChunks);
+	return PFT;
 }

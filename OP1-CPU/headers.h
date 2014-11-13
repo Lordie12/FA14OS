@@ -12,16 +12,19 @@ Essential header files for all programs
 Header files
 -----------------*/
 #include <vector>
-#include <iostream>
-#include <algorithm>
 #include <string>
-#include <mach/mach_time.h>
-#include <unistd.h>
-#include <sys/stat.h>
 #include <math.h>
-#include <stdlib.h>
-#include <unordered_map>
+#include <fcntl.h>
 #include <iomanip>
+#include <fstream>
+#include <iostream>
+#include <unistd.h>
+#include <stdlib.h>
+#include <algorithm>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <unordered_map>
+#include <mach/mach_time.h>
 
 /*-----------------
 Typedefs
@@ -31,13 +34,15 @@ typedef long double longVar;
 /*-----------------
 Namespace import
 -----------------*/
-using std::vector;
 using std::cout;
 using std::endl;
-using std::unordered_map;
-using std::string;
 using std::setw;
 using std::left;
+using std::vector;
+using std::string;
+using std::fstream;
+using std::to_string;
 using std::max_element;
+using std::unordered_map;
 
 #endif
