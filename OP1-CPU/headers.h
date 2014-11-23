@@ -17,14 +17,22 @@ Header files
 #include <fcntl.h>
 #include <iomanip>
 #include <fstream>
+#include <errno.h>
+#include <netdb.h>
+#include <stdio.h>
 #include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
 #include <algorithm>
 #include <sys/mman.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
 #include <unordered_map>
 #include <mach/mach_time.h>
+
 
 /*-----------------
 Typedefs
@@ -34,6 +42,7 @@ typedef long double longVar;
 /*-----------------
 Namespace import
 -----------------*/
+using std::cin;
 using std::cout;
 using std::endl;
 using std::setw;
