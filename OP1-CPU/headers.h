@@ -54,4 +54,15 @@ using std::to_string;
 using std::max_element;
 using std::unordered_map;
 
+/*----------------------
+MACROS for the network
+part of project
+----------------------*/
+#define PORT 			 5000
+#define NStoS(X) 		 ((X * 0.000000001))
+#define LOOPBACKIP 		 "127.0.0.1"
+#define NUM_PACKETS		 1000
+#define PACKET_SIZE		 1472
+#define CALCSIZEBYTES(X) (X * PACKET_SIZE)
+
 #endif

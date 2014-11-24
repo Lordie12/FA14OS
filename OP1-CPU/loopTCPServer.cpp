@@ -7,14 +7,11 @@ Loopback TCP Server
 
 #include "headers.h"
 
-#define PORT 5000
-
 int main(int argc, char *argv[])
 {
 	int sockDesc, connected, t = 1;
 	uint bytes;
-	char recv_data[1024];
-	const char* send_data = "ServeramOneBytesLongabcdefghijkl";       
+	char recv_data[PACKET_SIZE];
 
 	struct sockaddr_in s_addr, c_addr;    
 	int sin_size;
@@ -52,32 +49,24 @@ int main(int argc, char *argv[])
 	}
 	/*------------------------------------------------------------------------
 	End of server setup
-	------------------------------------------------------------------------*/
-
-	cout<<"\nServer waiting for client on loopback interface, port 5000";
-
+	------------------------------------------------------------------------*/	
 	while(1)
-	{  
+	{
 		sin_size = sizeof(struct sockaddr_in);
 		connected = accept(sockDesc, (struct sockaddr*)&c_addr, (socklen_t*)&sin_size);
 
-		cout<<"\n Connection from Client IP: "<<inet_ntoa(c_addr.sin_addr)<<", Port: "<<ntohs(c_addr.sin_port)<<")";
+		cout<<"\n Connection from Client IP: "<<inet_ntoa(c_addr.sin_addr)<<", Port: "<<ntohs(c_addr.sin_port)<<")"<<endl;
+		memset(recv_data, 0, sizeof(recv_data));
 
-		while (1)
+		while(1)
 		{
-			// memset(recv_data, 0, sizeof(recv_data));
-			// bytes = recv(connected, recv_data, 1024, 0);
-			// recv_data[bytes] = '\0';
-			// cout<<"Received "<<bytes<<" bytes with content "<<recv_data;
-
-			// send(connected, send_data, strlen(send_data), 0);  
-
-			// if (strcmp(recv_data , "q") == 0 || strcmp(send_data , "Q") == 0)
-			// {
-			// 	close(connected);
-			// 	break;
-			// }
+			bytes = recv(connected, recv_data, PACKET_SIZE, 0);
+			if (bytes == -1 || bytes == 0)
+				break;
+			recv_data[bytes] = '\0';
+			send(connected, recv_data, PACKET_SIZE, 0);  
 		}
+		close(connected);
 	}       
 	close(sockDesc);
 	return 0;

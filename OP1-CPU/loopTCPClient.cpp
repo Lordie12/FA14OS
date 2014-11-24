@@ -7,20 +7,26 @@ Loopback TCP Client
 
 #include "headers.h"
 
-#define LOOPBACKIP "127.0.0.1"
-
 void sendQ(int sockDesc)
 {
 	send(sockDesc, reinterpret_cast<void*>('q'), sizeof(char), 0);
 }
 
+char* create_packet(uint size)
+{
+	char* newPacket = new char[size];
+	memset(newPacket, 'a', size);
+	return newPacket;
+}
+
 int main()
 {
-	char recv_data[1024];
+	char recv_data[PACKET_SIZE];
 	struct sockaddr_in s_addr;  
-	int sockDesc, bytes_recieved, i = 0;;
+	int sockDesc;
 	uint bytes;
-	const char* send_data = "ClientamOneBytesLongabcdefghijkl";
+	char* packet = create_packet(PACKET_SIZE);
+	longVar tot = 0, start, end, avgLatency;
 
 	if ((sockDesc = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
 	{
@@ -40,21 +46,24 @@ int main()
 	    exit(1);
 	}
 
-	while(1)
+	for(int i = 0; i < NUM_PACKETS; i++)
 	{
-		send(sockDesc, send_data, strlen(send_data), 0);
-		bytes = recv(sockDesc, recv_data, 1024, 0);
-		recv_data[bytes] = '\0';
-
-		cout<<"\nRecieved "<<bytes<<" bytes with content "<<recv_data;
-	 
-	 	i++;
-	 	if (i == 10)
-	 	{
-	 		sendQ(sockDesc);
-	 		break;
-	 	}
+		start = mach_absolute_time();
+		send(sockDesc, packet, PACKET_SIZE, 0);
+		bytes = recv(sockDesc, recv_data, PACKET_SIZE, 0);
+		if (bytes == -1 || bytes == 0)
+		{
+			perror("Recv");
+			break;
+		}
+		end = mach_absolute_time();
+	 	tot += end - start;
 	}   
-	cout<<endl;
+
+	//Compute average one way transmission time
+	avgLatency = tot / (2 * NUM_PACKETS);
+	cout<<endl<<" Bandwidth is "<<CALCSIZEBYTES(NUM_PACKETS) / (float)(NStoS(avgLatency) * 1024 * 1024 * 1024)<<" GB/s"<<endl;
+	cout<<" Localhost latency is "<<avgLatency / 1000<<" us"<<endl;
+	close(sockDesc);
 	return 0;
 }

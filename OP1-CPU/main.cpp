@@ -77,6 +77,25 @@ int main()
 	// vector<longVar> totBWRead = measure_memReadBandwidth();
 	// cout<<"DRAM read bandwidth: "<<*max_element(totBWRead.begin(), totBWRead.end())<<" GiB/s"<<endl;
 
-	cout<<"Average Page Fault Service Time: "<<measure_pageFaultTime()<<"ns"<<endl;
+	// cout<<"Average Page Fault Service Time: "<<measure_pageFaultTime()<<"ns"<<endl;
+
+	/*-----------------------------------------------------------------
+						Measuring network latency
+	-----------------------------------------------------------------*/
+
+	system("g++ loopTCPServer.cpp -o server ; ./server &");
+	FILE* outFile = popen("g++ loopTCPClient.cpp -o client ; ./client", "r");
+	while(1)
+	{
+		int c = fgetc(outFile);
+		if(c == EOF)
+			break;
+		cout<<(char)c;
+	}
+	fclose(outFile);
+
+	//Terminate the server process once we are done
+	system("ps -ax | grep -i ./server| awk 'NR == 1 {print $1}' | tr -d '\n' | xargs -0 kill");
+
 	return 0;
 }
