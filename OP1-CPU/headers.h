@@ -20,6 +20,7 @@ Header files
 #include <errno.h>
 #include <netdb.h>
 #include <stdio.h>
+#include <signal.h>
 #include <iostream>
 #include <unistd.h>
 #include <stdlib.h>
@@ -61,7 +62,7 @@ part of project
 #define PORT 			 5000
 #define NStoS(X) 		 ((X * 0.000000001))
 #define LOOPBACKIP 		 "127.0.0.1"
-#define NUM_PACKETS		 1000
+#define NUM_PACKETS		 250
 #define PACKET_SIZE		 1472
 #define CALCSIZEBYTES(X) (X * PACKET_SIZE)
 

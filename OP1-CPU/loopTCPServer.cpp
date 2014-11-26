@@ -7,6 +7,11 @@ Loopback TCP Server
 
 #include "headers.h"
 
+void signal_callback_handler(int signum)
+{
+	printf("Caught signal %d", signum);
+}
+
 int main(int argc, char *argv[])
 {
 	int sockDesc, connected, t = 1;
@@ -15,6 +20,9 @@ int main(int argc, char *argv[])
 
 	struct sockaddr_in s_addr, c_addr;    
 	int sin_size;
+
+	// Register signal and signal handler
+	signal(SIGTERM, signal_callback_handler);
 
 	/*------------------------------------------------------------------------
 	Setting up the server information, sockets, status and everything else
