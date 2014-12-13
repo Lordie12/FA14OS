@@ -23,7 +23,7 @@ here for easy access
 Function prototypes for CPU operations, Part I of the OS 
 systems measurement project
 -------------------------------------------------------------*/
-longVar measure_timeOverhead();
+vector<longVar> measure_timeOverhead();
 longVar measure_threadOverhead();
 longVar measure_sysCallOverhead();
 longVar measure_processOverhead();

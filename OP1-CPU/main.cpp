@@ -9,27 +9,34 @@ The primary driver program to test all benchmarks
 
 int main()
 {
+	// longVar mean, stddev, sq_sum;
 	// /*-----------------------------------------------------------------
 	// 				     Overhead in measuring time
 	// -----------------------------------------------------------------*/
-	// longVar mesTimeOverhead = measure_timeOverhead();
-	// cout<<"Overhead of reading time, over "<<NUM_ITERATIONS<<" iterations:"<<mesTimeOverhead<<"ns"<<endl;
+	// vector<longVar> mesTimeOverhead = measure_timeOverhead();
+	// mean = accumulate(mesTimeOverhead.begin(), mesTimeOverhead.end(), 0.0)
+	// 					/ mesTimeOverhead.size();
+	// sq_sum = inner_product(mesTimeOverhead.begin(), mesTimeOverhead.end(), 
+	// 						mesTimeOverhead.begin(), 0.0);
+	// stddev = sqrt(sq_sum / mesTimeOverhead.size() - mean * mean);
+	// cout<<"Mean overhead of reading time, over "<<NUM_ITERATIONS<<" iterations: "<<mean<<"ns"<<endl;
+	// cout<<"Std. dev of overhead of reading time, over "<<NUM_ITERATIONS<<" iterations: "<<stddev<<"ns"<<endl;
 
 	// /*-----------------------------------------------------------------
 	// 					     Overhead of a loop
 	// -----------------------------------------------------------------*/
 	// longVar mesLoopOverhead = measure_loopOverhead();
-	// cout<<"Overhead of a loop, over "<<NUM_ITERATIONS<<" iterations:"<<mesLoopOverhead<<"ns"<<endl;
+	// cout<<"Overhead of a loop, over "<<NUM_ITERATIONS<<" iterations: "<<mesLoopOverhead<<"ns"<<endl;
 
 	// /*-----------------------------------------------------------------
 	//           Overhead in procedure calls of different lengths
 	// -----------------------------------------------------------------*/
-	// vector<longVar> procOverhead;
-	// int count = 0;
-	// measure_procCallOverhead(procOverhead);
-	// cout<<"Overhead for procedure calls, over "<<NUM_ITERATIONS<<" iterations: "<<endl;
-	// for (auto it: procOverhead)
-	// 	cout<<"Procedure with "<<count++<<" arguments: "<<it<<" ns"<<endl;
+	vector<longVar> procOverhead;
+	int count = 0;
+	measure_procCallOverhead(procOverhead);
+	cout<<"Overhead for procedure calls, over "<<NUM_ITERATIONS<<" iterations: "<<endl;
+	for (auto it: procOverhead)
+		cout<<"Procedure with "<<count++<<" arguments: "<<it<<" ns"<<endl;
 
 	// /*-----------------------------------------------------------------
 	//           			 Overhead for system call
@@ -79,21 +86,21 @@ int main()
 						Measuring network latency
 	-----------------------------------------------------------------*/
 
-	system("g++ loopTCPServer.cpp -o server ; ./server &");
+	// system("g++ loopTCPServer.cpp -o server ; ./server &");
 
-	//0 means we are measuring loopback, 1 means remote interface
-	FILE* outFile = popen("g++ loopTCPClient.cpp -o client ; ./client 0", "r");
-	while(1)
-	{
-		int c = fgetc(outFile);
-		if(c == EOF)
-			break;
-		cout<<(char)c;
-	}
-	fclose(outFile);
+	// //0 means we are measuring loopback, 1 means remote interface
+	// FILE* outFile = popen("g++ loopTCPClient.cpp -o client ; ./client 0", "r");
+	// while(1)
+	// {
+	// 	int c = fgetc(outFile);
+	// 	if(c == EOF)
+	// 		break;
+	// 	cout<<(char)c;
+	// }
+	// fclose(outFile);
 
-	//Terminate the server process once we are done
-	system("ps -ax | grep -i ./server| awk 'NR == 1 {print $1}' | tr -d '\n' | xargs -0 kill");
+	// //Terminate the server process once we are done
+	// system("ps -ax | grep -i ./server| awk 'NR == 1 {print $1}' | tr -d '\n' | xargs -0 kill");
 
 	return 0;
 }

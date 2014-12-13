@@ -7,11 +7,11 @@ Priyanka Ganapathy, pganapat@eng.ucsd.edu
 Benchmarking code implemented
 ---------------------------------------------------------------*/
 
-longVar measure_timeOverhead()
+vector<longVar> measure_timeOverhead()
 {
     longVar start;
     longVar end;
-    longVar total = 0;
+    vector<longVar> results;
     static mach_timebase_info_data_t sTimebaseInfo;
     int i;
 
@@ -21,11 +21,9 @@ longVar measure_timeOverhead()
     {
     	start = mach_absolute_time();
     	end = mach_absolute_time();
-     	total += end - start;
+     	results.push_back(end - start);
     }
-    total /= NUM_ITERATIONS;
-    total *= sTimebaseInfo.numer / sTimebaseInfo.denom;
-    return total;
+    return results;
 }
 
 longVar measure_loopOverhead(uint iterations)

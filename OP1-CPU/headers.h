@@ -20,6 +20,7 @@ Header files
 #include <errno.h>
 #include <netdb.h>
 #include <stdio.h>
+#include <numeric>
 #include <signal.h>
 #include <iostream>
 #include <unistd.h>
@@ -48,11 +49,14 @@ using std::cout;
 using std::endl;
 using std::setw;
 using std::left;
+using std::sqrt;
 using std::vector;
 using std::string;
 using std::fstream;
 using std::to_string;
+using std::accumulate;
 using std::max_element;
+using std::inner_product;
 using std::unordered_map;
 
 /*----------------------
