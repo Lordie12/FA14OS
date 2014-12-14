@@ -45,6 +45,7 @@ typedef long double longVar;
 Namespace import
 -----------------*/
 using std::cin;
+using std::ios;
 using std::cout;
 using std::endl;
 using std::setw;

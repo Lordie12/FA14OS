@@ -541,3 +541,156 @@ longVar measure_pageFaultTime()
 	PFT = total / (float)(numChunkPages * numChunks);
 	return PFT;
 }
+
+vector<longVar> measure_FileCacheSize(bool isCacheOn)
+{
+	// The different files to be read to measure the file cache
+	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
+	const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
+								"512MFile.txt", "1GFile.txt", "2GFile.txt"};
+
+	vector<longVar> output;
+	longVar start = 0, end = 0, tot = 0;
+
+	int fid;
+	int blocks = 0;
+	int size;
+	// Lets read one allocation block at a time
+	char BlockRead[ALLOC_SIZE];
+	// Store number of blocks to read from the file
+	struct stat fileStat;
+
+	cout<<"File Caching is ";
+	if (isCacheOn)
+		cout<<"on.\n";
+	else
+		cout<<"off.\n";
+
+	for(int i = 0; i < 7; i++)
+	{
+		fid = open((BaseFile + FileNames[i]).c_str(), O_RDONLY);
+		stat((BaseFile + FileNames[i]).c_str(), &fileStat);
+		//Disable file caching in memory
+		if (!isCacheOn)
+			fcntl(fid, F_NOCACHE, 1);
+		
+		tot = 0;
+		blocks = 0;
+
+		// Seek to end of file 
+		lseek(fid, 0, SEEK_END);
+
+		// We read this many blocks from the disk
+		while (blocks < (fileStat.st_size / ALLOC_SIZE) - 1)
+		{
+			//Read the file backward
+			lseek(fid, -2 * ALLOC_SIZE, SEEK_CUR);
+
+			start = mach_absolute_time();
+			size = read(fid, BlockRead, ALLOC_SIZE);
+			end = mach_absolute_time();
+			if (size == 0)
+				break;
+			tot += end - start;
+			blocks++;
+		}
+		close(fid);
+		cout<<"Average latency per block for "<<FileNames[i]<<": "<<tot / (float)blocks<<endl;
+		output.push_back(tot / (float)blocks);
+	}
+	return output;
+}
+
+vector<longVar> measure_SeqFileReadTime()
+{
+	// The different files to be read to measure the file cache
+	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
+	const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
+								"512MFile.txt", "1GFile.txt", "2GFile.txt"};
+
+	vector<longVar> output;
+	longVar start = 0, end = 0, tot = 0;
+
+	int fid;
+	int blocks = 0;
+	int size;
+	// Lets read one allocation block at a time
+	char BlockRead[ALLOC_SIZE];
+	// Store number of blocks to read from the file
+	struct stat fileStat;
+
+	for(int i = 0; i < 7; i++)
+	{
+		fid = open((BaseFile + FileNames[i]).c_str(), O_RDONLY);
+		stat((BaseFile + FileNames[i]).c_str(), &fileStat);
+		//Disable file caching in memory
+		fcntl(fid, F_NOCACHE, 1);
+		
+		tot = 0;
+		blocks = 0;
+
+		// We read this many blocks from the disk
+		while (blocks < (fileStat.st_size / ALLOC_SIZE) - 1)
+		{
+			//Read the file backward
+			start = mach_absolute_time();
+			size = read(fid, BlockRead, ALLOC_SIZE);
+			end = mach_absolute_time();
+			if (size == 0)
+				break;
+			tot += end - start;
+			blocks++;
+		}
+		close(fid);
+		cout<<"Time to read File: "<<FileNames[i]<<" - "<<tot<<endl;
+		output.push_back(tot / (float)blocks);
+	}
+	return output;
+}
+
+vector<longVar> measure_RandFileReadTime()
+{
+	// The different files to be read to measure the file cache
+	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
+	const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
+								"512MFile.txt", "1GFile.txt", "2GFile.txt"};
+
+	vector<longVar> output;
+	longVar start = 0, end = 0, tot = 0;
+
+	int fid;
+	int blocks = 0;
+	int size;
+	// Lets read one allocation block at a time
+	char BlockRead[ALLOC_SIZE];
+	// Store number of blocks to read from the file
+	struct stat fileStat;
+
+	for(int i = 0; i < 7; i++)
+	{
+		fid = open((BaseFile + FileNames[i]).c_str(), O_RDONLY);
+		stat((BaseFile + FileNames[i]).c_str(), &fileStat);
+		//Disable file caching in memory
+		fcntl(fid, F_NOCACHE, 1);
+		
+		tot = 0;
+		blocks = 0;
+
+		// We read this many blocks from the disk
+		while (blocks < (fileStat.st_size / ALLOC_SIZE) - 1)
+		{
+			//Read the file backward
+			start = mach_absolute_time();
+			size = read(fid, BlockRead, ALLOC_SIZE);
+			end = mach_absolute_time();
+			if (size == 0)
+				break;
+			tot += end - start;
+			blocks++;
+		}
+		close(fid);
+		cout<<"Time to read File: "<<FileNames[i]<<" - "<<tot<<endl;
+		output.push_back(tot / (float)blocks);
+	}
+	return output;
+}

@@ -53226,6 +53226,7 @@ typedef long double longVar;
 
 
 using std::cin;
+using std::ios;
 using std::cout;
 using std::endl;
 using std::setw;
@@ -53240,7 +53241,7 @@ using std::max_element;
 using std::inner_product;
 using std::unordered_map;
 # 13 "./benchmarks.h" 2
-# 26 "./benchmarks.h"
+# 27 "./benchmarks.h"
 vector<longVar> measure_timeOverhead();
 longVar measure_threadOverhead();
 longVar measure_sysCallOverhead();
@@ -53250,6 +53251,8 @@ longVar measure_threadContextSwitchOverhead();
 longVar measure_processContextSwitchOverhead();
 void measure_procCallOverhead(vector<longVar> &result);
 longVar measure_loopOverhead(uint iterations=250000);
+vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
+vector<longVar> measure_FileReadTime();
 
 
 
@@ -53270,98 +53273,8 @@ vector<longVar> measure_memWriteBandwidth();
 
 int main()
 {
- longVar mean, stddev, sq_sum;
-
-
-
- vector<longVar> mesTimeOverhead = measure_timeOverhead();
- mean = accumulate(mesTimeOverhead.begin(), mesTimeOverhead.end(), 0.0)
-      / mesTimeOverhead.size();
- sq_sum = inner_product(mesTimeOverhead.begin(), mesTimeOverhead.end(),
-       mesTimeOverhead.begin(), 0.0);
- stddev = sqrt(sq_sum / mesTimeOverhead.size() - mean * mean);
- cout<<"Mean overhead of reading time, over "<<250000<<" iterations: "<<mean<<"ns"<<endl;
- cout<<"Std. dev of overhead of reading time, over "<<250000<<" iterations: "<<stddev<<"ns"<<endl;
-
-
-
-
- longVar mesLoopOverhead = measure_loopOverhead();
- cout<<"Overhead of a loop, over "<<250000<<" iterations: "<<mesLoopOverhead<<"ns"<<endl;
-
-
-
-
- vector<longVar> procOverhead;
- int count = 0;
- measure_procCallOverhead(procOverhead);
- cout<<"Overhead for procedure calls, over "<<250000<<" iterations: "<<endl;
- for (auto it: procOverhead)
-  cout<<"Procedure with "<<count++<<" arguments: "<<it<<" ns"<<endl;
-
-
-
-
- longVar syscallOverhead = measure_sysCallOverhead();
- cout<<"Overhead for system call stat(), over "<<250000<<" iteration: "<<syscallOverhead<<" ns"<<endl;
-
-
-
-
- longVar processOverhead = measure_processOverhead();
- cout<<"Overhead for creating and running a single process is: "<<processOverhead<<" us"<<endl;
-
-
-
-
- longVar threadOverhead = measure_threadOverhead();
- cout<<"Overhead for creating and running a single thread is: "<<threadOverhead<<" ns"<<endl;
-
-
-
-
- longVar procContextSwitchOverhead = measure_processContextSwitchOverhead();
- cout<<"Overhead for proc context switch is: "<<procContextSwitchOverhead<<" ns"<<endl;
-
-
-
-
- longVar threadContextSwitchOverhead = measure_threadContextSwitchOverhead();
- cout<<"Overhead for thread context switch is: "<<threadContextSwitchOverhead<<" ns"<<endl;
-
-
-
-
-
- measure_memLatency();
-
- vector<longVar> totBWWrite = measure_memWriteBandwidth();
- cout<<"DRAM write bandwidth: "<<*max_element(totBWWrite.begin(), totBWWrite.end())<<" GiB/s"<<endl;
-
- vector<longVar> totBWRead = measure_memReadBandwidth();
- cout<<"DRAM read bandwidth: "<<*max_element(totBWRead.begin(), totBWRead.end())<<" GiB/s"<<endl;
-
- cout<<"Average Page Fault Service Time: "<<measure_pageFaultTime()<<"ns"<<endl;
-
-
-
-
-
- system("g++ loopTCPServer.cpp -o server ; ./server &");
-
-
- FILE* outFile = popen("g++ loopTCPClient.cpp -o client ; ./client 0", "r");
- while(1)
- {
-  int c = fgetc(outFile);
-  if(c == (-1))
-   break;
-  cout<<(char)c;
- }
- fclose(outFile);
-
-
- system("ps -ax | grep -i ./server| awk 'NR == 1 {print $1}' | tr -d '\n' | xargs -0 kill");
-
+# 120 "main.cpp"
+ system("sudo purge");
+ measure_FileReadTime();
  return 0;
 }

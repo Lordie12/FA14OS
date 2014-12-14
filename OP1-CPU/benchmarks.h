@@ -14,6 +14,7 @@ here for easy access
 #define ARR_SIZE 			1024 * 1024 * 1024LL
 #define NUM_LOADS 			100
 #define CHUNK_SIZE	 		128 * 1024LL
+#define ALLOC_SIZE			4096
 #define ARR_WRITES 			10
 #define NUM_SAMPLES 		10
 #define NUM_ITERATIONS 		250000
@@ -32,6 +33,9 @@ longVar measure_threadContextSwitchOverhead();
 longVar measure_processContextSwitchOverhead();
 void    measure_procCallOverhead(vector<longVar> &result);
 longVar measure_loopOverhead(uint iterations=NUM_ITERATIONS);
+vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
+vector<longVar> measure_SeqFileReadTime();
+vector<longVar> measure_RandFileReadTime()
 
 /*-------------------------------------------------------------
 Function prototypes for Memory operations, Part II of the OS
