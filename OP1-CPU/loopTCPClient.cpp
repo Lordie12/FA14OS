@@ -1,8 +1,6 @@
 /*---------------------------------------------------------------
 Kaushik Kalyanaraman, kkalyana@eng.ucsd.edu
-Priyanka Ganapathy, pganapat@eng.ucsd.edu
-
-Loopback TCP Client
+TCP Client
 ---------------------------------------------------------------*/
 
 #include "headers.h"
