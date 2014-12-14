@@ -80,7 +80,7 @@ void measure_procCallOverhead(vector<longVar> &result)
 	longVar start = 0;
 	longVar end = 0;
 	longVar tot = 0;
-	longVar loopOverhead = measure_loopOverhead();
+	const longVar loopOverhead = measure_loopOverhead();
 
 	int arg1 = 1;
 	int arg2 = 2;
@@ -199,7 +199,7 @@ void measure_procCallOverhead(vector<longVar> &result)
 longVar measure_sysCallOverhead()
 {
 	static mach_timebase_info_data_t sTimebaseInfo;
-	longVar loopOverhead = measure_loopOverhead();
+	const longVar loopOverhead = measure_loopOverhead();
 	longVar start;
 	longVar end;
 	struct stat fileStat;
@@ -268,7 +268,7 @@ longVar measure_threadOverhead()
 
 	if (iret1)
 	{
-		cout<<"Error - pthread _create return code: "<<iret1<<endl;
+		cout<<"Error - pthread_create returned error code "<<iret1<<endl;
 		return 0;
 	}
 	return (end - start) * sTimebaseInfo.numer / sTimebaseInfo.denom;
@@ -364,11 +364,11 @@ vector<vector<longVar>> measure_memLatency()
 	/*-------------------------------------------------------
 	The array sizes are in powers of 2
 	-------------------------------------------------------*/
-	vector<int> arrSizes = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
+	const vector<int> arrSizes = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
 	/*-------------------------------------------------------
 	The strides are in powers of 2
 	-------------------------------------------------------*/
-	vector<int> strides = {9, 10, 11, 13, 15, 16, 18, 19};
+	const vector<int> strides = {9, 10, 11, 13, 15, 16, 18, 19};
 	vector<vector<longVar>> totResults;
 
 	fstream f;
@@ -479,7 +479,7 @@ vector<longVar> measure_memReadBandwidth()
 {
 	longVar start, end, timeInNS;
 	vector<longVar> totals;
-	longVar loopOverhead = measure_loopOverhead(ARR_WRITES);
+	const longVar loopOverhead = measure_loopOverhead(ARR_WRITES);
   	for (uint i = 0; i < NUM_SAMPLES; i++) 
   	{
     	start = mach_absolute_time();

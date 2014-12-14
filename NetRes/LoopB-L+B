@@ -1,6 +1,6 @@
 Bandwidth is 10.1147 GB/s
-Localhost RTT is 66.884 us
+Localhost RTT is 94.884 us
 
 PING Statistics
-10 packets transmitted, 10 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.057/0.105/0.161/0.038 ms
+7 packets transmitted, 7 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.068/0.077/0.088/0.007 ms
