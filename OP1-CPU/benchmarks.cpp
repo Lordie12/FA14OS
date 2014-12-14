@@ -701,3 +701,65 @@ vector<longVar> measure_RandFileReadTime()
 	}
 	return output;
 }
+
+void call_from_thread(int fid) 
+{
+    int blocks = 0;
+    char BlockRead[ALLOC_SIZE];
+    // Read NUM_BLOCK_READS blocks into BlockRead
+    while (blocks < NUM_BLOCK_READS)
+    {
+    	read(fid, BlockRead, ALLOC_SIZE);
+    	blocks++;
+    }
+}
+
+vector<longVar> measure_FileContentionRead()
+{
+	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/ThreadFiles/";
+	const string EndFile = "thread_acc_file.dat";
+	const uint NUM_THREADS = 32;
+	int fid[NUM_THREADS];
+	vector<longVar> result;
+	thread t[NUM_THREADS];
+	longVar start = 0, end = 0;
+
+	// Lets open files preliminarily, less overhead when measuring time
+	for(uint i = 0; i < NUM_THREADS; i++)
+	{
+		fid[i] = open((BaseFile + to_string(i + 1) + EndFile).c_str(), O_RDONLY);
+		//Disable file caching in memory
+		fcntl(fid[i], F_NOCACHE, 1);
+	}
+
+	// Increase the number of threads and see what difference it makes
+	for(uint count = 1; count < NUM_THREADS + 1; count++)
+    {
+    	cout<<"Running "<<count<<" threads in parallel.\n";
+    	start = mach_absolute_time();
+    	//Launch a group of threads
+	    for (int i = 0; i < count; ++i) 
+	    {
+	        t[i] = thread(call_from_thread, fid[i]);
+	    }
+	    //Join the threads with the main thread
+	    for (int i = 0; i < count; ++i) 
+	    {
+	        t[i].join();
+	    }
+	    end = mach_absolute_time();
+
+	    for(uint i = 0; i < count; i++)
+		{
+			// Rewind the file to its beginning
+			lseek(fid[i], 0, SEEK_SET);
+		}
+		result.push_back((end - start) / (double)(NUM_BLOCK_READS * count));
+	}
+
+    for(uint i = 0; i < NUM_THREADS; i++)
+    {
+    	close(fid[i]);
+    }
+    return result;
+}

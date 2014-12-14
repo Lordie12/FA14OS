@@ -13,6 +13,7 @@ Header files
 #include <vector>
 #include <string>
 #include <math.h>
+#include <thread>
 #include <fcntl.h>
 #include <iomanip>
 #include <fstream>
@@ -52,22 +53,12 @@ using std::left;
 using std::sqrt;
 using std::vector;
 using std::string;
+using std::thread;
 using std::fstream;
 using std::to_string;
 using std::accumulate;
 using std::max_element;
 using std::inner_product;
 using std::unordered_map;
-
-/*----------------------
-MACROS for the network
-part of project
-----------------------*/
-#define PORT 			 5000
-#define NStoS(X) 		 ((X * 0.000000001))
-#define LOOPBACKIP 		 "127.0.0.1"
-#define NUM_PACKETS		 250
-#define PACKET_SIZE		 1472
-#define CALCSIZEBYTES(X) (X * PACKET_SIZE)
 
 #endif

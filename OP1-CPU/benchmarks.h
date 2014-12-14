@@ -17,7 +17,21 @@ here for easy access
 #define ARR_WRITES 			10
 #define NUM_SAMPLES 		10
 #define NUM_ITERATIONS 		250000
+#define NUM_BLOCK_READS		7500
 #define NUM_THREAD_SWITCHES 500
+
+/*----------------------
+MACROS for the network
+part of project
+----------------------*/
+#define PORT 			 5000
+#define NStoS(X) 		 ((X * 0.000000001))
+#define LOOPBACKIP 		 "127.0.0.1"
+#define NUM_PACKETS		 250
+#define PACKET_SIZE		 1472
+#define CALCSIZEBYTES(X) (X * PACKET_SIZE)
+
+
 
 /*-------------------------------------------------------------
 Function prototypes for CPU operations, Part I of the OS 
@@ -35,6 +49,7 @@ longVar measure_loopOverhead(uint iterations=NUM_ITERATIONS);
 vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
 vector<longVar> measure_SeqFileReadTime();
 vector<longVar> measure_RandFileReadTime();
+vector<longVar> measure_FileContentionRead();
 
 /*-------------------------------------------------------------
 Function prototypes for Memory operations, Part II of the OS

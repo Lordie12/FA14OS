@@ -6,9 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "main.cpp" 2
 # 1 "./benchmarks.h" 1
-# 12 "./benchmarks.h"
+# 11 "./benchmarks.h"
 # 1 "./headers.h" 1
-# 14 "./headers.h"
+# 13 "./headers.h"
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector" 1 3
 # 264 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector" 3
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config" 1 3
@@ -22069,7 +22069,7 @@ swap(vector<_Tp, _Allocator>& __x, vector<_Tp, _Allocator>& __y)
 }
 
 } }
-# 15 "./headers.h" 2
+# 14 "./headers.h" 2
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string" 1 3
 # 437 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string" 3
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdio" 1 3
@@ -26181,7 +26181,7 @@ extern template class __attribute__ ((__type_visibility__("default"))) basic_str
 extern template string operator+<char, char_traits<char>, allocator<char> >(char const*, string const&);
 
 } }
-# 16 "./headers.h" 2
+# 15 "./headers.h" 2
 # 1 "/usr/include/math.h" 1 3 4
 # 33 "/usr/include/math.h" 3 4
 extern "C" {
@@ -26600,2490 +26600,9 @@ extern double gamma(double) __attribute__((availability(macosx,introduced=10.0,d
 extern double significand(double) __attribute__((availability(macosx,introduced=10.0,deprecated=10.9)));
 # 737 "/usr/include/math.h" 3 4
 }
-# 17 "./headers.h" 2
-# 1 "/usr/include/fcntl.h" 1 3 4
-# 23 "/usr/include/fcntl.h" 3 4
-# 1 "/usr/include/sys/fcntl.h" 1 3 4
-# 83 "/usr/include/sys/fcntl.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 84 "/usr/include/sys/fcntl.h" 2 3 4
-# 1 "/usr/include/sys/_types/_mode_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_mode_t.h" 3 4
-typedef __darwin_mode_t mode_t;
-# 85 "/usr/include/sys/fcntl.h" 2 3 4
-
-# 1 "/usr/include/sys/_types/_pid_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_pid_t.h" 3 4
-typedef __darwin_pid_t pid_t;
-# 87 "/usr/include/sys/fcntl.h" 2 3 4
-# 116 "/usr/include/sys/fcntl.h" 3 4
-# 1 "/usr/include/sys/_types/_o_sync.h" 1 3 4
-# 117 "/usr/include/sys/fcntl.h" 2 3 4
-# 157 "/usr/include/sys/fcntl.h" 3 4
-# 1 "/usr/include/sys/_types/_o_dsync.h" 1 3 4
-# 158 "/usr/include/sys/fcntl.h" 2 3 4
-# 296 "/usr/include/sys/fcntl.h" 3 4
-# 1 "/usr/include/sys/_types/_seek_set.h" 1 3 4
-# 297 "/usr/include/sys/fcntl.h" 2 3 4
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_s_ifmt.h" 1 3 4
-# 303 "/usr/include/sys/fcntl.h" 2 3 4
-# 321 "/usr/include/sys/fcntl.h" 3 4
-struct flock {
- off_t l_start;
- off_t l_len;
- pid_t l_pid;
- short l_type;
- short l_whence;
-};
-# 336 "/usr/include/sys/fcntl.h" 3 4
-struct flocktimeout {
- struct flock fl;
- struct timespec timeout;
-};
-# 349 "/usr/include/sys/fcntl.h" 3 4
-struct radvisory {
-       off_t ra_offset;
-       int ra_count;
-};
-
-
-
-typedef struct fcodeblobs {
- void *f_cd_hash;
- size_t f_hash_size;
- void *f_cd_buffer;
- size_t f_cd_size;
- unsigned int *f_out_size;
- int f_arch;
- int __padding;
-} fcodeblobs_t;
-# 373 "/usr/include/sys/fcntl.h" 3 4
-typedef struct fsignatures {
- off_t fs_file_start;
- void *fs_blob_start;
- size_t fs_blob_size;
-} fsignatures_t;
-# 387 "/usr/include/sys/fcntl.h" 3 4
-typedef struct fstore {
- unsigned int fst_flags;
- int fst_posmode;
- off_t fst_offset;
- off_t fst_length;
- off_t fst_bytesalloc;
-} fstore_t;
-
-
-
-typedef struct fbootstraptransfer {
-  off_t fbt_offset;
-  size_t fbt_length;
-  void *fbt_buffer;
-} fbootstraptransfer_t;
-# 425 "/usr/include/sys/fcntl.h" 3 4
-#pragma pack(4)
-
-struct log2phys {
- unsigned int l2p_flags;
- off_t l2p_contigbytes;
-
-
- off_t l2p_devoffset;
-
-
-};
-
-#pragma pack()
-# 448 "/usr/include/sys/fcntl.h" 3 4
-# 1 "/usr/include/sys/_types/_filesec_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_filesec_t.h" 3 4
-struct _filesec;
-typedef struct _filesec *filesec_t;
-# 449 "/usr/include/sys/fcntl.h" 2 3 4
-
-typedef enum {
- FILESEC_OWNER = 1,
- FILESEC_GROUP = 2,
- FILESEC_UUID = 3,
- FILESEC_MODE = 4,
- FILESEC_ACL = 5,
- FILESEC_GRPUUID = 6,
-
-
- FILESEC_ACL_RAW = 100,
- FILESEC_ACL_ALLOCSIZE = 101
-} filesec_property_t;
-
-
-
-
-
-extern "C" {
-int open(const char *, int, ...) __asm("_" "open") ;
-
-int openat(int, const char *, int, ...) __asm("_" "openat") __attribute__((availability(macosx,introduced=10.10)));
-
-int creat(const char *, mode_t) __asm("_" "creat") ;
-int fcntl(int, int, ...) __asm("_" "fcntl") ;
-
-
-int openx_np(const char *, int, filesec_t);
-
-
-
-
-int open_dprotected_np ( const char *, int, int, int, ...);
-int flock(int, int);
-filesec_t filesec_init(void);
-filesec_t filesec_dup(filesec_t);
-void filesec_free(filesec_t);
-int filesec_get_property(filesec_t, filesec_property_t, void *);
-int filesec_query_property(filesec_t, filesec_property_t, int *);
-int filesec_set_property(filesec_t, filesec_property_t, const void *);
-int filesec_unset_property(filesec_t, filesec_property_t) __attribute__((availability(macosx,introduced=10.6)));
-
-
-
-}
-# 24 "/usr/include/fcntl.h" 2 3 4
-# 18 "./headers.h" 2
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iomanip" 1 3
-# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iomanip" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream" 1 3
-# 156 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream" 1 3
-# 131 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ios" 1 3
-# 216 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ios" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__locale" 1 3
-# 18 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__locale" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 1 3
-# 176 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 1 3
-# 15 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 1 3
-# 279 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ctime" 1 3
-# 52 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ctime" 3
-
-
-namespace std {inline namespace __1 {
-
-using ::clock_t;
-using ::size_t;
-using ::time_t;
-using ::tm;
-using ::clock;
-using ::difftime;
-using ::mktime;
-using ::time;
-using ::asctime;
-using ::ctime;
-using ::gmtime;
-using ::localtime;
-using ::strftime;
-
-} }
-# 280 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 2 3
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 1 3
-# 73 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max" 1 3
-# 74 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 2 3
-# 77 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
-
-
-namespace std {inline namespace __1 {
-
-
-
-template <intmax_t _Xp, intmax_t _Yp>
-struct __static_gcd
-{
-    static const intmax_t value = __static_gcd<_Yp, _Xp % _Yp>::value;
-};
-
-template <intmax_t _Xp>
-struct __static_gcd<_Xp, 0>
-{
-    static const intmax_t value = _Xp;
-};
-
-template <>
-struct __static_gcd<0, 0>
-{
-    static const intmax_t value = 1;
-};
-
-
-
-template <intmax_t _Xp, intmax_t _Yp>
-struct __static_lcm
-{
-    static const intmax_t value = _Xp / __static_gcd<_Xp, _Yp>::value * _Yp;
-};
-
-template <intmax_t _Xp>
-struct __static_abs
-{
-    static const intmax_t value = _Xp < 0 ? -_Xp : _Xp;
-};
-
-template <intmax_t _Xp>
-struct __static_sign
-{
-    static const intmax_t value = _Xp == 0 ? 0 : (_Xp < 0 ? -1 : 1);
-};
-
-template <intmax_t _Xp, intmax_t _Yp, intmax_t = __static_sign<_Yp>::value>
-class __ll_add;
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_add<_Xp, _Yp, 1>
-{
-    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
-    static const intmax_t max = -min;
-
-    static_assert(_Xp <= max - _Yp, "overflow in __ll_add");
-public:
-    static const intmax_t value = _Xp + _Yp;
-};
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_add<_Xp, _Yp, 0>
-{
-public:
-    static const intmax_t value = _Xp;
-};
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_add<_Xp, _Yp, -1>
-{
-    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
-    static const intmax_t max = -min;
-
-    static_assert(min - _Yp <= _Xp, "overflow in __ll_add");
-public:
-    static const intmax_t value = _Xp + _Yp;
-};
-
-template <intmax_t _Xp, intmax_t _Yp, intmax_t = __static_sign<_Yp>::value>
-class __ll_sub;
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_sub<_Xp, _Yp, 1>
-{
-    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
-    static const intmax_t max = -min;
-
-    static_assert(min + _Yp <= _Xp, "overflow in __ll_sub");
-public:
-    static const intmax_t value = _Xp - _Yp;
-};
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_sub<_Xp, _Yp, 0>
-{
-public:
-    static const intmax_t value = _Xp;
-};
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_sub<_Xp, _Yp, -1>
-{
-    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
-    static const intmax_t max = -min;
-
-    static_assert(_Xp <= max + _Yp, "overflow in __ll_sub");
-public:
-    static const intmax_t value = _Xp - _Yp;
-};
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_mul
-{
-    static const intmax_t nan = (1LL << (sizeof(intmax_t) * 8 - 1));
-    static const intmax_t min = nan + 1;
-    static const intmax_t max = -min;
-    static const intmax_t __a_x = __static_abs<_Xp>::value;
-    static const intmax_t __a_y = __static_abs<_Yp>::value;
-
-    static_assert(_Xp != nan && _Yp != nan && __a_x <= max / __a_y, "overflow in __ll_mul");
-public:
-    static const intmax_t value = _Xp * _Yp;
-};
-
-template <intmax_t _Yp>
-class __ll_mul<0, _Yp>
-{
-public:
-    static const intmax_t value = 0;
-};
-
-template <intmax_t _Xp>
-class __ll_mul<_Xp, 0>
-{
-public:
-    static const intmax_t value = 0;
-};
-
-template <>
-class __ll_mul<0, 0>
-{
-public:
-    static const intmax_t value = 0;
-};
-
-
-template <intmax_t _Xp, intmax_t _Yp>
-class __ll_div
-{
-    static const intmax_t nan = (1LL << (sizeof(intmax_t) * 8 - 1));
-    static const intmax_t min = nan + 1;
-    static const intmax_t max = -min;
-
-    static_assert(_Xp != nan && _Yp != nan && _Yp != 0, "overflow in __ll_div");
-public:
-    static const intmax_t value = _Xp / _Yp;
-};
-
-template <intmax_t _Num, intmax_t _Den = 1>
-class __attribute__ ((__type_visibility__("default"))) ratio
-{
-    static_assert(__static_abs<_Num>::value >= 0, "ratio numerator is out of range");
-    static_assert(_Den != 0, "ratio divide by 0");
-    static_assert(__static_abs<_Den>::value > 0, "ratio denominator is out of range");
-    static const intmax_t __na = __static_abs<_Num>::value;
-    static const intmax_t __da = __static_abs<_Den>::value;
-    static const intmax_t __s = __static_sign<_Num>::value * __static_sign<_Den>::value;
-    static const intmax_t __gcd = __static_gcd<__na, __da>::value;
-public:
-    static const intmax_t num = __s * __na / __gcd;
-    static const intmax_t den = __da / __gcd;
-
-    typedef ratio<num, den> type;
-};
-
-template <intmax_t _Num, intmax_t _Den> const intmax_t ratio<_Num, _Den>::num;
-template <intmax_t _Num, intmax_t _Den> const intmax_t ratio<_Num, _Den>::den;
-
-template <class _Tp> struct __is_ratio : false_type {};
-template <intmax_t _Num, intmax_t _Den> struct __is_ratio<ratio<_Num, _Den> > : true_type {};
-
-typedef ratio<1LL, 1000000000000000000LL> atto;
-typedef ratio<1LL, 1000000000000000LL> femto;
-typedef ratio<1LL, 1000000000000LL> pico;
-typedef ratio<1LL, 1000000000LL> nano;
-typedef ratio<1LL, 1000000LL> micro;
-typedef ratio<1LL, 1000LL> milli;
-typedef ratio<1LL, 100LL> centi;
-typedef ratio<1LL, 10LL> deci;
-typedef ratio< 10LL, 1LL> deca;
-typedef ratio< 100LL, 1LL> hecto;
-typedef ratio< 1000LL, 1LL> kilo;
-typedef ratio< 1000000LL, 1LL> mega;
-typedef ratio< 1000000000LL, 1LL> giga;
-typedef ratio< 1000000000000LL, 1LL> tera;
-typedef ratio< 1000000000000000LL, 1LL> peta;
-typedef ratio<1000000000000000000LL, 1LL> exa;
-
-template <class _R1, class _R2>
-struct __ratio_multiply
-{
-private:
-    static const intmax_t __gcd_n1_d2 = __static_gcd<_R1::num, _R2::den>::value;
-    static const intmax_t __gcd_d1_n2 = __static_gcd<_R1::den, _R2::num>::value;
-public:
-    typedef typename ratio
-        <
-            __ll_mul<_R1::num / __gcd_n1_d2, _R2::num / __gcd_d1_n2>::value,
-            __ll_mul<_R2::den / __gcd_n1_d2, _R1::den / __gcd_d1_n2>::value
-        >::type type;
-};
-
-
-
-template <class _R1, class _R2> using ratio_multiply
-                                    = typename __ratio_multiply<_R1, _R2>::type;
-# 300 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
-template <class _R1, class _R2>
-struct __ratio_divide
-{
-private:
-    static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
-    static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
-public:
-    typedef typename ratio
-        <
-            __ll_mul<_R1::num / __gcd_n1_n2, _R2::den / __gcd_d1_d2>::value,
-            __ll_mul<_R2::num / __gcd_n1_n2, _R1::den / __gcd_d1_d2>::value
-        >::type type;
-};
-
-
-
-template <class _R1, class _R2> using ratio_divide
-                                      = typename __ratio_divide<_R1, _R2>::type;
-# 327 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
-template <class _R1, class _R2>
-struct __ratio_add
-{
-private:
-    static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
-    static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
-public:
-    typedef typename ratio_multiply
-        <
-            ratio<__gcd_n1_n2, _R1::den / __gcd_d1_d2>,
-            ratio
-            <
-                __ll_add
-                <
-                    __ll_mul<_R1::num / __gcd_n1_n2, _R2::den / __gcd_d1_d2>::value,
-                    __ll_mul<_R2::num / __gcd_n1_n2, _R1::den / __gcd_d1_d2>::value
-                >::value,
-                _R2::den
-            >
-        >::type type;
-};
-
-
-
-template <class _R1, class _R2> using ratio_add
-                                         = typename __ratio_add<_R1, _R2>::type;
-# 362 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
-template <class _R1, class _R2>
-struct __ratio_subtract
-{
-private:
-    static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
-    static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
-public:
-    typedef typename ratio_multiply
-        <
-            ratio<__gcd_n1_n2, _R1::den / __gcd_d1_d2>,
-            ratio
-            <
-                __ll_sub
-                <
-                    __ll_mul<_R1::num / __gcd_n1_n2, _R2::den / __gcd_d1_d2>::value,
-                    __ll_mul<_R2::num / __gcd_n1_n2, _R1::den / __gcd_d1_d2>::value
-                >::value,
-                _R2::den
-            >
-        >::type type;
-};
-
-
-
-template <class _R1, class _R2> using ratio_subtract
-                                    = typename __ratio_subtract<_R1, _R2>::type;
-# 399 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
-template <class _R1, class _R2>
-struct __attribute__ ((__type_visibility__("default"))) ratio_equal
-    : public integral_constant<bool, _R1::num == _R2::num && _R1::den == _R2::den> {};
-
-template <class _R1, class _R2>
-struct __attribute__ ((__type_visibility__("default"))) ratio_not_equal
-    : public integral_constant<bool, !ratio_equal<_R1, _R2>::value> {};
-
-
-
-template <class _R1, class _R2, bool _Odd = false,
-          intmax_t _Q1 = _R1::num / _R1::den, intmax_t _M1 = _R1::num % _R1::den,
-          intmax_t _Q2 = _R2::num / _R2::den, intmax_t _M2 = _R2::num % _R2::den>
-struct __ratio_less1
-{
-    static const bool value = _Odd ? _Q2 < _Q1 : _Q1 < _Q2;
-};
-
-template <class _R1, class _R2, bool _Odd, intmax_t _Qp>
-struct __ratio_less1<_R1, _R2, _Odd, _Qp, 0, _Qp, 0>
-{
-    static const bool value = false;
-};
-
-template <class _R1, class _R2, bool _Odd, intmax_t _Qp, intmax_t _M2>
-struct __ratio_less1<_R1, _R2, _Odd, _Qp, 0, _Qp, _M2>
-{
-    static const bool value = !_Odd;
-};
-
-template <class _R1, class _R2, bool _Odd, intmax_t _Qp, intmax_t _M1>
-struct __ratio_less1<_R1, _R2, _Odd, _Qp, _M1, _Qp, 0>
-{
-    static const bool value = _Odd;
-};
-
-template <class _R1, class _R2, bool _Odd, intmax_t _Qp, intmax_t _M1,
-                                                        intmax_t _M2>
-struct __ratio_less1<_R1, _R2, _Odd, _Qp, _M1, _Qp, _M2>
-{
-    static const bool value = __ratio_less1<ratio<_R1::den, _M1>,
-                                            ratio<_R2::den, _M2>, !_Odd>::value;
-};
-
-template <class _R1, class _R2, intmax_t _S1 = __static_sign<_R1::num>::value,
-                                intmax_t _S2 = __static_sign<_R2::num>::value>
-struct __ratio_less
-{
-    static const bool value = _S1 < _S2;
-};
-
-template <class _R1, class _R2>
-struct __ratio_less<_R1, _R2, 1LL, 1LL>
-{
-    static const bool value = __ratio_less1<_R1, _R2>::value;
-};
-
-template <class _R1, class _R2>
-struct __ratio_less<_R1, _R2, -1LL, -1LL>
-{
-    static const bool value = __ratio_less1<ratio<-_R2::num, _R2::den>, ratio<-_R1::num, _R1::den> >::value;
-};
-
-template <class _R1, class _R2>
-struct __attribute__ ((__type_visibility__("default"))) ratio_less
-    : public integral_constant<bool, __ratio_less<_R1, _R2>::value> {};
-
-template <class _R1, class _R2>
-struct __attribute__ ((__type_visibility__("default"))) ratio_less_equal
-    : public integral_constant<bool, !ratio_less<_R2, _R1>::value> {};
-
-template <class _R1, class _R2>
-struct __attribute__ ((__type_visibility__("default"))) ratio_greater
-    : public integral_constant<bool, ratio_less<_R2, _R1>::value> {};
-
-template <class _R1, class _R2>
-struct __attribute__ ((__type_visibility__("default"))) ratio_greater_equal
-    : public integral_constant<bool, !ratio_less<_R1, _R2>::value> {};
-
-template <class _R1, class _R2>
-struct __ratio_gcd
-{
-    typedef ratio<__static_gcd<_R1::num, _R2::num>::value,
-                  __static_lcm<_R1::den, _R2::den>::value> type;
-};
-
-} }
-# 282 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 2 3
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max" 1 3
-# 285 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 2 3
-# 288 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 3
-
-
-namespace std {inline namespace __1 {
-
-namespace chrono
-{
-
-template <class _Rep, class _Period = ratio<1> > class __attribute__ ((__type_visibility__("default"))) duration;
-
-template <class _Tp>
-struct __is_duration : false_type {};
-
-template <class _Rep, class _Period>
-struct __is_duration<duration<_Rep, _Period> > : true_type {};
-
-template <class _Rep, class _Period>
-struct __is_duration<const duration<_Rep, _Period> > : true_type {};
-
-template <class _Rep, class _Period>
-struct __is_duration<volatile duration<_Rep, _Period> > : true_type {};
-
-template <class _Rep, class _Period>
-struct __is_duration<const volatile duration<_Rep, _Period> > : true_type {};
-
-}
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-struct __attribute__ ((__type_visibility__("default"))) common_type<chrono::duration<_Rep1, _Period1>,
-                                         chrono::duration<_Rep2, _Period2> >
-{
-    typedef chrono::duration<typename common_type<_Rep1, _Rep2>::type,
-                             typename __ratio_gcd<_Period1, _Period2>::type> type;
-};
-
-namespace chrono {
-
-
-
-template <class _FromDuration, class _ToDuration,
-          class _Period = typename ratio_divide<typename _FromDuration::period, typename _ToDuration::period>::type,
-          bool = _Period::num == 1,
-          bool = _Period::den == 1>
-struct __duration_cast;
-
-template <class _FromDuration, class _ToDuration, class _Period>
-struct __duration_cast<_FromDuration, _ToDuration, _Period, true, true>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    _ToDuration operator()(const _FromDuration& __fd) const
-    {
-        return _ToDuration(static_cast<typename _ToDuration::rep>(__fd.count()));
-    }
-};
-
-template <class _FromDuration, class _ToDuration, class _Period>
-struct __duration_cast<_FromDuration, _ToDuration, _Period, true, false>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    _ToDuration operator()(const _FromDuration& __fd) const
-    {
-        typedef typename common_type<typename _ToDuration::rep, typename _FromDuration::rep, intmax_t>::type _Ct;
-        return _ToDuration(static_cast<typename _ToDuration::rep>(
-                           static_cast<_Ct>(__fd.count()) / static_cast<_Ct>(_Period::den)));
-    }
-};
-
-template <class _FromDuration, class _ToDuration, class _Period>
-struct __duration_cast<_FromDuration, _ToDuration, _Period, false, true>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    _ToDuration operator()(const _FromDuration& __fd) const
-    {
-        typedef typename common_type<typename _ToDuration::rep, typename _FromDuration::rep, intmax_t>::type _Ct;
-        return _ToDuration(static_cast<typename _ToDuration::rep>(
-                           static_cast<_Ct>(__fd.count()) * static_cast<_Ct>(_Period::num)));
-    }
-};
-
-template <class _FromDuration, class _ToDuration, class _Period>
-struct __duration_cast<_FromDuration, _ToDuration, _Period, false, false>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    _ToDuration operator()(const _FromDuration& __fd) const
-    {
-        typedef typename common_type<typename _ToDuration::rep, typename _FromDuration::rep, intmax_t>::type _Ct;
-        return _ToDuration(static_cast<typename _ToDuration::rep>(
-                           static_cast<_Ct>(__fd.count()) * static_cast<_Ct>(_Period::num)
-                                                          / static_cast<_Ct>(_Period::den)));
-    }
-};
-
-template <class _ToDuration, class _Rep, class _Period>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename enable_if
-<
-    __is_duration<_ToDuration>::value,
-    _ToDuration
->::type
-duration_cast(const duration<_Rep, _Period>& __fd)
-{
-    return __duration_cast<duration<_Rep, _Period>, _ToDuration>()(__fd);
-}
-
-template <class _Rep>
-struct __attribute__ ((__type_visibility__("default"))) treat_as_floating_point : is_floating_point<_Rep> {};
-
-template <class _Rep>
-struct __attribute__ ((__type_visibility__("default"))) duration_values
-{
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr _Rep zero() {return _Rep(0);}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr _Rep max() {return numeric_limits<_Rep>::max();}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr _Rep min() {return numeric_limits<_Rep>::lowest();}
-};
-
-
-
-template <class _Rep, class _Period>
-class __attribute__ ((__type_visibility__("default"))) duration
-{
-    static_assert(!__is_duration<_Rep>::value, "A duration representation can not be a duration");
-    static_assert(__is_ratio<_Period>::value, "Second template parameter of duration must be a std::ratio");
-    static_assert(_Period::num > 0, "duration period must be positive");
-
-    template <class _R1, class _R2>
-    struct __no_overflow
-    {
-    private:
-        static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
-        static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
-        static const intmax_t __n1 = _R1::num / __gcd_n1_n2;
-        static const intmax_t __d1 = _R1::den / __gcd_d1_d2;
-        static const intmax_t __n2 = _R2::num / __gcd_n1_n2;
-        static const intmax_t __d2 = _R2::den / __gcd_d1_d2;
-        static const intmax_t max = -((intmax_t(1) << (sizeof(intmax_t) * 8 - 1)) + 1);
-
-        template <intmax_t _Xp, intmax_t _Yp, bool __overflow>
-        struct __mul
-        {
-            static const intmax_t value = _Xp * _Yp;
-        };
-
-        template <intmax_t _Xp, intmax_t _Yp>
-        struct __mul<_Xp, _Yp, true>
-        {
-            static const intmax_t value = 1;
-        };
-
-    public:
-        static const bool value = (__n1 <= max / __d2) && (__n2 <= max / __d1);
-        typedef ratio<__mul<__n1, __d2, !value>::value,
-                      __mul<__n2, __d1, !value>::value> type;
-    };
-
-public:
-    typedef _Rep rep;
-    typedef _Period period;
-private:
-    rep __rep_;
-public:
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-
-        duration() = default;
-
-
-
-
-    template <class _Rep2>
-        __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-        explicit duration(const _Rep2& __r,
-            typename enable_if
-            <
-               is_convertible<_Rep2, rep>::value &&
-               (treat_as_floating_point<rep>::value ||
-               !treat_as_floating_point<_Rep2>::value)
-            >::type* = 0)
-                : __rep_(__r) {}
-
-
-    template <class _Rep2, class _Period2>
-        __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-        duration(const duration<_Rep2, _Period2>& __d,
-            typename enable_if
-            <
-                __no_overflow<_Period2, period>::value && (
-                treat_as_floating_point<rep>::value ||
-                (__no_overflow<_Period2, period>::type::den == 1 &&
-                 !treat_as_floating_point<_Rep2>::value))
-            >::type* = 0)
-                : __rep_(std::__1::chrono::duration_cast<duration>(__d).count()) {}
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr rep count() const {return __rep_;}
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr duration operator+() const {return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr duration operator-() const {return duration(-__rep_);}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator++() {++__rep_; return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration operator++(int) {return duration(__rep_++);}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator--() {--__rep_; return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration operator--(int) {return duration(__rep_--);}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator+=(const duration& __d) {__rep_ += __d.count(); return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator-=(const duration& __d) {__rep_ -= __d.count(); return *this;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator*=(const rep& rhs) {__rep_ *= rhs; return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator/=(const rep& rhs) {__rep_ /= rhs; return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator%=(const rep& rhs) {__rep_ %= rhs; return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator%=(const duration& rhs) {__rep_ %= rhs.count(); return *this;}
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr duration zero() {return duration(duration_values<rep>::zero());}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr duration min() {return duration(duration_values<rep>::min());}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr duration max() {return duration(duration_values<rep>::max());}
-};
-
-typedef duration<long long, nano> nanoseconds;
-typedef duration<long long, micro> microseconds;
-typedef duration<long long, milli> milliseconds;
-typedef duration<long long > seconds;
-typedef duration< long, ratio< 60> > minutes;
-typedef duration< long, ratio<3600> > hours;
-
-
-
-template <class _LhsDuration, class _RhsDuration>
-struct __duration_eq
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    bool operator()(const _LhsDuration& __lhs, const _RhsDuration& __rhs) const
-        {
-            typedef typename common_type<_LhsDuration, _RhsDuration>::type _Ct;
-            return _Ct(__lhs).count() == _Ct(__rhs).count();
-        }
-};
-
-template <class _LhsDuration>
-struct __duration_eq<_LhsDuration, _LhsDuration>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    bool operator()(const _LhsDuration& __lhs, const _LhsDuration& __rhs) const
-        {return __lhs.count() == __rhs.count();}
-};
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-bool
-operator==(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return __duration_eq<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >()(__lhs, __rhs);
-}
-
-
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-bool
-operator!=(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return !(__lhs == __rhs);
-}
-
-
-
-template <class _LhsDuration, class _RhsDuration>
-struct __duration_lt
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    bool operator()(const _LhsDuration& __lhs, const _RhsDuration& __rhs) const
-        {
-            typedef typename common_type<_LhsDuration, _RhsDuration>::type _Ct;
-            return _Ct(__lhs).count() < _Ct(__rhs).count();
-        }
-};
-
-template <class _LhsDuration>
-struct __duration_lt<_LhsDuration, _LhsDuration>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
-    bool operator()(const _LhsDuration& __lhs, const _LhsDuration& __rhs) const
-        {return __lhs.count() < __rhs.count();}
-};
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-bool
-operator< (const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return __duration_lt<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >()(__lhs, __rhs);
-}
-
-
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-bool
-operator> (const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return __rhs < __lhs;
-}
-
-
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-bool
-operator<=(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return !(__rhs < __lhs);
-}
-
-
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-bool
-operator>=(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return !(__lhs < __rhs);
-}
-
-
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type
-operator+(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Cd;
-    return _Cd(_Cd(__lhs).count() + _Cd(__rhs).count());
-}
-
-
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type
-operator-(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Cd;
-    return _Cd(_Cd(__lhs).count() - _Cd(__rhs).count());
-}
-
-
-
-template <class _Rep1, class _Period, class _Rep2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename enable_if
-<
-    is_convertible<_Rep2, typename common_type<_Rep1, _Rep2>::type>::value,
-    duration<typename common_type<_Rep1, _Rep2>::type, _Period>
->::type
-operator*(const duration<_Rep1, _Period>& __d, const _Rep2& __s)
-{
-    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
-    typedef duration<_Cr, _Period> _Cd;
-    return _Cd(_Cd(__d).count() * static_cast<_Cr>(__s));
-}
-
-template <class _Rep1, class _Period, class _Rep2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename enable_if
-<
-    is_convertible<_Rep1, typename common_type<_Rep1, _Rep2>::type>::value,
-    duration<typename common_type<_Rep1, _Rep2>::type, _Period>
->::type
-operator*(const _Rep1& __s, const duration<_Rep2, _Period>& __d)
-{
-    return __d * __s;
-}
-
-
-
-template <class _Duration, class _Rep, bool = __is_duration<_Rep>::value>
-struct __duration_divide_result
-{
-};
-
-template <class _Duration, class _Rep2,
-    bool = is_convertible<_Rep2,
-                          typename common_type<typename _Duration::rep, _Rep2>::type>::value>
-struct __duration_divide_imp
-{
-};
-
-template <class _Rep1, class _Period, class _Rep2>
-struct __duration_divide_imp<duration<_Rep1, _Period>, _Rep2, true>
-{
-    typedef duration<typename common_type<_Rep1, _Rep2>::type, _Period> type;
-};
-
-template <class _Rep1, class _Period, class _Rep2>
-struct __duration_divide_result<duration<_Rep1, _Period>, _Rep2, false>
-    : __duration_divide_imp<duration<_Rep1, _Period>, _Rep2>
-{
-};
-
-template <class _Rep1, class _Period, class _Rep2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename __duration_divide_result<duration<_Rep1, _Period>, _Rep2>::type
-operator/(const duration<_Rep1, _Period>& __d, const _Rep2& __s)
-{
-    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
-    typedef duration<_Cr, _Period> _Cd;
-    return _Cd(_Cd(__d).count() / static_cast<_Cr>(__s));
-}
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename common_type<_Rep1, _Rep2>::type
-operator/(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Ct;
-    return _Ct(__lhs).count() / _Ct(__rhs).count();
-}
-
-
-
-template <class _Rep1, class _Period, class _Rep2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename __duration_divide_result<duration<_Rep1, _Period>, _Rep2>::type
-operator%(const duration<_Rep1, _Period>& __d, const _Rep2& __s)
-{
-    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
-    typedef duration<_Cr, _Period> _Cd;
-    return _Cd(_Cd(__d).count() % static_cast<_Cr>(__s));
-}
-
-template <class _Rep1, class _Period1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-constexpr
-typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type
-operator%(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
-    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Cd;
-    return _Cd(static_cast<_Cr>(_Cd(__lhs).count()) % static_cast<_Cr>(_Cd(__rhs).count()));
-}
-
-
-
-
-
-template <class _Clock, class _Duration = typename _Clock::duration>
-class __attribute__ ((__type_visibility__("default"))) time_point
-{
-    static_assert(__is_duration<_Duration>::value,
-                  "Second template parameter of time_point must be a std::chrono::duration");
-public:
-    typedef _Clock clock;
-    typedef _Duration duration;
-    typedef typename duration::rep rep;
-    typedef typename duration::period period;
-private:
-    duration __d_;
-
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) time_point() : __d_(duration::zero()) {}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) explicit time_point(const duration& __d) : __d_(__d) {}
-
-
-    template <class _Duration2>
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    time_point(const time_point<clock, _Duration2>& t,
-        typename enable_if
-        <
-            is_convertible<_Duration2, duration>::value
-        >::type* = 0)
-            : __d_(t.time_since_epoch()) {}
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration time_since_epoch() const {return __d_;}
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) time_point& operator+=(const duration& __d) {__d_ += __d; return *this;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) time_point& operator-=(const duration& __d) {__d_ -= __d; return *this;}
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr time_point min() {return time_point(duration::min());}
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr time_point max() {return time_point(duration::max());}
-};
-
-}
-
-template <class _Clock, class _Duration1, class _Duration2>
-struct __attribute__ ((__type_visibility__("default"))) common_type<chrono::time_point<_Clock, _Duration1>,
-                                         chrono::time_point<_Clock, _Duration2> >
-{
-    typedef chrono::time_point<_Clock, typename common_type<_Duration1, _Duration2>::type> type;
-};
-
-namespace chrono {
-
-template <class _ToDuration, class _Clock, class _Duration>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-time_point<_Clock, _ToDuration>
-time_point_cast(const time_point<_Clock, _Duration>& __t)
-{
-    return time_point<_Clock, _ToDuration>(std::__1::chrono::duration_cast<_ToDuration>(__t.time_since_epoch()));
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator==(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return __lhs.time_since_epoch() == __rhs.time_since_epoch();
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator!=(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return !(__lhs == __rhs);
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator<(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return __lhs.time_since_epoch() < __rhs.time_since_epoch();
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator>(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return __rhs < __lhs;
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator<=(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return !(__rhs < __lhs);
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator>=(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return !(__lhs < __rhs);
-}
-
-
-
-template <class _Clock, class _Duration1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-time_point<_Clock, typename common_type<_Duration1, duration<_Rep2, _Period2> >::type>
-operator+(const time_point<_Clock, _Duration1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    typedef time_point<_Clock, typename common_type<_Duration1, duration<_Rep2, _Period2> >::type> _Tr;
-    return _Tr (__lhs.time_since_epoch() + __rhs);
-}
-
-
-
-template <class _Rep1, class _Period1, class _Clock, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-time_point<_Clock, typename common_type<duration<_Rep1, _Period1>, _Duration2>::type>
-operator+(const duration<_Rep1, _Period1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return __rhs + __lhs;
-}
-
-
-
-template <class _Clock, class _Duration1, class _Rep2, class _Period2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-time_point<_Clock, typename common_type<_Duration1, duration<_Rep2, _Period2> >::type>
-operator-(const time_point<_Clock, _Duration1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
-{
-    return __lhs + (-__rhs);
-}
-
-
-
-template <class _Clock, class _Duration1, class _Duration2>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-typename common_type<_Duration1, _Duration2>::type
-operator-(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
-{
-    return __lhs.time_since_epoch() - __rhs.time_since_epoch();
-}
-
-
-
-
-
-class __attribute__ ((__type_visibility__("default"))) system_clock
-{
-public:
-    typedef microseconds duration;
-    typedef duration::rep rep;
-    typedef duration::period period;
-    typedef chrono::time_point<system_clock> time_point;
-    static const bool is_steady = false;
-
-    static time_point now() noexcept;
-    static time_t to_time_t (const time_point& __t) noexcept;
-    static time_point from_time_t(time_t __t) noexcept;
-};
-
-class __attribute__ ((__type_visibility__("default"))) steady_clock
-{
-public:
-    typedef nanoseconds duration;
-    typedef duration::rep rep;
-    typedef duration::period period;
-    typedef chrono::time_point<steady_clock, duration> time_point;
-    static const bool is_steady = true;
-
-    static time_point now() noexcept;
-};
-
-typedef steady_clock high_resolution_clock;
-
-}
-# 1025 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 3
-} }
-# 16 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 2 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 1 3
-# 222 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 3
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 1 3
-# 27 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 3
-# 1 "/usr/include/errno.h" 1 3 4
-# 23 "/usr/include/errno.h" 3 4
-# 1 "/usr/include/sys/errno.h" 1 3 4
-# 79 "/usr/include/sys/errno.h" 3 4
-extern "C" {
-extern int * __error(void);
-
-}
-# 24 "/usr/include/errno.h" 2 3 4
-# 28 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 2 3
-# 31 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 3
-# 223 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 2 3
-# 229 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 3
-
-
-namespace std {inline namespace __1 {
-
-
-
-template <class _Tp>
-struct __attribute__ ((__type_visibility__("default"))) is_error_code_enum
-    : public false_type {};
-
-
-
-template <class _Tp>
-struct __attribute__ ((__type_visibility__("default"))) is_error_condition_enum
-    : public false_type {};
-
-
-
-
-
-enum class __attribute__ ((__type_visibility__("default"))) errc
-{
-    address_family_not_supported = 47,
-    address_in_use = 48,
-    address_not_available = 49,
-    already_connected = 56,
-    argument_list_too_long = 7,
-    argument_out_of_domain = 33,
-    bad_address = 14,
-    bad_file_descriptor = 9,
-    bad_message = 94,
-    broken_pipe = 32,
-    connection_aborted = 53,
-    connection_already_in_progress = 37,
-    connection_refused = 61,
-    connection_reset = 54,
-    cross_device_link = 18,
-    destination_address_required = 39,
-    device_or_resource_busy = 16,
-    directory_not_empty = 66,
-    executable_format_error = 8,
-    file_exists = 17,
-    file_too_large = 27,
-    filename_too_long = 63,
-    function_not_supported = 78,
-    host_unreachable = 65,
-    identifier_removed = 90,
-    illegal_byte_sequence = 92,
-    inappropriate_io_control_operation = 25,
-    interrupted = 4,
-    invalid_argument = 22,
-    invalid_seek = 29,
-    io_error = 5,
-    is_a_directory = 21,
-    message_size = 40,
-    network_down = 50,
-    network_reset = 52,
-    network_unreachable = 51,
-    no_buffer_space = 55,
-    no_child_process = 10,
-    no_link = 97,
-    no_lock_available = 77,
-
-    no_message_available = 96,
-
-
-
-    no_message = 91,
-    no_protocol_option = 42,
-    no_space_on_device = 28,
-
-    no_stream_resources = 98,
-
-
-
-    no_such_device_or_address = 6,
-    no_such_device = 19,
-    no_such_file_or_directory = 2,
-    no_such_process = 3,
-    not_a_directory = 20,
-    not_a_socket = 38,
-
-    not_a_stream = 99,
-
-
-
-    not_connected = 57,
-    not_enough_memory = 12,
-    not_supported = 45,
-    operation_canceled = 89,
-    operation_in_progress = 36,
-    operation_not_permitted = 1,
-    operation_not_supported = 102,
-    operation_would_block = 35,
-    owner_dead = 105,
-    permission_denied = 13,
-    protocol_error = 100,
-    protocol_not_supported = 43,
-    read_only_file_system = 30,
-    resource_deadlock_would_occur = 11,
-    resource_unavailable_try_again = 35,
-    result_out_of_range = 34,
-    state_not_recoverable = 104,
-
-    stream_timeout = 101,
-
-
-
-    text_file_busy = 26,
-    timed_out = 60,
-    too_many_files_open_in_system = 23,
-    too_many_files_open = 24,
-    too_many_links = 31,
-    too_many_symbolic_link_levels = 62,
-    value_too_large = 84,
-    wrong_protocol_type = 41
-};
-
-
-template <>
-struct __attribute__ ((__type_visibility__("default"))) is_error_condition_enum<errc>
-    : true_type { };
-
-
-
-
-
-
-
-class __attribute__ ((__type_visibility__("default"))) error_condition;
-class __attribute__ ((__type_visibility__("default"))) error_code;
-
-
-
-class __attribute__ ((__visibility__("hidden"))) __do_message;
-
-class __attribute__ ((__type_visibility__("default"))) error_category
-{
-public:
-    virtual ~error_category() noexcept;
-
-
-
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-                                  error_category() noexcept = default;;
-
-private:
-    error_category(const error_category&);
-    error_category& operator=(const error_category&);
-
-public:
-    virtual const char* name() const noexcept = 0;
-    virtual error_condition default_error_condition(int __ev) const noexcept;
-    virtual bool equivalent(int __code, const error_condition& __condition) const noexcept;
-    virtual bool equivalent(const error_code& __code, int __condition) const noexcept;
-    virtual string message(int __ev) const = 0;
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    bool operator==(const error_category& __rhs) const noexcept {return this == &__rhs;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    bool operator!=(const error_category& __rhs) const noexcept {return !(*this == __rhs);}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    bool operator< (const error_category& __rhs) const noexcept {return this < &__rhs;}
-
-    friend class __attribute__ ((__visibility__("hidden"))) __do_message;
-};
-
-class __attribute__ ((__visibility__("hidden"))) __do_message
-    : public error_category
-{
-public:
-    virtual string message(int ev) const;
-};
-
-__attribute__ ((__visibility__("default"))) const error_category& generic_category() noexcept;
-__attribute__ ((__visibility__("default"))) const error_category& system_category() noexcept;
-
-class __attribute__ ((__type_visibility__("default"))) error_condition
-{
-    int __val_;
-    const error_category* __cat_;
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    error_condition() noexcept : __val_(0), __cat_(&generic_category()) {}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    error_condition(int __val, const error_category& __cat) noexcept
-        : __val_(__val), __cat_(&__cat) {}
-
-    template <class _Ep>
-        __attribute__ ((__visibility__("hidden"), __always_inline__))
-        error_condition(_Ep __e,
-              typename enable_if<is_error_condition_enum<_Ep>::value>::type* = 0
-                                                                     ) noexcept
-            {*this = make_error_condition(__e);}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    void assign(int __val, const error_category& __cat) noexcept
-    {
-        __val_ = __val;
-        __cat_ = &__cat;
-    }
-
-    template <class _Ep>
-        __attribute__ ((__visibility__("hidden"), __always_inline__))
-        typename enable_if
-        <
-            is_error_condition_enum<_Ep>::value,
-            error_condition&
-        >::type
-        operator=(_Ep __e) noexcept
-            {*this = make_error_condition(__e); return *this;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    void clear() noexcept
-    {
-        __val_ = 0;
-        __cat_ = &generic_category();
-    }
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    int value() const noexcept {return __val_;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    const error_category& category() const noexcept {return *__cat_;}
-    string message() const;
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-        explicit
-        operator bool() const noexcept {return __val_ != 0;}
-};
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-error_condition
-make_error_condition(errc __e) noexcept
-{
-    return error_condition(static_cast<int>(__e), generic_category());
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator<(const error_condition& __x, const error_condition& __y) noexcept
-{
-    return __x.category() < __y.category()
-        || (__x.category() == __y.category() && __x.value() < __y.value());
-}
-
-
-
-class __attribute__ ((__type_visibility__("default"))) error_code
-{
-    int __val_;
-    const error_category* __cat_;
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    error_code() noexcept : __val_(0), __cat_(&system_category()) {}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    error_code(int __val, const error_category& __cat) noexcept
-        : __val_(__val), __cat_(&__cat) {}
-
-    template <class _Ep>
-        __attribute__ ((__visibility__("hidden"), __always_inline__))
-        error_code(_Ep __e,
-                   typename enable_if<is_error_code_enum<_Ep>::value>::type* = 0
-                                                                     ) noexcept
-            {*this = make_error_code(__e);}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    void assign(int __val, const error_category& __cat) noexcept
-    {
-        __val_ = __val;
-        __cat_ = &__cat;
-    }
-
-    template <class _Ep>
-        __attribute__ ((__visibility__("hidden"), __always_inline__))
-        typename enable_if
-        <
-            is_error_code_enum<_Ep>::value,
-            error_code&
-        >::type
-        operator=(_Ep __e) noexcept
-            {*this = make_error_code(__e); return *this;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    void clear() noexcept
-    {
-        __val_ = 0;
-        __cat_ = &system_category();
-    }
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    int value() const noexcept {return __val_;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    const error_category& category() const noexcept {return *__cat_;}
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    error_condition default_error_condition() const noexcept
-        {return __cat_->default_error_condition(__val_);}
-
-    string message() const;
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-        explicit
-        operator bool() const noexcept {return __val_ != 0;}
-};
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-error_code
-make_error_code(errc __e) noexcept
-{
-    return error_code(static_cast<int>(__e), generic_category());
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator<(const error_code& __x, const error_code& __y) noexcept
-{
-    return __x.category() < __y.category()
-        || (__x.category() == __y.category() && __x.value() < __y.value());
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator==(const error_code& __x, const error_code& __y) noexcept
-{
-    return __x.category() == __y.category() && __x.value() == __y.value();
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator==(const error_code& __x, const error_condition& __y) noexcept
-{
-    return __x.category().equivalent(__x.value(), __y)
-        || __y.category().equivalent(__x, __y.value());
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator==(const error_condition& __x, const error_code& __y) noexcept
-{
-    return __y == __x;
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator==(const error_condition& __x, const error_condition& __y) noexcept
-{
-    return __x.category() == __y.category() && __x.value() == __y.value();
-}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator!=(const error_code& __x, const error_code& __y) noexcept
-{return !(__x == __y);}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator!=(const error_code& __x, const error_condition& __y) noexcept
-{return !(__x == __y);}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator!=(const error_condition& __x, const error_code& __y) noexcept
-{return !(__x == __y);}
-
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-operator!=(const error_condition& __x, const error_condition& __y) noexcept
-{return !(__x == __y);}
-
-template <>
-struct __attribute__ ((__type_visibility__("default"))) hash<error_code>
-    : public unary_function<error_code, size_t>
-{
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    size_t operator()(const error_code& __ec) const noexcept
-    {
-        return static_cast<size_t>(__ec.value());
-    }
-};
-
-
-
-class __attribute__ ((__type_visibility__("default"))) system_error
-    : public runtime_error
-{
-    error_code __ec_;
-public:
-    system_error(error_code __ec, const string& __what_arg);
-    system_error(error_code __ec, const char* __what_arg);
-    system_error(error_code __ec);
-    system_error(int __ev, const error_category& __ecat, const string& __what_arg);
-    system_error(int __ev, const error_category& __ecat, const char* __what_arg);
-    system_error(int __ev, const error_category& __ecat);
-    ~system_error() noexcept;
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    const error_code& code() const noexcept {return __ec_;}
-
-private:
-    static string __init(const error_code&, string);
-};
-
-__attribute__ ((__visibility__("default"))) void __throw_system_error(int ev, const char* what_arg);
-
-} }
-# 17 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 2 3
-# 1 "/usr/include/pthread.h" 1 3 4
-# 57 "/usr/include/pthread.h" 3 4
-# 1 "/usr/include/pthread/pthread_impl.h" 1 3 4
-# 58 "/usr/include/pthread.h" 2 3 4
-
-# 1 "/usr/include/pthread/sched.h" 1 3 4
-# 30 "/usr/include/pthread/sched.h" 3 4
-extern "C" {
-
-
-
-
-struct sched_param { int sched_priority; char __opaque[4]; };
-
-
-extern int sched_yield(void);
-extern int sched_get_priority_min(int);
-extern int sched_get_priority_max(int);
-}
-# 60 "/usr/include/pthread.h" 2 3 4
-
-
-# 1 "/usr/include/sys/_pthread/_pthread_attr_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_attr_t.h" 3 4
-typedef __darwin_pthread_attr_t pthread_attr_t;
-# 63 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_cond_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_cond_t.h" 3 4
-typedef __darwin_pthread_cond_t pthread_cond_t;
-# 64 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_condattr_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_condattr_t.h" 3 4
-typedef __darwin_pthread_condattr_t pthread_condattr_t;
-# 65 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_key_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_key_t.h" 3 4
-typedef __darwin_pthread_key_t pthread_key_t;
-# 66 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_mutex_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_mutex_t.h" 3 4
-typedef __darwin_pthread_mutex_t pthread_mutex_t;
-# 67 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_mutexattr_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_mutexattr_t.h" 3 4
-typedef __darwin_pthread_mutexattr_t pthread_mutexattr_t;
-# 68 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_once_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_once_t.h" 3 4
-typedef __darwin_pthread_once_t pthread_once_t;
-# 69 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_rwlock_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_rwlock_t.h" 3 4
-typedef __darwin_pthread_rwlock_t pthread_rwlock_t;
-# 70 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_rwlockattr_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_rwlockattr_t.h" 3 4
-typedef __darwin_pthread_rwlockattr_t pthread_rwlockattr_t;
-# 71 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_pthread/_pthread_t.h" 1 3 4
-# 30 "/usr/include/sys/_pthread/_pthread_t.h" 3 4
-typedef __darwin_pthread_t pthread_t;
-# 72 "/usr/include/pthread.h" 2 3 4
-
-# 1 "/usr/include/pthread/qos.h" 1 3 4
-# 32 "/usr/include/pthread/qos.h" 3 4
-# 1 "/usr/include/sys/qos.h" 1 3 4
-# 124 "/usr/include/sys/qos.h" 3 4
-typedef enum : unsigned int { QOS_CLASS_USER_INTERACTIVE __attribute__((availability(macosx,introduced=10.10))) = 0x21, QOS_CLASS_USER_INITIATED __attribute__((availability(macosx,introduced=10.10))) = 0x19, QOS_CLASS_DEFAULT __attribute__((availability(macosx,introduced=10.10))) = 0x15, QOS_CLASS_UTILITY __attribute__((availability(macosx,introduced=10.10))) = 0x11, QOS_CLASS_BACKGROUND __attribute__((availability(macosx,introduced=10.10))) = 0x09, QOS_CLASS_UNSPECIFIED __attribute__((availability(macosx,introduced=10.10))) = 0x00, } qos_class_t;
-# 153 "/usr/include/sys/qos.h" 3 4
-extern "C" {
-# 164 "/usr/include/sys/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-qos_class_t
-qos_class_self(void);
-# 186 "/usr/include/sys/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-qos_class_t
-qos_class_main(void);
-
-}
-# 33 "/usr/include/pthread/qos.h" 2 3 4
-
-
-
-extern "C" {
-# 76 "/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-int
-pthread_attr_set_qos_class_np(pthread_attr_t *__attr,
-  qos_class_t __qos_class, int __relative_priority);
-# 107 "/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-int
-pthread_attr_get_qos_class_np(pthread_attr_t * __attr,
-  qos_class_t * __qos_class,
-  int * __relative_priority);
-# 148 "/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-int
-pthread_set_qos_class_self_np(qos_class_t __qos_class,
-  int __relative_priority);
-# 179 "/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-int
-pthread_get_qos_class_np(pthread_t __pthread,
-  qos_class_t * __qos_class,
-  int * __relative_priority);
-# 206 "/usr/include/pthread/qos.h" 3 4
-typedef struct pthread_override_s* pthread_override_t;
-# 258 "/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-pthread_override_t
-pthread_override_qos_class_start_np(pthread_t __pthread,
-  qos_class_t __qos_class, int __relative_priority);
-# 286 "/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macosx,introduced=10.10)))
-int
-pthread_override_qos_class_end_np(pthread_override_t __override);
-
-}
-# 74 "/usr/include/pthread.h" 2 3 4
-
-
-
-# 1 "/usr/include/sys/_types/_mach_port_t.h" 1 3 4
-# 49 "/usr/include/sys/_types/_mach_port_t.h" 3 4
-typedef __darwin_mach_port_t mach_port_t;
-# 78 "/usr/include/pthread.h" 2 3 4
-# 1 "/usr/include/sys/_types/_sigset_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
-typedef __darwin_sigset_t sigset_t;
-# 79 "/usr/include/pthread.h" 2 3 4
-# 105 "/usr/include/pthread.h" 3 4
-extern "C" {
-# 209 "/usr/include/pthread.h" 3 4
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_atfork(void (*)(void), void (*)(void), void (*)(void));
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_destroy(pthread_attr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getdetachstate(const pthread_attr_t *, int *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getguardsize(const pthread_attr_t * , size_t * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getinheritsched(const pthread_attr_t * , int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getschedparam(const pthread_attr_t * ,
-  struct sched_param * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getschedpolicy(const pthread_attr_t * , int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getscope(const pthread_attr_t * , int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getstack(const pthread_attr_t * , void ** ,
-  size_t * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getstackaddr(const pthread_attr_t * , void ** );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_getstacksize(const pthread_attr_t * , size_t * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_init(pthread_attr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setdetachstate(pthread_attr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setguardsize(pthread_attr_t *, size_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setinheritsched(pthread_attr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setschedparam(pthread_attr_t * ,
-  const struct sched_param * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setschedpolicy(pthread_attr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setscope(pthread_attr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setstack(pthread_attr_t *, void *, size_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setstackaddr(pthread_attr_t *, void *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_attr_setstacksize(pthread_attr_t *, size_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cancel(pthread_t) __asm("_" "pthread_cancel") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_broadcast(pthread_cond_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_destroy(pthread_cond_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_init(pthread_cond_t * ,
-  const pthread_condattr_t * ) __asm("_" "pthread_cond_init") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_signal(pthread_cond_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_timedwait(pthread_cond_t * , pthread_mutex_t * ,
-  const struct timespec * ) __asm("_" "pthread_cond_timedwait") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_wait(pthread_cond_t * ,
-  pthread_mutex_t * ) __asm("_" "pthread_cond_wait") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_condattr_destroy(pthread_condattr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_condattr_init(pthread_condattr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_condattr_getpshared(const pthread_condattr_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_condattr_setpshared(pthread_condattr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_create(pthread_t * , const pthread_attr_t * ,
-  void *(*)(void *), void * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_detach(pthread_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_equal(pthread_t, pthread_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-void pthread_exit(void *) __attribute__((noreturn));
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_getconcurrency(void);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_getschedparam(pthread_t , int * ,
-  struct sched_param * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-void* pthread_getspecific(pthread_key_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_join(pthread_t , void **) __asm("_" "pthread_join") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_key_create(pthread_key_t *, void (*)(void *));
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_key_delete(pthread_key_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_destroy(pthread_mutex_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_getprioceiling(const pthread_mutex_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_init(pthread_mutex_t * ,
-  const pthread_mutexattr_t * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_lock(pthread_mutex_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_setprioceiling(pthread_mutex_t * , int,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_trylock(pthread_mutex_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutex_unlock(pthread_mutex_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_destroy(pthread_mutexattr_t *) __asm("_" "pthread_mutexattr_destroy") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_getprotocol(const pthread_mutexattr_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_getpshared(const pthread_mutexattr_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_gettype(const pthread_mutexattr_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_init(pthread_mutexattr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_setprotocol(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_setpshared(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_mutexattr_settype(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_once(pthread_once_t *, void (*)(void));
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_destroy(pthread_rwlock_t * ) __asm("_" "pthread_rwlock_destroy") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_init(pthread_rwlock_t * ,
-  const pthread_rwlockattr_t * ) __asm("_" "pthread_rwlock_init") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_rdlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_rdlock") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_tryrdlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_tryrdlock") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_trywrlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_trywrlock") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_wrlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_wrlock") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlock_unlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_unlock") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlockattr_destroy(pthread_rwlockattr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t * ,
-  int * );
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlockattr_init(pthread_rwlockattr_t *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *, int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-pthread_t pthread_self(void);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_setcancelstate(int , int *) __asm("_" "pthread_setcancelstate") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_setcanceltype(int , int *) __asm("_" "pthread_setcanceltype") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_setconcurrency(int);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_setschedparam(pthread_t, int, const struct sched_param *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_setspecific(pthread_key_t , const void *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-void pthread_testcancel(void) __asm("_" "pthread_testcancel") ;
-
-
-
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_is_threaded_np(void);
-
-__attribute__((availability(macosx,introduced=10.6)))
-int pthread_threadid_np(pthread_t,__uint64_t*);
-
-
-__attribute__((availability(macosx,introduced=10.6)))
-int pthread_getname_np(pthread_t,char*,size_t);
-
-__attribute__((availability(macosx,introduced=10.6)))
-int pthread_setname_np(const char*);
-
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_main_np(void);
-
-
-__attribute__((availability(macosx,introduced=10.4)))
-mach_port_t pthread_mach_thread_np(pthread_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-size_t pthread_get_stacksize_np(pthread_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-void* pthread_get_stackaddr_np(pthread_t);
-
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_signal_thread_np(pthread_cond_t *, pthread_t);
-
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_cond_timedwait_relative_np(pthread_cond_t *, pthread_mutex_t *,
-  const struct timespec *);
-
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_create_suspended_np(pthread_t *, const pthread_attr_t *,
-  void *(*)(void *), void *);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_kill(pthread_t, int);
-
-__attribute__((availability(macosx,introduced=10.5)))
-pthread_t pthread_from_mach_thread_np(mach_port_t);
-
-__attribute__((availability(macosx,introduced=10.4)))
-int pthread_sigmask(int, const sigset_t *, sigset_t *) __asm("_" "pthread_sigmask") ;
-
-__attribute__((availability(macosx,introduced=10.4)))
-void pthread_yield_np(void);
-
-
-}
-# 18 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 2 3
-# 21 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 3
-
-
-namespace std {inline namespace __1 {
-
-class __attribute__ ((__type_visibility__("default"))) mutex
-{
-    pthread_mutex_t __m_;
-
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-
-     constexpr mutex() noexcept : __m_({0x32AAABA7, {0}}) {}
-
-
-
-     ~mutex();
-
-private:
-    mutex(const mutex&);
-    mutex& operator=(const mutex&);
-
-public:
-    void lock();
-    bool try_lock() noexcept;
-    void unlock() noexcept;
-
-    typedef pthread_mutex_t* native_handle_type;
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) native_handle_type native_handle() {return &__m_;}
-};
-
-struct __attribute__ ((__type_visibility__("default"))) defer_lock_t {};
-struct __attribute__ ((__type_visibility__("default"))) try_to_lock_t {};
-struct __attribute__ ((__type_visibility__("default"))) adopt_lock_t {};
-# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 3
-constexpr defer_lock_t defer_lock = defer_lock_t();
-constexpr try_to_lock_t try_to_lock = try_to_lock_t();
-constexpr adopt_lock_t adopt_lock = adopt_lock_t();
-
-
-
-template <class _Mutex>
-class __attribute__ ((__type_visibility__("default"))) lock_guard
-{
-public:
-    typedef _Mutex mutex_type;
-
-private:
-    mutex_type& __m_;
-public:
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    explicit lock_guard(mutex_type& __m)
-        : __m_(__m) {__m_.lock();}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    lock_guard(mutex_type& __m, adopt_lock_t)
-        : __m_(__m) {}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    ~lock_guard() {__m_.unlock();}
-
-private:
-    lock_guard(lock_guard const&);
-    lock_guard& operator=(lock_guard const&);
-};
-
-template <class _Mutex>
-class __attribute__ ((__type_visibility__("default"))) unique_lock
-{
-public:
-    typedef _Mutex mutex_type;
-
-private:
-    mutex_type* __m_;
-    bool __owns_;
-
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    unique_lock() noexcept : __m_(nullptr), __owns_(false) {}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    explicit unique_lock(mutex_type& __m)
-        : __m_(&__m), __owns_(true) {__m_->lock();}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    unique_lock(mutex_type& __m, defer_lock_t) noexcept
-        : __m_(&__m), __owns_(false) {}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    unique_lock(mutex_type& __m, try_to_lock_t)
-        : __m_(&__m), __owns_(__m.try_lock()) {}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    unique_lock(mutex_type& __m, adopt_lock_t)
-        : __m_(&__m), __owns_(true) {}
-    template <class _Clock, class _Duration>
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-        unique_lock(mutex_type& __m, const chrono::time_point<_Clock, _Duration>& __t)
-            : __m_(&__m), __owns_(__m.try_lock_until(__t)) {}
-    template <class _Rep, class _Period>
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-        unique_lock(mutex_type& __m, const chrono::duration<_Rep, _Period>& __d)
-            : __m_(&__m), __owns_(__m.try_lock_for(__d)) {}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    ~unique_lock()
-    {
-        if (__owns_)
-            __m_->unlock();
-    }
-
-private:
-    unique_lock(unique_lock const&);
-    unique_lock& operator=(unique_lock const&);
-
-public:
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    unique_lock(unique_lock&& __u) noexcept
-        : __m_(__u.__m_), __owns_(__u.__owns_)
-        {__u.__m_ = nullptr; __u.__owns_ = false;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    unique_lock& operator=(unique_lock&& __u) noexcept
-        {
-            if (__owns_)
-                __m_->unlock();
-            __m_ = __u.__m_;
-            __owns_ = __u.__owns_;
-            __u.__m_ = nullptr;
-            __u.__owns_ = false;
-            return *this;
-        }
-
-
-
-    void lock();
-    bool try_lock();
-
-    template <class _Rep, class _Period>
-        bool try_lock_for(const chrono::duration<_Rep, _Period>& __d);
-    template <class _Clock, class _Duration>
-        bool try_lock_until(const chrono::time_point<_Clock, _Duration>& __t);
-
-    void unlock();
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    void swap(unique_lock& __u) noexcept
-    {
-        std::__1::swap(__m_, __u.__m_);
-        std::__1::swap(__owns_, __u.__owns_);
-    }
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    mutex_type* release() noexcept
-    {
-        mutex_type* __m = __m_;
-        __m_ = nullptr;
-        __owns_ = false;
-        return __m;
-    }
-
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    bool owns_lock() const noexcept {return __owns_;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    explicit
-        operator bool () const noexcept {return __owns_;}
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-    mutex_type* mutex() const noexcept {return __m_;}
-};
-
-template <class _Mutex>
-void
-unique_lock<_Mutex>::lock()
-{
-    if (__m_ == nullptr)
-        __throw_system_error(1, "unique_lock::lock: references null mutex");
-    if (__owns_)
-        __throw_system_error(11, "unique_lock::lock: already locked");
-    __m_->lock();
-    __owns_ = true;
-}
-
-template <class _Mutex>
-bool
-unique_lock<_Mutex>::try_lock()
-{
-    if (__m_ == nullptr)
-        __throw_system_error(1, "unique_lock::try_lock: references null mutex");
-    if (__owns_)
-        __throw_system_error(11, "unique_lock::try_lock: already locked");
-    __owns_ = __m_->try_lock();
-    return __owns_;
-}
-
-template <class _Mutex>
-template <class _Rep, class _Period>
-bool
-unique_lock<_Mutex>::try_lock_for(const chrono::duration<_Rep, _Period>& __d)
-{
-    if (__m_ == nullptr)
-        __throw_system_error(1, "unique_lock::try_lock_for: references null mutex");
-    if (__owns_)
-        __throw_system_error(11, "unique_lock::try_lock_for: already locked");
-    __owns_ = __m_->try_lock_for(__d);
-    return __owns_;
-}
-
-template <class _Mutex>
-template <class _Clock, class _Duration>
-bool
-unique_lock<_Mutex>::try_lock_until(const chrono::time_point<_Clock, _Duration>& __t)
-{
-    if (__m_ == nullptr)
-        __throw_system_error(1, "unique_lock::try_lock_until: references null mutex");
-    if (__owns_)
-        __throw_system_error(11, "unique_lock::try_lock_until: already locked");
-    __owns_ = __m_->try_lock_until(__t);
-    return __owns_;
-}
-
-template <class _Mutex>
-void
-unique_lock<_Mutex>::unlock()
-{
-    if (!__owns_)
-        __throw_system_error(1, "unique_lock::unlock: not locked");
-    __m_->unlock();
-    __owns_ = false;
-}
-
-template <class _Mutex>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-void
-swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) noexcept
-    {__x.swap(__y);}
-
-
-enum class __attribute__ ((__type_visibility__("default"))) cv_status
-{
-    no_timeout,
-    timeout
-};
-
-
-class __attribute__ ((__type_visibility__("default"))) condition_variable
-{
-    pthread_cond_t __cv_;
-public:
-    __attribute__ ((__visibility__("hidden"), __always_inline__))
-
-    constexpr condition_variable() : __cv_({0x3CB0B1BB, {0}}) {}
-
-
-
-    ~condition_variable();
-
-private:
-    condition_variable(const condition_variable&);
-    condition_variable& operator=(const condition_variable&);
-
-public:
-    void notify_one() noexcept;
-    void notify_all() noexcept;
-
-    void wait(unique_lock<mutex>& __lk);
-    template <class _Predicate>
-        void wait(unique_lock<mutex>& __lk, _Predicate __pred);
-
-    template <class _Clock, class _Duration>
-        cv_status
-        wait_until(unique_lock<mutex>& __lk,
-                   const chrono::time_point<_Clock, _Duration>& __t);
-
-    template <class _Clock, class _Duration, class _Predicate>
-        bool
-        wait_until(unique_lock<mutex>& __lk,
-                   const chrono::time_point<_Clock, _Duration>& __t,
-                   _Predicate __pred);
-
-    template <class _Rep, class _Period>
-        cv_status
-        wait_for(unique_lock<mutex>& __lk,
-                 const chrono::duration<_Rep, _Period>& __d);
-
-    template <class _Rep, class _Period, class _Predicate>
-        bool
-        wait_for(unique_lock<mutex>& __lk,
-                 const chrono::duration<_Rep, _Period>& __d,
-                 _Predicate __pred);
-
-    typedef pthread_cond_t* native_handle_type;
-    __attribute__ ((__visibility__("hidden"), __always_inline__)) native_handle_type native_handle() {return &__cv_;}
-
-private:
-    void __do_timed_wait(unique_lock<mutex>& __lk,
-                 chrono::time_point<chrono::system_clock, chrono::nanoseconds>);
-};
-
-template <class _To, class _Rep, class _Period>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-typename enable_if
-<
-    chrono::__is_duration<_To>::value,
-    _To
->::type
-__ceil(chrono::duration<_Rep, _Period> __d)
-{
-    using namespace chrono;
-    _To __r = duration_cast<_To>(__d);
-    if (__r < __d)
-        ++__r;
-    return __r;
-}
-
-template <class _Predicate>
-void
-condition_variable::wait(unique_lock<mutex>& __lk, _Predicate __pred)
-{
-    while (!__pred())
-        wait(__lk);
-}
-
-template <class _Clock, class _Duration>
-cv_status
-condition_variable::wait_until(unique_lock<mutex>& __lk,
-                               const chrono::time_point<_Clock, _Duration>& __t)
-{
-    using namespace chrono;
-    wait_for(__lk, __t - _Clock::now());
-    return _Clock::now() < __t ? cv_status::no_timeout : cv_status::timeout;
-}
-
-template <class _Clock, class _Duration, class _Predicate>
-bool
-condition_variable::wait_until(unique_lock<mutex>& __lk,
-                   const chrono::time_point<_Clock, _Duration>& __t,
-                   _Predicate __pred)
-{
-    while (!__pred())
-    {
-        if (wait_until(__lk, __t) == cv_status::timeout)
-            return __pred();
-    }
-    return true;
-}
-
-template <class _Rep, class _Period>
-cv_status
-condition_variable::wait_for(unique_lock<mutex>& __lk,
-                             const chrono::duration<_Rep, _Period>& __d)
-{
-    using namespace chrono;
-    if (__d <= __d.zero())
-        return cv_status::timeout;
-    typedef time_point<system_clock, duration<long double, nano> > __sys_tpf;
-    typedef time_point<system_clock, nanoseconds> __sys_tpi;
-    __sys_tpf _Max = __sys_tpi::max();
-    system_clock::time_point __s_now = system_clock::now();
-    steady_clock::time_point __c_now = steady_clock::now();
-    if (_Max - __d > __s_now)
-        __do_timed_wait(__lk, __s_now + __ceil<nanoseconds>(__d));
-    else
-        __do_timed_wait(__lk, __sys_tpi::max());
-    return steady_clock::now() - __c_now < __d ? cv_status::no_timeout :
-                                                 cv_status::timeout;
-}
-
-template <class _Rep, class _Period, class _Predicate>
-inline __attribute__ ((__visibility__("hidden"), __always_inline__))
-bool
-condition_variable::wait_for(unique_lock<mutex>& __lk,
-                             const chrono::duration<_Rep, _Period>& __d,
-                             _Predicate __pred)
-{
-    return wait_until(__lk, chrono::steady_clock::now() + __d,
-                      std::__1::move(__pred));
-}
-
-} }
-# 177 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 2 3
+# 16 "./headers.h" 2
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 1 3
+# 93 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 3
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional" 1 3
 # 484 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional" 3
 
@@ -30635,11 +28154,2818 @@ struct __attribute__ ((__type_visibility__("default"))) hash<long double>
 };
 # 2416 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional" 3
 } }
-# 178 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 2 3
+# 94 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 2 3
+
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 1 3
+# 222 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 1 3
+# 27 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 3
+# 1 "/usr/include/errno.h" 1 3 4
+# 23 "/usr/include/errno.h" 3 4
+# 1 "/usr/include/sys/errno.h" 1 3 4
+# 79 "/usr/include/sys/errno.h" 3 4
+extern "C" {
+extern int * __error(void);
+
+}
+# 24 "/usr/include/errno.h" 2 3 4
+# 28 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 2 3
+# 31 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno" 3
+# 223 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 2 3
+# 229 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error" 3
+
+
+namespace std {inline namespace __1 {
+
+
+
+template <class _Tp>
+struct __attribute__ ((__type_visibility__("default"))) is_error_code_enum
+    : public false_type {};
+
+
+
+template <class _Tp>
+struct __attribute__ ((__type_visibility__("default"))) is_error_condition_enum
+    : public false_type {};
 
 
 
 
+
+enum class __attribute__ ((__type_visibility__("default"))) errc
+{
+    address_family_not_supported = 47,
+    address_in_use = 48,
+    address_not_available = 49,
+    already_connected = 56,
+    argument_list_too_long = 7,
+    argument_out_of_domain = 33,
+    bad_address = 14,
+    bad_file_descriptor = 9,
+    bad_message = 94,
+    broken_pipe = 32,
+    connection_aborted = 53,
+    connection_already_in_progress = 37,
+    connection_refused = 61,
+    connection_reset = 54,
+    cross_device_link = 18,
+    destination_address_required = 39,
+    device_or_resource_busy = 16,
+    directory_not_empty = 66,
+    executable_format_error = 8,
+    file_exists = 17,
+    file_too_large = 27,
+    filename_too_long = 63,
+    function_not_supported = 78,
+    host_unreachable = 65,
+    identifier_removed = 90,
+    illegal_byte_sequence = 92,
+    inappropriate_io_control_operation = 25,
+    interrupted = 4,
+    invalid_argument = 22,
+    invalid_seek = 29,
+    io_error = 5,
+    is_a_directory = 21,
+    message_size = 40,
+    network_down = 50,
+    network_reset = 52,
+    network_unreachable = 51,
+    no_buffer_space = 55,
+    no_child_process = 10,
+    no_link = 97,
+    no_lock_available = 77,
+
+    no_message_available = 96,
+
+
+
+    no_message = 91,
+    no_protocol_option = 42,
+    no_space_on_device = 28,
+
+    no_stream_resources = 98,
+
+
+
+    no_such_device_or_address = 6,
+    no_such_device = 19,
+    no_such_file_or_directory = 2,
+    no_such_process = 3,
+    not_a_directory = 20,
+    not_a_socket = 38,
+
+    not_a_stream = 99,
+
+
+
+    not_connected = 57,
+    not_enough_memory = 12,
+    not_supported = 45,
+    operation_canceled = 89,
+    operation_in_progress = 36,
+    operation_not_permitted = 1,
+    operation_not_supported = 102,
+    operation_would_block = 35,
+    owner_dead = 105,
+    permission_denied = 13,
+    protocol_error = 100,
+    protocol_not_supported = 43,
+    read_only_file_system = 30,
+    resource_deadlock_would_occur = 11,
+    resource_unavailable_try_again = 35,
+    result_out_of_range = 34,
+    state_not_recoverable = 104,
+
+    stream_timeout = 101,
+
+
+
+    text_file_busy = 26,
+    timed_out = 60,
+    too_many_files_open_in_system = 23,
+    too_many_files_open = 24,
+    too_many_links = 31,
+    too_many_symbolic_link_levels = 62,
+    value_too_large = 84,
+    wrong_protocol_type = 41
+};
+
+
+template <>
+struct __attribute__ ((__type_visibility__("default"))) is_error_condition_enum<errc>
+    : true_type { };
+
+
+
+
+
+
+
+class __attribute__ ((__type_visibility__("default"))) error_condition;
+class __attribute__ ((__type_visibility__("default"))) error_code;
+
+
+
+class __attribute__ ((__visibility__("hidden"))) __do_message;
+
+class __attribute__ ((__type_visibility__("default"))) error_category
+{
+public:
+    virtual ~error_category() noexcept;
+
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+                                  error_category() noexcept = default;;
+
+private:
+    error_category(const error_category&);
+    error_category& operator=(const error_category&);
+
+public:
+    virtual const char* name() const noexcept = 0;
+    virtual error_condition default_error_condition(int __ev) const noexcept;
+    virtual bool equivalent(int __code, const error_condition& __condition) const noexcept;
+    virtual bool equivalent(const error_code& __code, int __condition) const noexcept;
+    virtual string message(int __ev) const = 0;
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    bool operator==(const error_category& __rhs) const noexcept {return this == &__rhs;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    bool operator!=(const error_category& __rhs) const noexcept {return !(*this == __rhs);}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    bool operator< (const error_category& __rhs) const noexcept {return this < &__rhs;}
+
+    friend class __attribute__ ((__visibility__("hidden"))) __do_message;
+};
+
+class __attribute__ ((__visibility__("hidden"))) __do_message
+    : public error_category
+{
+public:
+    virtual string message(int ev) const;
+};
+
+__attribute__ ((__visibility__("default"))) const error_category& generic_category() noexcept;
+__attribute__ ((__visibility__("default"))) const error_category& system_category() noexcept;
+
+class __attribute__ ((__type_visibility__("default"))) error_condition
+{
+    int __val_;
+    const error_category* __cat_;
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    error_condition() noexcept : __val_(0), __cat_(&generic_category()) {}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    error_condition(int __val, const error_category& __cat) noexcept
+        : __val_(__val), __cat_(&__cat) {}
+
+    template <class _Ep>
+        __attribute__ ((__visibility__("hidden"), __always_inline__))
+        error_condition(_Ep __e,
+              typename enable_if<is_error_condition_enum<_Ep>::value>::type* = 0
+                                                                     ) noexcept
+            {*this = make_error_condition(__e);}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    void assign(int __val, const error_category& __cat) noexcept
+    {
+        __val_ = __val;
+        __cat_ = &__cat;
+    }
+
+    template <class _Ep>
+        __attribute__ ((__visibility__("hidden"), __always_inline__))
+        typename enable_if
+        <
+            is_error_condition_enum<_Ep>::value,
+            error_condition&
+        >::type
+        operator=(_Ep __e) noexcept
+            {*this = make_error_condition(__e); return *this;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    void clear() noexcept
+    {
+        __val_ = 0;
+        __cat_ = &generic_category();
+    }
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    int value() const noexcept {return __val_;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    const error_category& category() const noexcept {return *__cat_;}
+    string message() const;
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+        explicit
+        operator bool() const noexcept {return __val_ != 0;}
+};
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+error_condition
+make_error_condition(errc __e) noexcept
+{
+    return error_condition(static_cast<int>(__e), generic_category());
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator<(const error_condition& __x, const error_condition& __y) noexcept
+{
+    return __x.category() < __y.category()
+        || (__x.category() == __y.category() && __x.value() < __y.value());
+}
+
+
+
+class __attribute__ ((__type_visibility__("default"))) error_code
+{
+    int __val_;
+    const error_category* __cat_;
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    error_code() noexcept : __val_(0), __cat_(&system_category()) {}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    error_code(int __val, const error_category& __cat) noexcept
+        : __val_(__val), __cat_(&__cat) {}
+
+    template <class _Ep>
+        __attribute__ ((__visibility__("hidden"), __always_inline__))
+        error_code(_Ep __e,
+                   typename enable_if<is_error_code_enum<_Ep>::value>::type* = 0
+                                                                     ) noexcept
+            {*this = make_error_code(__e);}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    void assign(int __val, const error_category& __cat) noexcept
+    {
+        __val_ = __val;
+        __cat_ = &__cat;
+    }
+
+    template <class _Ep>
+        __attribute__ ((__visibility__("hidden"), __always_inline__))
+        typename enable_if
+        <
+            is_error_code_enum<_Ep>::value,
+            error_code&
+        >::type
+        operator=(_Ep __e) noexcept
+            {*this = make_error_code(__e); return *this;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    void clear() noexcept
+    {
+        __val_ = 0;
+        __cat_ = &system_category();
+    }
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    int value() const noexcept {return __val_;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    const error_category& category() const noexcept {return *__cat_;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    error_condition default_error_condition() const noexcept
+        {return __cat_->default_error_condition(__val_);}
+
+    string message() const;
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+        explicit
+        operator bool() const noexcept {return __val_ != 0;}
+};
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+error_code
+make_error_code(errc __e) noexcept
+{
+    return error_code(static_cast<int>(__e), generic_category());
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator<(const error_code& __x, const error_code& __y) noexcept
+{
+    return __x.category() < __y.category()
+        || (__x.category() == __y.category() && __x.value() < __y.value());
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator==(const error_code& __x, const error_code& __y) noexcept
+{
+    return __x.category() == __y.category() && __x.value() == __y.value();
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator==(const error_code& __x, const error_condition& __y) noexcept
+{
+    return __x.category().equivalent(__x.value(), __y)
+        || __y.category().equivalent(__x, __y.value());
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator==(const error_condition& __x, const error_code& __y) noexcept
+{
+    return __y == __x;
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator==(const error_condition& __x, const error_condition& __y) noexcept
+{
+    return __x.category() == __y.category() && __x.value() == __y.value();
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator!=(const error_code& __x, const error_code& __y) noexcept
+{return !(__x == __y);}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator!=(const error_code& __x, const error_condition& __y) noexcept
+{return !(__x == __y);}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator!=(const error_condition& __x, const error_code& __y) noexcept
+{return !(__x == __y);}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator!=(const error_condition& __x, const error_condition& __y) noexcept
+{return !(__x == __y);}
+
+template <>
+struct __attribute__ ((__type_visibility__("default"))) hash<error_code>
+    : public unary_function<error_code, size_t>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    size_t operator()(const error_code& __ec) const noexcept
+    {
+        return static_cast<size_t>(__ec.value());
+    }
+};
+
+
+
+class __attribute__ ((__type_visibility__("default"))) system_error
+    : public runtime_error
+{
+    error_code __ec_;
+public:
+    system_error(error_code __ec, const string& __what_arg);
+    system_error(error_code __ec, const char* __what_arg);
+    system_error(error_code __ec);
+    system_error(int __ev, const error_category& __ecat, const string& __what_arg);
+    system_error(int __ev, const error_category& __ecat, const char* __what_arg);
+    system_error(int __ev, const error_category& __ecat);
+    ~system_error() noexcept;
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    const error_code& code() const noexcept {return __ec_;}
+
+private:
+    static string __init(const error_code&, string);
+};
+
+__attribute__ ((__visibility__("default"))) void __throw_system_error(int ev, const char* what_arg);
+
+} }
+# 96 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 2 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 1 3
+# 279 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ctime" 1 3
+# 52 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ctime" 3
+
+
+namespace std {inline namespace __1 {
+
+using ::clock_t;
+using ::size_t;
+using ::time_t;
+using ::tm;
+using ::clock;
+using ::difftime;
+using ::mktime;
+using ::time;
+using ::asctime;
+using ::ctime;
+using ::gmtime;
+using ::localtime;
+using ::strftime;
+
+} }
+# 280 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 2 3
+
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 1 3
+# 73 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max" 1 3
+# 74 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 2 3
+# 77 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
+
+
+namespace std {inline namespace __1 {
+
+
+
+template <intmax_t _Xp, intmax_t _Yp>
+struct __static_gcd
+{
+    static const intmax_t value = __static_gcd<_Yp, _Xp % _Yp>::value;
+};
+
+template <intmax_t _Xp>
+struct __static_gcd<_Xp, 0>
+{
+    static const intmax_t value = _Xp;
+};
+
+template <>
+struct __static_gcd<0, 0>
+{
+    static const intmax_t value = 1;
+};
+
+
+
+template <intmax_t _Xp, intmax_t _Yp>
+struct __static_lcm
+{
+    static const intmax_t value = _Xp / __static_gcd<_Xp, _Yp>::value * _Yp;
+};
+
+template <intmax_t _Xp>
+struct __static_abs
+{
+    static const intmax_t value = _Xp < 0 ? -_Xp : _Xp;
+};
+
+template <intmax_t _Xp>
+struct __static_sign
+{
+    static const intmax_t value = _Xp == 0 ? 0 : (_Xp < 0 ? -1 : 1);
+};
+
+template <intmax_t _Xp, intmax_t _Yp, intmax_t = __static_sign<_Yp>::value>
+class __ll_add;
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_add<_Xp, _Yp, 1>
+{
+    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
+    static const intmax_t max = -min;
+
+    static_assert(_Xp <= max - _Yp, "overflow in __ll_add");
+public:
+    static const intmax_t value = _Xp + _Yp;
+};
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_add<_Xp, _Yp, 0>
+{
+public:
+    static const intmax_t value = _Xp;
+};
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_add<_Xp, _Yp, -1>
+{
+    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
+    static const intmax_t max = -min;
+
+    static_assert(min - _Yp <= _Xp, "overflow in __ll_add");
+public:
+    static const intmax_t value = _Xp + _Yp;
+};
+
+template <intmax_t _Xp, intmax_t _Yp, intmax_t = __static_sign<_Yp>::value>
+class __ll_sub;
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_sub<_Xp, _Yp, 1>
+{
+    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
+    static const intmax_t max = -min;
+
+    static_assert(min + _Yp <= _Xp, "overflow in __ll_sub");
+public:
+    static const intmax_t value = _Xp - _Yp;
+};
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_sub<_Xp, _Yp, 0>
+{
+public:
+    static const intmax_t value = _Xp;
+};
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_sub<_Xp, _Yp, -1>
+{
+    static const intmax_t min = (1LL << (sizeof(intmax_t) * 8 - 1)) + 1;
+    static const intmax_t max = -min;
+
+    static_assert(_Xp <= max + _Yp, "overflow in __ll_sub");
+public:
+    static const intmax_t value = _Xp - _Yp;
+};
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_mul
+{
+    static const intmax_t nan = (1LL << (sizeof(intmax_t) * 8 - 1));
+    static const intmax_t min = nan + 1;
+    static const intmax_t max = -min;
+    static const intmax_t __a_x = __static_abs<_Xp>::value;
+    static const intmax_t __a_y = __static_abs<_Yp>::value;
+
+    static_assert(_Xp != nan && _Yp != nan && __a_x <= max / __a_y, "overflow in __ll_mul");
+public:
+    static const intmax_t value = _Xp * _Yp;
+};
+
+template <intmax_t _Yp>
+class __ll_mul<0, _Yp>
+{
+public:
+    static const intmax_t value = 0;
+};
+
+template <intmax_t _Xp>
+class __ll_mul<_Xp, 0>
+{
+public:
+    static const intmax_t value = 0;
+};
+
+template <>
+class __ll_mul<0, 0>
+{
+public:
+    static const intmax_t value = 0;
+};
+
+
+template <intmax_t _Xp, intmax_t _Yp>
+class __ll_div
+{
+    static const intmax_t nan = (1LL << (sizeof(intmax_t) * 8 - 1));
+    static const intmax_t min = nan + 1;
+    static const intmax_t max = -min;
+
+    static_assert(_Xp != nan && _Yp != nan && _Yp != 0, "overflow in __ll_div");
+public:
+    static const intmax_t value = _Xp / _Yp;
+};
+
+template <intmax_t _Num, intmax_t _Den = 1>
+class __attribute__ ((__type_visibility__("default"))) ratio
+{
+    static_assert(__static_abs<_Num>::value >= 0, "ratio numerator is out of range");
+    static_assert(_Den != 0, "ratio divide by 0");
+    static_assert(__static_abs<_Den>::value > 0, "ratio denominator is out of range");
+    static const intmax_t __na = __static_abs<_Num>::value;
+    static const intmax_t __da = __static_abs<_Den>::value;
+    static const intmax_t __s = __static_sign<_Num>::value * __static_sign<_Den>::value;
+    static const intmax_t __gcd = __static_gcd<__na, __da>::value;
+public:
+    static const intmax_t num = __s * __na / __gcd;
+    static const intmax_t den = __da / __gcd;
+
+    typedef ratio<num, den> type;
+};
+
+template <intmax_t _Num, intmax_t _Den> const intmax_t ratio<_Num, _Den>::num;
+template <intmax_t _Num, intmax_t _Den> const intmax_t ratio<_Num, _Den>::den;
+
+template <class _Tp> struct __is_ratio : false_type {};
+template <intmax_t _Num, intmax_t _Den> struct __is_ratio<ratio<_Num, _Den> > : true_type {};
+
+typedef ratio<1LL, 1000000000000000000LL> atto;
+typedef ratio<1LL, 1000000000000000LL> femto;
+typedef ratio<1LL, 1000000000000LL> pico;
+typedef ratio<1LL, 1000000000LL> nano;
+typedef ratio<1LL, 1000000LL> micro;
+typedef ratio<1LL, 1000LL> milli;
+typedef ratio<1LL, 100LL> centi;
+typedef ratio<1LL, 10LL> deci;
+typedef ratio< 10LL, 1LL> deca;
+typedef ratio< 100LL, 1LL> hecto;
+typedef ratio< 1000LL, 1LL> kilo;
+typedef ratio< 1000000LL, 1LL> mega;
+typedef ratio< 1000000000LL, 1LL> giga;
+typedef ratio< 1000000000000LL, 1LL> tera;
+typedef ratio< 1000000000000000LL, 1LL> peta;
+typedef ratio<1000000000000000000LL, 1LL> exa;
+
+template <class _R1, class _R2>
+struct __ratio_multiply
+{
+private:
+    static const intmax_t __gcd_n1_d2 = __static_gcd<_R1::num, _R2::den>::value;
+    static const intmax_t __gcd_d1_n2 = __static_gcd<_R1::den, _R2::num>::value;
+public:
+    typedef typename ratio
+        <
+            __ll_mul<_R1::num / __gcd_n1_d2, _R2::num / __gcd_d1_n2>::value,
+            __ll_mul<_R2::den / __gcd_n1_d2, _R1::den / __gcd_d1_n2>::value
+        >::type type;
+};
+
+
+
+template <class _R1, class _R2> using ratio_multiply
+                                    = typename __ratio_multiply<_R1, _R2>::type;
+# 300 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
+template <class _R1, class _R2>
+struct __ratio_divide
+{
+private:
+    static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
+    static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
+public:
+    typedef typename ratio
+        <
+            __ll_mul<_R1::num / __gcd_n1_n2, _R2::den / __gcd_d1_d2>::value,
+            __ll_mul<_R2::num / __gcd_n1_n2, _R1::den / __gcd_d1_d2>::value
+        >::type type;
+};
+
+
+
+template <class _R1, class _R2> using ratio_divide
+                                      = typename __ratio_divide<_R1, _R2>::type;
+# 327 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
+template <class _R1, class _R2>
+struct __ratio_add
+{
+private:
+    static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
+    static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
+public:
+    typedef typename ratio_multiply
+        <
+            ratio<__gcd_n1_n2, _R1::den / __gcd_d1_d2>,
+            ratio
+            <
+                __ll_add
+                <
+                    __ll_mul<_R1::num / __gcd_n1_n2, _R2::den / __gcd_d1_d2>::value,
+                    __ll_mul<_R2::num / __gcd_n1_n2, _R1::den / __gcd_d1_d2>::value
+                >::value,
+                _R2::den
+            >
+        >::type type;
+};
+
+
+
+template <class _R1, class _R2> using ratio_add
+                                         = typename __ratio_add<_R1, _R2>::type;
+# 362 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
+template <class _R1, class _R2>
+struct __ratio_subtract
+{
+private:
+    static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
+    static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
+public:
+    typedef typename ratio_multiply
+        <
+            ratio<__gcd_n1_n2, _R1::den / __gcd_d1_d2>,
+            ratio
+            <
+                __ll_sub
+                <
+                    __ll_mul<_R1::num / __gcd_n1_n2, _R2::den / __gcd_d1_d2>::value,
+                    __ll_mul<_R2::num / __gcd_n1_n2, _R1::den / __gcd_d1_d2>::value
+                >::value,
+                _R2::den
+            >
+        >::type type;
+};
+
+
+
+template <class _R1, class _R2> using ratio_subtract
+                                    = typename __ratio_subtract<_R1, _R2>::type;
+# 399 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio" 3
+template <class _R1, class _R2>
+struct __attribute__ ((__type_visibility__("default"))) ratio_equal
+    : public integral_constant<bool, _R1::num == _R2::num && _R1::den == _R2::den> {};
+
+template <class _R1, class _R2>
+struct __attribute__ ((__type_visibility__("default"))) ratio_not_equal
+    : public integral_constant<bool, !ratio_equal<_R1, _R2>::value> {};
+
+
+
+template <class _R1, class _R2, bool _Odd = false,
+          intmax_t _Q1 = _R1::num / _R1::den, intmax_t _M1 = _R1::num % _R1::den,
+          intmax_t _Q2 = _R2::num / _R2::den, intmax_t _M2 = _R2::num % _R2::den>
+struct __ratio_less1
+{
+    static const bool value = _Odd ? _Q2 < _Q1 : _Q1 < _Q2;
+};
+
+template <class _R1, class _R2, bool _Odd, intmax_t _Qp>
+struct __ratio_less1<_R1, _R2, _Odd, _Qp, 0, _Qp, 0>
+{
+    static const bool value = false;
+};
+
+template <class _R1, class _R2, bool _Odd, intmax_t _Qp, intmax_t _M2>
+struct __ratio_less1<_R1, _R2, _Odd, _Qp, 0, _Qp, _M2>
+{
+    static const bool value = !_Odd;
+};
+
+template <class _R1, class _R2, bool _Odd, intmax_t _Qp, intmax_t _M1>
+struct __ratio_less1<_R1, _R2, _Odd, _Qp, _M1, _Qp, 0>
+{
+    static const bool value = _Odd;
+};
+
+template <class _R1, class _R2, bool _Odd, intmax_t _Qp, intmax_t _M1,
+                                                        intmax_t _M2>
+struct __ratio_less1<_R1, _R2, _Odd, _Qp, _M1, _Qp, _M2>
+{
+    static const bool value = __ratio_less1<ratio<_R1::den, _M1>,
+                                            ratio<_R2::den, _M2>, !_Odd>::value;
+};
+
+template <class _R1, class _R2, intmax_t _S1 = __static_sign<_R1::num>::value,
+                                intmax_t _S2 = __static_sign<_R2::num>::value>
+struct __ratio_less
+{
+    static const bool value = _S1 < _S2;
+};
+
+template <class _R1, class _R2>
+struct __ratio_less<_R1, _R2, 1LL, 1LL>
+{
+    static const bool value = __ratio_less1<_R1, _R2>::value;
+};
+
+template <class _R1, class _R2>
+struct __ratio_less<_R1, _R2, -1LL, -1LL>
+{
+    static const bool value = __ratio_less1<ratio<-_R2::num, _R2::den>, ratio<-_R1::num, _R1::den> >::value;
+};
+
+template <class _R1, class _R2>
+struct __attribute__ ((__type_visibility__("default"))) ratio_less
+    : public integral_constant<bool, __ratio_less<_R1, _R2>::value> {};
+
+template <class _R1, class _R2>
+struct __attribute__ ((__type_visibility__("default"))) ratio_less_equal
+    : public integral_constant<bool, !ratio_less<_R2, _R1>::value> {};
+
+template <class _R1, class _R2>
+struct __attribute__ ((__type_visibility__("default"))) ratio_greater
+    : public integral_constant<bool, ratio_less<_R2, _R1>::value> {};
+
+template <class _R1, class _R2>
+struct __attribute__ ((__type_visibility__("default"))) ratio_greater_equal
+    : public integral_constant<bool, !ratio_less<_R1, _R2>::value> {};
+
+template <class _R1, class _R2>
+struct __ratio_gcd
+{
+    typedef ratio<__static_gcd<_R1::num, _R2::num>::value,
+                  __static_lcm<_R1::den, _R2::den>::value> type;
+};
+
+} }
+# 282 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 2 3
+
+
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max" 1 3
+# 285 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 2 3
+# 288 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 3
+
+
+namespace std {inline namespace __1 {
+
+namespace chrono
+{
+
+template <class _Rep, class _Period = ratio<1> > class __attribute__ ((__type_visibility__("default"))) duration;
+
+template <class _Tp>
+struct __is_duration : false_type {};
+
+template <class _Rep, class _Period>
+struct __is_duration<duration<_Rep, _Period> > : true_type {};
+
+template <class _Rep, class _Period>
+struct __is_duration<const duration<_Rep, _Period> > : true_type {};
+
+template <class _Rep, class _Period>
+struct __is_duration<volatile duration<_Rep, _Period> > : true_type {};
+
+template <class _Rep, class _Period>
+struct __is_duration<const volatile duration<_Rep, _Period> > : true_type {};
+
+}
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+struct __attribute__ ((__type_visibility__("default"))) common_type<chrono::duration<_Rep1, _Period1>,
+                                         chrono::duration<_Rep2, _Period2> >
+{
+    typedef chrono::duration<typename common_type<_Rep1, _Rep2>::type,
+                             typename __ratio_gcd<_Period1, _Period2>::type> type;
+};
+
+namespace chrono {
+
+
+
+template <class _FromDuration, class _ToDuration,
+          class _Period = typename ratio_divide<typename _FromDuration::period, typename _ToDuration::period>::type,
+          bool = _Period::num == 1,
+          bool = _Period::den == 1>
+struct __duration_cast;
+
+template <class _FromDuration, class _ToDuration, class _Period>
+struct __duration_cast<_FromDuration, _ToDuration, _Period, true, true>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    _ToDuration operator()(const _FromDuration& __fd) const
+    {
+        return _ToDuration(static_cast<typename _ToDuration::rep>(__fd.count()));
+    }
+};
+
+template <class _FromDuration, class _ToDuration, class _Period>
+struct __duration_cast<_FromDuration, _ToDuration, _Period, true, false>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    _ToDuration operator()(const _FromDuration& __fd) const
+    {
+        typedef typename common_type<typename _ToDuration::rep, typename _FromDuration::rep, intmax_t>::type _Ct;
+        return _ToDuration(static_cast<typename _ToDuration::rep>(
+                           static_cast<_Ct>(__fd.count()) / static_cast<_Ct>(_Period::den)));
+    }
+};
+
+template <class _FromDuration, class _ToDuration, class _Period>
+struct __duration_cast<_FromDuration, _ToDuration, _Period, false, true>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    _ToDuration operator()(const _FromDuration& __fd) const
+    {
+        typedef typename common_type<typename _ToDuration::rep, typename _FromDuration::rep, intmax_t>::type _Ct;
+        return _ToDuration(static_cast<typename _ToDuration::rep>(
+                           static_cast<_Ct>(__fd.count()) * static_cast<_Ct>(_Period::num)));
+    }
+};
+
+template <class _FromDuration, class _ToDuration, class _Period>
+struct __duration_cast<_FromDuration, _ToDuration, _Period, false, false>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    _ToDuration operator()(const _FromDuration& __fd) const
+    {
+        typedef typename common_type<typename _ToDuration::rep, typename _FromDuration::rep, intmax_t>::type _Ct;
+        return _ToDuration(static_cast<typename _ToDuration::rep>(
+                           static_cast<_Ct>(__fd.count()) * static_cast<_Ct>(_Period::num)
+                                                          / static_cast<_Ct>(_Period::den)));
+    }
+};
+
+template <class _ToDuration, class _Rep, class _Period>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename enable_if
+<
+    __is_duration<_ToDuration>::value,
+    _ToDuration
+>::type
+duration_cast(const duration<_Rep, _Period>& __fd)
+{
+    return __duration_cast<duration<_Rep, _Period>, _ToDuration>()(__fd);
+}
+
+template <class _Rep>
+struct __attribute__ ((__type_visibility__("default"))) treat_as_floating_point : is_floating_point<_Rep> {};
+
+template <class _Rep>
+struct __attribute__ ((__type_visibility__("default"))) duration_values
+{
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr _Rep zero() {return _Rep(0);}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr _Rep max() {return numeric_limits<_Rep>::max();}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr _Rep min() {return numeric_limits<_Rep>::lowest();}
+};
+
+
+
+template <class _Rep, class _Period>
+class __attribute__ ((__type_visibility__("default"))) duration
+{
+    static_assert(!__is_duration<_Rep>::value, "A duration representation can not be a duration");
+    static_assert(__is_ratio<_Period>::value, "Second template parameter of duration must be a std::ratio");
+    static_assert(_Period::num > 0, "duration period must be positive");
+
+    template <class _R1, class _R2>
+    struct __no_overflow
+    {
+    private:
+        static const intmax_t __gcd_n1_n2 = __static_gcd<_R1::num, _R2::num>::value;
+        static const intmax_t __gcd_d1_d2 = __static_gcd<_R1::den, _R2::den>::value;
+        static const intmax_t __n1 = _R1::num / __gcd_n1_n2;
+        static const intmax_t __d1 = _R1::den / __gcd_d1_d2;
+        static const intmax_t __n2 = _R2::num / __gcd_n1_n2;
+        static const intmax_t __d2 = _R2::den / __gcd_d1_d2;
+        static const intmax_t max = -((intmax_t(1) << (sizeof(intmax_t) * 8 - 1)) + 1);
+
+        template <intmax_t _Xp, intmax_t _Yp, bool __overflow>
+        struct __mul
+        {
+            static const intmax_t value = _Xp * _Yp;
+        };
+
+        template <intmax_t _Xp, intmax_t _Yp>
+        struct __mul<_Xp, _Yp, true>
+        {
+            static const intmax_t value = 1;
+        };
+
+    public:
+        static const bool value = (__n1 <= max / __d2) && (__n2 <= max / __d1);
+        typedef ratio<__mul<__n1, __d2, !value>::value,
+                      __mul<__n2, __d1, !value>::value> type;
+    };
+
+public:
+    typedef _Rep rep;
+    typedef _Period period;
+private:
+    rep __rep_;
+public:
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+
+        duration() = default;
+
+
+
+
+    template <class _Rep2>
+        __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+        explicit duration(const _Rep2& __r,
+            typename enable_if
+            <
+               is_convertible<_Rep2, rep>::value &&
+               (treat_as_floating_point<rep>::value ||
+               !treat_as_floating_point<_Rep2>::value)
+            >::type* = 0)
+                : __rep_(__r) {}
+
+
+    template <class _Rep2, class _Period2>
+        __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+        duration(const duration<_Rep2, _Period2>& __d,
+            typename enable_if
+            <
+                __no_overflow<_Period2, period>::value && (
+                treat_as_floating_point<rep>::value ||
+                (__no_overflow<_Period2, period>::type::den == 1 &&
+                 !treat_as_floating_point<_Rep2>::value))
+            >::type* = 0)
+                : __rep_(std::__1::chrono::duration_cast<duration>(__d).count()) {}
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr rep count() const {return __rep_;}
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr duration operator+() const {return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr duration operator-() const {return duration(-__rep_);}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator++() {++__rep_; return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration operator++(int) {return duration(__rep_++);}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator--() {--__rep_; return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration operator--(int) {return duration(__rep_--);}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator+=(const duration& __d) {__rep_ += __d.count(); return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator-=(const duration& __d) {__rep_ -= __d.count(); return *this;}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator*=(const rep& rhs) {__rep_ *= rhs; return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator/=(const rep& rhs) {__rep_ /= rhs; return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator%=(const rep& rhs) {__rep_ %= rhs; return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration& operator%=(const duration& rhs) {__rep_ %= rhs.count(); return *this;}
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr duration zero() {return duration(duration_values<rep>::zero());}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr duration min() {return duration(duration_values<rep>::min());}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr duration max() {return duration(duration_values<rep>::max());}
+};
+
+typedef duration<long long, nano> nanoseconds;
+typedef duration<long long, micro> microseconds;
+typedef duration<long long, milli> milliseconds;
+typedef duration<long long > seconds;
+typedef duration< long, ratio< 60> > minutes;
+typedef duration< long, ratio<3600> > hours;
+
+
+
+template <class _LhsDuration, class _RhsDuration>
+struct __duration_eq
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    bool operator()(const _LhsDuration& __lhs, const _RhsDuration& __rhs) const
+        {
+            typedef typename common_type<_LhsDuration, _RhsDuration>::type _Ct;
+            return _Ct(__lhs).count() == _Ct(__rhs).count();
+        }
+};
+
+template <class _LhsDuration>
+struct __duration_eq<_LhsDuration, _LhsDuration>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    bool operator()(const _LhsDuration& __lhs, const _LhsDuration& __rhs) const
+        {return __lhs.count() == __rhs.count();}
+};
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+bool
+operator==(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return __duration_eq<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >()(__lhs, __rhs);
+}
+
+
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+bool
+operator!=(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return !(__lhs == __rhs);
+}
+
+
+
+template <class _LhsDuration, class _RhsDuration>
+struct __duration_lt
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    bool operator()(const _LhsDuration& __lhs, const _RhsDuration& __rhs) const
+        {
+            typedef typename common_type<_LhsDuration, _RhsDuration>::type _Ct;
+            return _Ct(__lhs).count() < _Ct(__rhs).count();
+        }
+};
+
+template <class _LhsDuration>
+struct __duration_lt<_LhsDuration, _LhsDuration>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) constexpr
+    bool operator()(const _LhsDuration& __lhs, const _LhsDuration& __rhs) const
+        {return __lhs.count() < __rhs.count();}
+};
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+bool
+operator< (const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return __duration_lt<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >()(__lhs, __rhs);
+}
+
+
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+bool
+operator> (const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return __rhs < __lhs;
+}
+
+
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+bool
+operator<=(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return !(__rhs < __lhs);
+}
+
+
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+bool
+operator>=(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return !(__lhs < __rhs);
+}
+
+
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type
+operator+(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Cd;
+    return _Cd(_Cd(__lhs).count() + _Cd(__rhs).count());
+}
+
+
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type
+operator-(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Cd;
+    return _Cd(_Cd(__lhs).count() - _Cd(__rhs).count());
+}
+
+
+
+template <class _Rep1, class _Period, class _Rep2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename enable_if
+<
+    is_convertible<_Rep2, typename common_type<_Rep1, _Rep2>::type>::value,
+    duration<typename common_type<_Rep1, _Rep2>::type, _Period>
+>::type
+operator*(const duration<_Rep1, _Period>& __d, const _Rep2& __s)
+{
+    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
+    typedef duration<_Cr, _Period> _Cd;
+    return _Cd(_Cd(__d).count() * static_cast<_Cr>(__s));
+}
+
+template <class _Rep1, class _Period, class _Rep2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename enable_if
+<
+    is_convertible<_Rep1, typename common_type<_Rep1, _Rep2>::type>::value,
+    duration<typename common_type<_Rep1, _Rep2>::type, _Period>
+>::type
+operator*(const _Rep1& __s, const duration<_Rep2, _Period>& __d)
+{
+    return __d * __s;
+}
+
+
+
+template <class _Duration, class _Rep, bool = __is_duration<_Rep>::value>
+struct __duration_divide_result
+{
+};
+
+template <class _Duration, class _Rep2,
+    bool = is_convertible<_Rep2,
+                          typename common_type<typename _Duration::rep, _Rep2>::type>::value>
+struct __duration_divide_imp
+{
+};
+
+template <class _Rep1, class _Period, class _Rep2>
+struct __duration_divide_imp<duration<_Rep1, _Period>, _Rep2, true>
+{
+    typedef duration<typename common_type<_Rep1, _Rep2>::type, _Period> type;
+};
+
+template <class _Rep1, class _Period, class _Rep2>
+struct __duration_divide_result<duration<_Rep1, _Period>, _Rep2, false>
+    : __duration_divide_imp<duration<_Rep1, _Period>, _Rep2>
+{
+};
+
+template <class _Rep1, class _Period, class _Rep2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename __duration_divide_result<duration<_Rep1, _Period>, _Rep2>::type
+operator/(const duration<_Rep1, _Period>& __d, const _Rep2& __s)
+{
+    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
+    typedef duration<_Cr, _Period> _Cd;
+    return _Cd(_Cd(__d).count() / static_cast<_Cr>(__s));
+}
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename common_type<_Rep1, _Rep2>::type
+operator/(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Ct;
+    return _Ct(__lhs).count() / _Ct(__rhs).count();
+}
+
+
+
+template <class _Rep1, class _Period, class _Rep2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename __duration_divide_result<duration<_Rep1, _Period>, _Rep2>::type
+operator%(const duration<_Rep1, _Period>& __d, const _Rep2& __s)
+{
+    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
+    typedef duration<_Cr, _Period> _Cd;
+    return _Cd(_Cd(__d).count() % static_cast<_Cr>(__s));
+}
+
+template <class _Rep1, class _Period1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+constexpr
+typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type
+operator%(const duration<_Rep1, _Period1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    typedef typename common_type<_Rep1, _Rep2>::type _Cr;
+    typedef typename common_type<duration<_Rep1, _Period1>, duration<_Rep2, _Period2> >::type _Cd;
+    return _Cd(static_cast<_Cr>(_Cd(__lhs).count()) % static_cast<_Cr>(_Cd(__rhs).count()));
+}
+
+
+
+
+
+template <class _Clock, class _Duration = typename _Clock::duration>
+class __attribute__ ((__type_visibility__("default"))) time_point
+{
+    static_assert(__is_duration<_Duration>::value,
+                  "Second template parameter of time_point must be a std::chrono::duration");
+public:
+    typedef _Clock clock;
+    typedef _Duration duration;
+    typedef typename duration::rep rep;
+    typedef typename duration::period period;
+private:
+    duration __d_;
+
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) time_point() : __d_(duration::zero()) {}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) explicit time_point(const duration& __d) : __d_(__d) {}
+
+
+    template <class _Duration2>
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    time_point(const time_point<clock, _Duration2>& t,
+        typename enable_if
+        <
+            is_convertible<_Duration2, duration>::value
+        >::type* = 0)
+            : __d_(t.time_since_epoch()) {}
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) duration time_since_epoch() const {return __d_;}
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) time_point& operator+=(const duration& __d) {__d_ += __d; return *this;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) time_point& operator-=(const duration& __d) {__d_ -= __d; return *this;}
+
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr time_point min() {return time_point(duration::min());}
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) static constexpr time_point max() {return time_point(duration::max());}
+};
+
+}
+
+template <class _Clock, class _Duration1, class _Duration2>
+struct __attribute__ ((__type_visibility__("default"))) common_type<chrono::time_point<_Clock, _Duration1>,
+                                         chrono::time_point<_Clock, _Duration2> >
+{
+    typedef chrono::time_point<_Clock, typename common_type<_Duration1, _Duration2>::type> type;
+};
+
+namespace chrono {
+
+template <class _ToDuration, class _Clock, class _Duration>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+time_point<_Clock, _ToDuration>
+time_point_cast(const time_point<_Clock, _Duration>& __t)
+{
+    return time_point<_Clock, _ToDuration>(std::__1::chrono::duration_cast<_ToDuration>(__t.time_since_epoch()));
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator==(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return __lhs.time_since_epoch() == __rhs.time_since_epoch();
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator!=(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return !(__lhs == __rhs);
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator<(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return __lhs.time_since_epoch() < __rhs.time_since_epoch();
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator>(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return __rhs < __lhs;
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator<=(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return !(__rhs < __lhs);
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+operator>=(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return !(__lhs < __rhs);
+}
+
+
+
+template <class _Clock, class _Duration1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+time_point<_Clock, typename common_type<_Duration1, duration<_Rep2, _Period2> >::type>
+operator+(const time_point<_Clock, _Duration1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    typedef time_point<_Clock, typename common_type<_Duration1, duration<_Rep2, _Period2> >::type> _Tr;
+    return _Tr (__lhs.time_since_epoch() + __rhs);
+}
+
+
+
+template <class _Rep1, class _Period1, class _Clock, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+time_point<_Clock, typename common_type<duration<_Rep1, _Period1>, _Duration2>::type>
+operator+(const duration<_Rep1, _Period1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return __rhs + __lhs;
+}
+
+
+
+template <class _Clock, class _Duration1, class _Rep2, class _Period2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+time_point<_Clock, typename common_type<_Duration1, duration<_Rep2, _Period2> >::type>
+operator-(const time_point<_Clock, _Duration1>& __lhs, const duration<_Rep2, _Period2>& __rhs)
+{
+    return __lhs + (-__rhs);
+}
+
+
+
+template <class _Clock, class _Duration1, class _Duration2>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+typename common_type<_Duration1, _Duration2>::type
+operator-(const time_point<_Clock, _Duration1>& __lhs, const time_point<_Clock, _Duration2>& __rhs)
+{
+    return __lhs.time_since_epoch() - __rhs.time_since_epoch();
+}
+
+
+
+
+
+class __attribute__ ((__type_visibility__("default"))) system_clock
+{
+public:
+    typedef microseconds duration;
+    typedef duration::rep rep;
+    typedef duration::period period;
+    typedef chrono::time_point<system_clock> time_point;
+    static const bool is_steady = false;
+
+    static time_point now() noexcept;
+    static time_t to_time_t (const time_point& __t) noexcept;
+    static time_point from_time_t(time_t __t) noexcept;
+};
+
+class __attribute__ ((__type_visibility__("default"))) steady_clock
+{
+public:
+    typedef nanoseconds duration;
+    typedef duration::rep rep;
+    typedef duration::period period;
+    typedef chrono::time_point<steady_clock, duration> time_point;
+    static const bool is_steady = true;
+
+    static time_point now() noexcept;
+};
+
+typedef steady_clock high_resolution_clock;
+
+}
+# 1025 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono" 3
+} }
+# 97 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 2 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 1 3
+# 17 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 3
+# 1 "/usr/include/pthread.h" 1 3 4
+# 57 "/usr/include/pthread.h" 3 4
+# 1 "/usr/include/pthread/pthread_impl.h" 1 3 4
+# 58 "/usr/include/pthread.h" 2 3 4
+
+# 1 "/usr/include/pthread/sched.h" 1 3 4
+# 30 "/usr/include/pthread/sched.h" 3 4
+extern "C" {
+
+
+
+
+struct sched_param { int sched_priority; char __opaque[4]; };
+
+
+extern int sched_yield(void);
+extern int sched_get_priority_min(int);
+extern int sched_get_priority_max(int);
+}
+# 60 "/usr/include/pthread.h" 2 3 4
+
+
+# 1 "/usr/include/sys/_pthread/_pthread_attr_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_attr_t.h" 3 4
+typedef __darwin_pthread_attr_t pthread_attr_t;
+# 63 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_cond_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_cond_t.h" 3 4
+typedef __darwin_pthread_cond_t pthread_cond_t;
+# 64 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_condattr_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_condattr_t.h" 3 4
+typedef __darwin_pthread_condattr_t pthread_condattr_t;
+# 65 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_key_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_key_t.h" 3 4
+typedef __darwin_pthread_key_t pthread_key_t;
+# 66 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_mutex_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_mutex_t.h" 3 4
+typedef __darwin_pthread_mutex_t pthread_mutex_t;
+# 67 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_mutexattr_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_mutexattr_t.h" 3 4
+typedef __darwin_pthread_mutexattr_t pthread_mutexattr_t;
+# 68 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_once_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_once_t.h" 3 4
+typedef __darwin_pthread_once_t pthread_once_t;
+# 69 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_rwlock_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_rwlock_t.h" 3 4
+typedef __darwin_pthread_rwlock_t pthread_rwlock_t;
+# 70 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_rwlockattr_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_rwlockattr_t.h" 3 4
+typedef __darwin_pthread_rwlockattr_t pthread_rwlockattr_t;
+# 71 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_pthread/_pthread_t.h" 1 3 4
+# 30 "/usr/include/sys/_pthread/_pthread_t.h" 3 4
+typedef __darwin_pthread_t pthread_t;
+# 72 "/usr/include/pthread.h" 2 3 4
+
+# 1 "/usr/include/pthread/qos.h" 1 3 4
+# 32 "/usr/include/pthread/qos.h" 3 4
+# 1 "/usr/include/sys/qos.h" 1 3 4
+# 124 "/usr/include/sys/qos.h" 3 4
+typedef enum : unsigned int { QOS_CLASS_USER_INTERACTIVE __attribute__((availability(macosx,introduced=10.10))) = 0x21, QOS_CLASS_USER_INITIATED __attribute__((availability(macosx,introduced=10.10))) = 0x19, QOS_CLASS_DEFAULT __attribute__((availability(macosx,introduced=10.10))) = 0x15, QOS_CLASS_UTILITY __attribute__((availability(macosx,introduced=10.10))) = 0x11, QOS_CLASS_BACKGROUND __attribute__((availability(macosx,introduced=10.10))) = 0x09, QOS_CLASS_UNSPECIFIED __attribute__((availability(macosx,introduced=10.10))) = 0x00, } qos_class_t;
+# 153 "/usr/include/sys/qos.h" 3 4
+extern "C" {
+# 164 "/usr/include/sys/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+qos_class_t
+qos_class_self(void);
+# 186 "/usr/include/sys/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+qos_class_t
+qos_class_main(void);
+
+}
+# 33 "/usr/include/pthread/qos.h" 2 3 4
+
+
+
+extern "C" {
+# 76 "/usr/include/pthread/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+int
+pthread_attr_set_qos_class_np(pthread_attr_t *__attr,
+  qos_class_t __qos_class, int __relative_priority);
+# 107 "/usr/include/pthread/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+int
+pthread_attr_get_qos_class_np(pthread_attr_t * __attr,
+  qos_class_t * __qos_class,
+  int * __relative_priority);
+# 148 "/usr/include/pthread/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+int
+pthread_set_qos_class_self_np(qos_class_t __qos_class,
+  int __relative_priority);
+# 179 "/usr/include/pthread/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+int
+pthread_get_qos_class_np(pthread_t __pthread,
+  qos_class_t * __qos_class,
+  int * __relative_priority);
+# 206 "/usr/include/pthread/qos.h" 3 4
+typedef struct pthread_override_s* pthread_override_t;
+# 258 "/usr/include/pthread/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+pthread_override_t
+pthread_override_qos_class_start_np(pthread_t __pthread,
+  qos_class_t __qos_class, int __relative_priority);
+# 286 "/usr/include/pthread/qos.h" 3 4
+__attribute__((availability(macosx,introduced=10.10)))
+int
+pthread_override_qos_class_end_np(pthread_override_t __override);
+
+}
+# 74 "/usr/include/pthread.h" 2 3 4
+
+
+
+# 1 "/usr/include/sys/_types/_mach_port_t.h" 1 3 4
+# 49 "/usr/include/sys/_types/_mach_port_t.h" 3 4
+typedef __darwin_mach_port_t mach_port_t;
+# 78 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sys/_types/_sigset_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
+typedef __darwin_sigset_t sigset_t;
+# 79 "/usr/include/pthread.h" 2 3 4
+# 105 "/usr/include/pthread.h" 3 4
+extern "C" {
+# 209 "/usr/include/pthread.h" 3 4
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_atfork(void (*)(void), void (*)(void), void (*)(void));
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_destroy(pthread_attr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getdetachstate(const pthread_attr_t *, int *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getguardsize(const pthread_attr_t * , size_t * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getinheritsched(const pthread_attr_t * , int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getschedparam(const pthread_attr_t * ,
+  struct sched_param * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getschedpolicy(const pthread_attr_t * , int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getscope(const pthread_attr_t * , int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getstack(const pthread_attr_t * , void ** ,
+  size_t * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getstackaddr(const pthread_attr_t * , void ** );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_getstacksize(const pthread_attr_t * , size_t * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_init(pthread_attr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setdetachstate(pthread_attr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setguardsize(pthread_attr_t *, size_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setinheritsched(pthread_attr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setschedparam(pthread_attr_t * ,
+  const struct sched_param * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setschedpolicy(pthread_attr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setscope(pthread_attr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setstack(pthread_attr_t *, void *, size_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setstackaddr(pthread_attr_t *, void *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_attr_setstacksize(pthread_attr_t *, size_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cancel(pthread_t) __asm("_" "pthread_cancel") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_broadcast(pthread_cond_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_destroy(pthread_cond_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_init(pthread_cond_t * ,
+  const pthread_condattr_t * ) __asm("_" "pthread_cond_init") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_signal(pthread_cond_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_timedwait(pthread_cond_t * , pthread_mutex_t * ,
+  const struct timespec * ) __asm("_" "pthread_cond_timedwait") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_wait(pthread_cond_t * ,
+  pthread_mutex_t * ) __asm("_" "pthread_cond_wait") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_condattr_destroy(pthread_condattr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_condattr_init(pthread_condattr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_condattr_getpshared(const pthread_condattr_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_condattr_setpshared(pthread_condattr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_create(pthread_t * , const pthread_attr_t * ,
+  void *(*)(void *), void * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_detach(pthread_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_equal(pthread_t, pthread_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+void pthread_exit(void *) __attribute__((noreturn));
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_getconcurrency(void);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_getschedparam(pthread_t , int * ,
+  struct sched_param * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+void* pthread_getspecific(pthread_key_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_join(pthread_t , void **) __asm("_" "pthread_join") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_key_create(pthread_key_t *, void (*)(void *));
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_key_delete(pthread_key_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_destroy(pthread_mutex_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_getprioceiling(const pthread_mutex_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_init(pthread_mutex_t * ,
+  const pthread_mutexattr_t * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_lock(pthread_mutex_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_setprioceiling(pthread_mutex_t * , int,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_trylock(pthread_mutex_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutex_unlock(pthread_mutex_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_destroy(pthread_mutexattr_t *) __asm("_" "pthread_mutexattr_destroy") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_getprotocol(const pthread_mutexattr_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_getpshared(const pthread_mutexattr_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_gettype(const pthread_mutexattr_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_init(pthread_mutexattr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_setprotocol(pthread_mutexattr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_setpshared(pthread_mutexattr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_mutexattr_settype(pthread_mutexattr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_once(pthread_once_t *, void (*)(void));
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_destroy(pthread_rwlock_t * ) __asm("_" "pthread_rwlock_destroy") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_init(pthread_rwlock_t * ,
+  const pthread_rwlockattr_t * ) __asm("_" "pthread_rwlock_init") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_rdlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_rdlock") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_tryrdlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_tryrdlock") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_trywrlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_trywrlock") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_wrlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_wrlock") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlock_unlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_unlock") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlockattr_destroy(pthread_rwlockattr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t * ,
+  int * );
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlockattr_init(pthread_rwlockattr_t *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *, int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+pthread_t pthread_self(void);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_setcancelstate(int , int *) __asm("_" "pthread_setcancelstate") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_setcanceltype(int , int *) __asm("_" "pthread_setcanceltype") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_setconcurrency(int);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_setschedparam(pthread_t, int, const struct sched_param *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_setspecific(pthread_key_t , const void *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+void pthread_testcancel(void) __asm("_" "pthread_testcancel") ;
+
+
+
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_is_threaded_np(void);
+
+__attribute__((availability(macosx,introduced=10.6)))
+int pthread_threadid_np(pthread_t,__uint64_t*);
+
+
+__attribute__((availability(macosx,introduced=10.6)))
+int pthread_getname_np(pthread_t,char*,size_t);
+
+__attribute__((availability(macosx,introduced=10.6)))
+int pthread_setname_np(const char*);
+
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_main_np(void);
+
+
+__attribute__((availability(macosx,introduced=10.4)))
+mach_port_t pthread_mach_thread_np(pthread_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+size_t pthread_get_stacksize_np(pthread_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+void* pthread_get_stackaddr_np(pthread_t);
+
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_signal_thread_np(pthread_cond_t *, pthread_t);
+
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_cond_timedwait_relative_np(pthread_cond_t *, pthread_mutex_t *,
+  const struct timespec *);
+
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_create_suspended_np(pthread_t *, const pthread_attr_t *,
+  void *(*)(void *), void *);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_kill(pthread_t, int);
+
+__attribute__((availability(macosx,introduced=10.5)))
+pthread_t pthread_from_mach_thread_np(mach_port_t);
+
+__attribute__((availability(macosx,introduced=10.4)))
+int pthread_sigmask(int, const sigset_t *, sigset_t *) __asm("_" "pthread_sigmask") ;
+
+__attribute__((availability(macosx,introduced=10.4)))
+void pthread_yield_np(void);
+
+
+}
+# 18 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 2 3
+# 21 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 3
+
+
+namespace std {inline namespace __1 {
+
+class __attribute__ ((__type_visibility__("default"))) mutex
+{
+    pthread_mutex_t __m_;
+
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+
+     constexpr mutex() noexcept : __m_({0x32AAABA7, {0}}) {}
+
+
+
+     ~mutex();
+
+private:
+    mutex(const mutex&);
+    mutex& operator=(const mutex&);
+
+public:
+    void lock();
+    bool try_lock() noexcept;
+    void unlock() noexcept;
+
+    typedef pthread_mutex_t* native_handle_type;
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) native_handle_type native_handle() {return &__m_;}
+};
+
+struct __attribute__ ((__type_visibility__("default"))) defer_lock_t {};
+struct __attribute__ ((__type_visibility__("default"))) try_to_lock_t {};
+struct __attribute__ ((__type_visibility__("default"))) adopt_lock_t {};
+# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base" 3
+constexpr defer_lock_t defer_lock = defer_lock_t();
+constexpr try_to_lock_t try_to_lock = try_to_lock_t();
+constexpr adopt_lock_t adopt_lock = adopt_lock_t();
+
+
+
+template <class _Mutex>
+class __attribute__ ((__type_visibility__("default"))) lock_guard
+{
+public:
+    typedef _Mutex mutex_type;
+
+private:
+    mutex_type& __m_;
+public:
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    explicit lock_guard(mutex_type& __m)
+        : __m_(__m) {__m_.lock();}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    lock_guard(mutex_type& __m, adopt_lock_t)
+        : __m_(__m) {}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    ~lock_guard() {__m_.unlock();}
+
+private:
+    lock_guard(lock_guard const&);
+    lock_guard& operator=(lock_guard const&);
+};
+
+template <class _Mutex>
+class __attribute__ ((__type_visibility__("default"))) unique_lock
+{
+public:
+    typedef _Mutex mutex_type;
+
+private:
+    mutex_type* __m_;
+    bool __owns_;
+
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    unique_lock() noexcept : __m_(nullptr), __owns_(false) {}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    explicit unique_lock(mutex_type& __m)
+        : __m_(&__m), __owns_(true) {__m_->lock();}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    unique_lock(mutex_type& __m, defer_lock_t) noexcept
+        : __m_(&__m), __owns_(false) {}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    unique_lock(mutex_type& __m, try_to_lock_t)
+        : __m_(&__m), __owns_(__m.try_lock()) {}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    unique_lock(mutex_type& __m, adopt_lock_t)
+        : __m_(&__m), __owns_(true) {}
+    template <class _Clock, class _Duration>
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+        unique_lock(mutex_type& __m, const chrono::time_point<_Clock, _Duration>& __t)
+            : __m_(&__m), __owns_(__m.try_lock_until(__t)) {}
+    template <class _Rep, class _Period>
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+        unique_lock(mutex_type& __m, const chrono::duration<_Rep, _Period>& __d)
+            : __m_(&__m), __owns_(__m.try_lock_for(__d)) {}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    ~unique_lock()
+    {
+        if (__owns_)
+            __m_->unlock();
+    }
+
+private:
+    unique_lock(unique_lock const&);
+    unique_lock& operator=(unique_lock const&);
+
+public:
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    unique_lock(unique_lock&& __u) noexcept
+        : __m_(__u.__m_), __owns_(__u.__owns_)
+        {__u.__m_ = nullptr; __u.__owns_ = false;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    unique_lock& operator=(unique_lock&& __u) noexcept
+        {
+            if (__owns_)
+                __m_->unlock();
+            __m_ = __u.__m_;
+            __owns_ = __u.__owns_;
+            __u.__m_ = nullptr;
+            __u.__owns_ = false;
+            return *this;
+        }
+
+
+
+    void lock();
+    bool try_lock();
+
+    template <class _Rep, class _Period>
+        bool try_lock_for(const chrono::duration<_Rep, _Period>& __d);
+    template <class _Clock, class _Duration>
+        bool try_lock_until(const chrono::time_point<_Clock, _Duration>& __t);
+
+    void unlock();
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    void swap(unique_lock& __u) noexcept
+    {
+        std::__1::swap(__m_, __u.__m_);
+        std::__1::swap(__owns_, __u.__owns_);
+    }
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    mutex_type* release() noexcept
+    {
+        mutex_type* __m = __m_;
+        __m_ = nullptr;
+        __owns_ = false;
+        return __m;
+    }
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    bool owns_lock() const noexcept {return __owns_;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    explicit
+        operator bool () const noexcept {return __owns_;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    mutex_type* mutex() const noexcept {return __m_;}
+};
+
+template <class _Mutex>
+void
+unique_lock<_Mutex>::lock()
+{
+    if (__m_ == nullptr)
+        __throw_system_error(1, "unique_lock::lock: references null mutex");
+    if (__owns_)
+        __throw_system_error(11, "unique_lock::lock: already locked");
+    __m_->lock();
+    __owns_ = true;
+}
+
+template <class _Mutex>
+bool
+unique_lock<_Mutex>::try_lock()
+{
+    if (__m_ == nullptr)
+        __throw_system_error(1, "unique_lock::try_lock: references null mutex");
+    if (__owns_)
+        __throw_system_error(11, "unique_lock::try_lock: already locked");
+    __owns_ = __m_->try_lock();
+    return __owns_;
+}
+
+template <class _Mutex>
+template <class _Rep, class _Period>
+bool
+unique_lock<_Mutex>::try_lock_for(const chrono::duration<_Rep, _Period>& __d)
+{
+    if (__m_ == nullptr)
+        __throw_system_error(1, "unique_lock::try_lock_for: references null mutex");
+    if (__owns_)
+        __throw_system_error(11, "unique_lock::try_lock_for: already locked");
+    __owns_ = __m_->try_lock_for(__d);
+    return __owns_;
+}
+
+template <class _Mutex>
+template <class _Clock, class _Duration>
+bool
+unique_lock<_Mutex>::try_lock_until(const chrono::time_point<_Clock, _Duration>& __t)
+{
+    if (__m_ == nullptr)
+        __throw_system_error(1, "unique_lock::try_lock_until: references null mutex");
+    if (__owns_)
+        __throw_system_error(11, "unique_lock::try_lock_until: already locked");
+    __owns_ = __m_->try_lock_until(__t);
+    return __owns_;
+}
+
+template <class _Mutex>
+void
+unique_lock<_Mutex>::unlock()
+{
+    if (!__owns_)
+        __throw_system_error(1, "unique_lock::unlock: not locked");
+    __m_->unlock();
+    __owns_ = false;
+}
+
+template <class _Mutex>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+void
+swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) noexcept
+    {__x.swap(__y);}
+
+
+enum class __attribute__ ((__type_visibility__("default"))) cv_status
+{
+    no_timeout,
+    timeout
+};
+
+
+class __attribute__ ((__type_visibility__("default"))) condition_variable
+{
+    pthread_cond_t __cv_;
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+
+    constexpr condition_variable() : __cv_({0x3CB0B1BB, {0}}) {}
+
+
+
+    ~condition_variable();
+
+private:
+    condition_variable(const condition_variable&);
+    condition_variable& operator=(const condition_variable&);
+
+public:
+    void notify_one() noexcept;
+    void notify_all() noexcept;
+
+    void wait(unique_lock<mutex>& __lk);
+    template <class _Predicate>
+        void wait(unique_lock<mutex>& __lk, _Predicate __pred);
+
+    template <class _Clock, class _Duration>
+        cv_status
+        wait_until(unique_lock<mutex>& __lk,
+                   const chrono::time_point<_Clock, _Duration>& __t);
+
+    template <class _Clock, class _Duration, class _Predicate>
+        bool
+        wait_until(unique_lock<mutex>& __lk,
+                   const chrono::time_point<_Clock, _Duration>& __t,
+                   _Predicate __pred);
+
+    template <class _Rep, class _Period>
+        cv_status
+        wait_for(unique_lock<mutex>& __lk,
+                 const chrono::duration<_Rep, _Period>& __d);
+
+    template <class _Rep, class _Period, class _Predicate>
+        bool
+        wait_for(unique_lock<mutex>& __lk,
+                 const chrono::duration<_Rep, _Period>& __d,
+                 _Predicate __pred);
+
+    typedef pthread_cond_t* native_handle_type;
+    __attribute__ ((__visibility__("hidden"), __always_inline__)) native_handle_type native_handle() {return &__cv_;}
+
+private:
+    void __do_timed_wait(unique_lock<mutex>& __lk,
+                 chrono::time_point<chrono::system_clock, chrono::nanoseconds>);
+};
+
+template <class _To, class _Rep, class _Period>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+typename enable_if
+<
+    chrono::__is_duration<_To>::value,
+    _To
+>::type
+__ceil(chrono::duration<_Rep, _Period> __d)
+{
+    using namespace chrono;
+    _To __r = duration_cast<_To>(__d);
+    if (__r < __d)
+        ++__r;
+    return __r;
+}
+
+template <class _Predicate>
+void
+condition_variable::wait(unique_lock<mutex>& __lk, _Predicate __pred)
+{
+    while (!__pred())
+        wait(__lk);
+}
+
+template <class _Clock, class _Duration>
+cv_status
+condition_variable::wait_until(unique_lock<mutex>& __lk,
+                               const chrono::time_point<_Clock, _Duration>& __t)
+{
+    using namespace chrono;
+    wait_for(__lk, __t - _Clock::now());
+    return _Clock::now() < __t ? cv_status::no_timeout : cv_status::timeout;
+}
+
+template <class _Clock, class _Duration, class _Predicate>
+bool
+condition_variable::wait_until(unique_lock<mutex>& __lk,
+                   const chrono::time_point<_Clock, _Duration>& __t,
+                   _Predicate __pred)
+{
+    while (!__pred())
+    {
+        if (wait_until(__lk, __t) == cv_status::timeout)
+            return __pred();
+    }
+    return true;
+}
+
+template <class _Rep, class _Period>
+cv_status
+condition_variable::wait_for(unique_lock<mutex>& __lk,
+                             const chrono::duration<_Rep, _Period>& __d)
+{
+    using namespace chrono;
+    if (__d <= __d.zero())
+        return cv_status::timeout;
+    typedef time_point<system_clock, duration<long double, nano> > __sys_tpf;
+    typedef time_point<system_clock, nanoseconds> __sys_tpi;
+    __sys_tpf _Max = __sys_tpi::max();
+    system_clock::time_point __s_now = system_clock::now();
+    steady_clock::time_point __c_now = steady_clock::now();
+    if (_Max - __d > __s_now)
+        __do_timed_wait(__lk, __s_now + __ceil<nanoseconds>(__d));
+    else
+        __do_timed_wait(__lk, __sys_tpi::max());
+    return steady_clock::now() - __c_now < __d ? cv_status::no_timeout :
+                                                 cv_status::timeout;
+}
+
+template <class _Rep, class _Period, class _Predicate>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+bool
+condition_variable::wait_for(unique_lock<mutex>& __lk,
+                             const chrono::duration<_Rep, _Period>& __d,
+                             _Predicate __pred)
+{
+    return wait_until(__lk, chrono::steady_clock::now() + __d,
+                      std::__1::move(__pred));
+}
+
+} }
+# 98 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 2 3
+# 105 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 3
+
+
+
+
+namespace std {inline namespace __1 {
+
+template <class _Tp>
+class __thread_specific_ptr
+{
+    pthread_key_t __key_;
+
+    __thread_specific_ptr(const __thread_specific_ptr&);
+    __thread_specific_ptr& operator=(const __thread_specific_ptr&);
+
+    static void __at_thread_exit(void*);
+public:
+    typedef _Tp* pointer;
+
+    __thread_specific_ptr();
+    ~__thread_specific_ptr();
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    pointer get() const {return static_cast<_Tp*>(pthread_getspecific(__key_));}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    pointer operator*() const {return *get();}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    pointer operator->() const {return get();}
+    pointer release();
+    void reset(pointer __p = nullptr);
+};
+
+template <class _Tp>
+void
+__thread_specific_ptr<_Tp>::__at_thread_exit(void* __p)
+{
+    delete static_cast<pointer>(__p);
+}
+
+template <class _Tp>
+__thread_specific_ptr<_Tp>::__thread_specific_ptr()
+{
+    int __ec = pthread_key_create(&__key_, &__thread_specific_ptr::__at_thread_exit);
+
+    if (__ec)
+        throw system_error(error_code(__ec, system_category()),
+                           "__thread_specific_ptr construction failed");
+
+}
+
+template <class _Tp>
+__thread_specific_ptr<_Tp>::~__thread_specific_ptr()
+{
+    pthread_key_delete(__key_);
+}
+
+template <class _Tp>
+typename __thread_specific_ptr<_Tp>::pointer
+__thread_specific_ptr<_Tp>::release()
+{
+    pointer __p = get();
+    pthread_setspecific(__key_, 0);
+    return __p;
+}
+
+template <class _Tp>
+void
+__thread_specific_ptr<_Tp>::reset(pointer __p)
+{
+    pointer __p_old = get();
+    pthread_setspecific(__key_, __p);
+    delete __p_old;
+}
+
+class __attribute__ ((__type_visibility__("default"))) thread;
+class __attribute__ ((__type_visibility__("default"))) __thread_id;
+
+namespace this_thread
+{
+
+__attribute__ ((__visibility__("hidden"), __always_inline__)) __thread_id get_id() noexcept;
+
+}
+
+template<> struct __attribute__ ((__type_visibility__("default"))) hash<__thread_id>;
+
+class __attribute__ ((__type_visibility__("default"))) __thread_id
+{
+
+
+
+    pthread_t __id_;
+
+public:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    __thread_id() noexcept : __id_(0) {}
+
+    friend __attribute__ ((__visibility__("hidden"), __always_inline__))
+        bool operator==(__thread_id __x, __thread_id __y) noexcept
+        {return __x.__id_ == __y.__id_;}
+    friend __attribute__ ((__visibility__("hidden"), __always_inline__))
+        bool operator!=(__thread_id __x, __thread_id __y) noexcept
+        {return !(__x == __y);}
+    friend __attribute__ ((__visibility__("hidden"), __always_inline__))
+        bool operator< (__thread_id __x, __thread_id __y) noexcept
+        {return __x.__id_ < __y.__id_;}
+    friend __attribute__ ((__visibility__("hidden"), __always_inline__))
+        bool operator<=(__thread_id __x, __thread_id __y) noexcept
+        {return !(__y < __x);}
+    friend __attribute__ ((__visibility__("hidden"), __always_inline__))
+        bool operator> (__thread_id __x, __thread_id __y) noexcept
+        {return __y < __x ;}
+    friend __attribute__ ((__visibility__("hidden"), __always_inline__))
+        bool operator>=(__thread_id __x, __thread_id __y) noexcept
+        {return !(__x < __y);}
+
+    template<class _CharT, class _Traits>
+    friend
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, __thread_id __id)
+        {return __os << __id.__id_;}
+
+private:
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    __thread_id(pthread_t __id) : __id_(__id) {}
+
+    friend __thread_id this_thread::get_id() noexcept;
+    friend class __attribute__ ((__type_visibility__("default"))) thread;
+    friend struct __attribute__ ((__type_visibility__("default"))) hash<__thread_id>;
+};
+
+template<>
+struct __attribute__ ((__type_visibility__("default"))) hash<__thread_id>
+    : public unary_function<__thread_id, size_t>
+{
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    size_t operator()(__thread_id __v) const
+    {
+        return hash<pthread_t>()(__v.__id_);
+    }
+};
+
+namespace this_thread
+{
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+__thread_id
+get_id() noexcept
+{
+    return pthread_self();
+}
+
+}
+
+class __attribute__ ((__type_visibility__("default"))) thread
+{
+    pthread_t __t_;
+
+    thread(const thread&);
+    thread& operator=(const thread&);
+public:
+    typedef __thread_id id;
+    typedef pthread_t native_handle_type;
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    thread() noexcept : __t_(0) {}
+
+    template <class _Fp, class ..._Args,
+              class = typename enable_if
+              <
+                   !is_same<typename decay<_Fp>::type, thread>::value
+              >::type
+             >
+        explicit thread(_Fp&& __f, _Args&&... __args);
+
+
+
+    ~thread();
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    thread(thread&& __t) noexcept : __t_(__t.__t_) {__t.__t_ = 0;}
+    thread& operator=(thread&& __t) noexcept;
+
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    void swap(thread& __t) noexcept {std::__1::swap(__t_, __t.__t_);}
+
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    bool joinable() const noexcept {return __t_ != 0;}
+    void join();
+    void detach();
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    id get_id() const noexcept {return __t_;}
+    __attribute__ ((__visibility__("hidden"), __always_inline__))
+    native_handle_type native_handle() noexcept {return __t_;}
+
+    static unsigned hardware_concurrency() noexcept;
+};
+
+class __assoc_sub_state;
+
+class __attribute__ ((__visibility__("hidden"))) __thread_struct_imp;
+
+class __attribute__ ((__type_visibility__("default"))) __thread_struct
+{
+    __thread_struct_imp* __p_;
+
+    __thread_struct(const __thread_struct&);
+    __thread_struct& operator=(const __thread_struct&);
+public:
+    __thread_struct();
+    ~__thread_struct();
+
+    void notify_all_at_thread_exit(condition_variable*, mutex*);
+    void __make_ready_at_thread_exit(__assoc_sub_state*);
+};
+
+__attribute__ ((__visibility__("default"))) __thread_specific_ptr<__thread_struct>& __thread_local_data();
+
+
+
+template <class _Fp, class ..._Args, size_t ..._Indices>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+void
+__thread_execute(tuple<_Fp, _Args...>& __t, __tuple_indices<_Indices...>)
+{
+    __invoke(std::__1::move(std::__1::get<0>(__t)), std::__1::move(std::__1::get<_Indices>(__t))...);
+}
+
+template <class _Fp>
+void*
+__thread_proxy(void* __vp)
+{
+    __thread_local_data().reset(new __thread_struct);
+    std::unique_ptr<_Fp> __p(static_cast<_Fp*>(__vp));
+    typedef typename __make_tuple_indices<tuple_size<_Fp>::value, 1>::type _Index;
+    __thread_execute(*__p, _Index());
+    return nullptr;
+}
+
+template <class _Fp, class ..._Args,
+          class
+         >
+thread::thread(_Fp&& __f, _Args&&... __args)
+{
+    typedef tuple<typename decay<_Fp>::type, typename decay<_Args>::type...> _Gp;
+    std::__1::unique_ptr<_Gp> __p(new _Gp(__decay_copy(std::__1::forward<_Fp>(__f)),
+                                __decay_copy(std::__1::forward<_Args>(__args))...));
+    int __ec = pthread_create(&__t_, 0, &__thread_proxy<_Gp>, __p.get());
+    if (__ec == 0)
+        __p.release();
+    else
+        __throw_system_error(__ec, "thread constructor failed");
+}
+# 388 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/thread" 3
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+thread&
+thread::operator=(thread&& __t) noexcept
+{
+    if (__t_ != 0)
+        terminate();
+    __t_ = __t.__t_;
+    __t.__t_ = 0;
+    return *this;
+}
+
+
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+void swap(thread& __x, thread& __y) noexcept {__x.swap(__y);}
+
+namespace this_thread
+{
+
+__attribute__ ((__visibility__("default"))) void sleep_for(const chrono::nanoseconds& ns);
+
+template <class _Rep, class _Period>
+void
+sleep_for(const chrono::duration<_Rep, _Period>& __d)
+{
+    using namespace chrono;
+    if (__d > duration<_Rep, _Period>::zero())
+    {
+        constexpr duration<long double> _Max = nanoseconds::max();
+        nanoseconds __ns;
+        if (__d < _Max)
+        {
+            __ns = duration_cast<nanoseconds>(__d);
+            if (__ns < __d)
+                ++__ns;
+        }
+        else
+            __ns = nanoseconds::max();
+        sleep_for(__ns);
+    }
+}
+
+template <class _Clock, class _Duration>
+void
+sleep_until(const chrono::time_point<_Clock, _Duration>& __t)
+{
+    using namespace chrono;
+    mutex __mut;
+    condition_variable __cv;
+    unique_lock<mutex> __lk(__mut);
+    while (_Clock::now() < __t)
+        __cv.wait_until(__lk, __t);
+}
+
+template <class _Duration>
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+void
+sleep_until(const chrono::time_point<chrono::steady_clock, _Duration>& __t)
+{
+    using namespace chrono;
+    sleep_for(__t - steady_clock::now());
+}
+
+inline __attribute__ ((__visibility__("hidden"), __always_inline__))
+void yield() noexcept {sched_yield();}
+
+}
+
+} }
+# 17 "./headers.h" 2
+# 1 "/usr/include/fcntl.h" 1 3 4
+# 23 "/usr/include/fcntl.h" 3 4
+# 1 "/usr/include/sys/fcntl.h" 1 3 4
+# 83 "/usr/include/sys/fcntl.h" 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 84 "/usr/include/sys/fcntl.h" 2 3 4
+# 1 "/usr/include/sys/_types/_mode_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_mode_t.h" 3 4
+typedef __darwin_mode_t mode_t;
+# 85 "/usr/include/sys/fcntl.h" 2 3 4
+
+# 1 "/usr/include/sys/_types/_pid_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_pid_t.h" 3 4
+typedef __darwin_pid_t pid_t;
+# 87 "/usr/include/sys/fcntl.h" 2 3 4
+# 116 "/usr/include/sys/fcntl.h" 3 4
+# 1 "/usr/include/sys/_types/_o_sync.h" 1 3 4
+# 117 "/usr/include/sys/fcntl.h" 2 3 4
+# 157 "/usr/include/sys/fcntl.h" 3 4
+# 1 "/usr/include/sys/_types/_o_dsync.h" 1 3 4
+# 158 "/usr/include/sys/fcntl.h" 2 3 4
+# 296 "/usr/include/sys/fcntl.h" 3 4
+# 1 "/usr/include/sys/_types/_seek_set.h" 1 3 4
+# 297 "/usr/include/sys/fcntl.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_s_ifmt.h" 1 3 4
+# 303 "/usr/include/sys/fcntl.h" 2 3 4
+# 321 "/usr/include/sys/fcntl.h" 3 4
+struct flock {
+ off_t l_start;
+ off_t l_len;
+ pid_t l_pid;
+ short l_type;
+ short l_whence;
+};
+# 336 "/usr/include/sys/fcntl.h" 3 4
+struct flocktimeout {
+ struct flock fl;
+ struct timespec timeout;
+};
+# 349 "/usr/include/sys/fcntl.h" 3 4
+struct radvisory {
+       off_t ra_offset;
+       int ra_count;
+};
+
+
+
+typedef struct fcodeblobs {
+ void *f_cd_hash;
+ size_t f_hash_size;
+ void *f_cd_buffer;
+ size_t f_cd_size;
+ unsigned int *f_out_size;
+ int f_arch;
+ int __padding;
+} fcodeblobs_t;
+# 373 "/usr/include/sys/fcntl.h" 3 4
+typedef struct fsignatures {
+ off_t fs_file_start;
+ void *fs_blob_start;
+ size_t fs_blob_size;
+} fsignatures_t;
+# 387 "/usr/include/sys/fcntl.h" 3 4
+typedef struct fstore {
+ unsigned int fst_flags;
+ int fst_posmode;
+ off_t fst_offset;
+ off_t fst_length;
+ off_t fst_bytesalloc;
+} fstore_t;
+
+
+
+typedef struct fbootstraptransfer {
+  off_t fbt_offset;
+  size_t fbt_length;
+  void *fbt_buffer;
+} fbootstraptransfer_t;
+# 425 "/usr/include/sys/fcntl.h" 3 4
+#pragma pack(4)
+
+struct log2phys {
+ unsigned int l2p_flags;
+ off_t l2p_contigbytes;
+
+
+ off_t l2p_devoffset;
+
+
+};
+
+#pragma pack()
+# 448 "/usr/include/sys/fcntl.h" 3 4
+# 1 "/usr/include/sys/_types/_filesec_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_filesec_t.h" 3 4
+struct _filesec;
+typedef struct _filesec *filesec_t;
+# 449 "/usr/include/sys/fcntl.h" 2 3 4
+
+typedef enum {
+ FILESEC_OWNER = 1,
+ FILESEC_GROUP = 2,
+ FILESEC_UUID = 3,
+ FILESEC_MODE = 4,
+ FILESEC_ACL = 5,
+ FILESEC_GRPUUID = 6,
+
+
+ FILESEC_ACL_RAW = 100,
+ FILESEC_ACL_ALLOCSIZE = 101
+} filesec_property_t;
+
+
+
+
+
+extern "C" {
+int open(const char *, int, ...) __asm("_" "open") ;
+
+int openat(int, const char *, int, ...) __asm("_" "openat") __attribute__((availability(macosx,introduced=10.10)));
+
+int creat(const char *, mode_t) __asm("_" "creat") ;
+int fcntl(int, int, ...) __asm("_" "fcntl") ;
+
+
+int openx_np(const char *, int, filesec_t);
+
+
+
+
+int open_dprotected_np ( const char *, int, int, int, ...);
+int flock(int, int);
+filesec_t filesec_init(void);
+filesec_t filesec_dup(filesec_t);
+void filesec_free(filesec_t);
+int filesec_get_property(filesec_t, filesec_property_t, void *);
+int filesec_query_property(filesec_t, filesec_property_t, int *);
+int filesec_set_property(filesec_t, filesec_property_t, const void *);
+int filesec_unset_property(filesec_t, filesec_property_t) __attribute__((availability(macosx,introduced=10.6)));
+
+
+
+}
+# 24 "/usr/include/fcntl.h" 2 3 4
+# 18 "./headers.h" 2
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iomanip" 1 3
+# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iomanip" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream" 1 3
+# 156 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream" 1 3
+# 131 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ios" 1 3
+# 216 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ios" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__locale" 1 3
+# 18 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__locale" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 1 3
+# 182 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 3
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max" 1 3
 # 183 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 2 3
 # 186 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex" 3
@@ -53234,14 +53560,15 @@ using std::left;
 using std::sqrt;
 using std::vector;
 using std::string;
+using std::thread;
 using std::fstream;
 using std::to_string;
 using std::accumulate;
 using std::max_element;
 using std::inner_product;
 using std::unordered_map;
-# 13 "./benchmarks.h" 2
-# 27 "./benchmarks.h"
+# 12 "./benchmarks.h" 2
+# 40 "./benchmarks.h"
 vector<longVar> measure_timeOverhead();
 longVar measure_threadOverhead();
 longVar measure_sysCallOverhead();
@@ -53254,6 +53581,7 @@ longVar measure_loopOverhead(uint iterations=250000);
 vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
 vector<longVar> measure_SeqFileReadTime();
 vector<longVar> measure_RandFileReadTime();
+vector<longVar> measure_FileContentionRead();
 
 
 
@@ -53271,12 +53599,11 @@ vector<longVar> measure_memWriteBandwidth();
 
 
 
-
 int main()
 {
-# 120 "main.cpp"
- system("sudo purge");
-
- measure_RandFileReadTime();
+# 128 "main.cpp"
+ vector<longVar> result = measure_FileContentionRead();
+ for (auto it: result)
+  cout<<it<<' ';
  return 0;
 }
