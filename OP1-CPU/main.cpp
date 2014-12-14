@@ -125,6 +125,7 @@ int main()
 	/*-----------------------------------------------------------------
 						Measuring File contention read
 	-----------------------------------------------------------------*/
+	system("sudo purge");
 	vector<longVar> result = measure_FileContentionRead();
 	for (auto it: result)
 		cout<<it<<' ';
