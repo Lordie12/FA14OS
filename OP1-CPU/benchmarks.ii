@@ -53252,7 +53252,8 @@ longVar measure_processContextSwitchOverhead();
 void measure_procCallOverhead(vector<longVar> &result);
 longVar measure_loopOverhead(uint iterations=250000);
 vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
-vector<longVar> measure_FileReadTime();
+vector<longVar> measure_SeqFileReadTime();
+vector<longVar> measure_RandFileReadTime();
 
 
 
@@ -53811,7 +53812,7 @@ vector<longVar> measure_FileCacheSize(bool isCacheOn)
 
  const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
  const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
-        "512MFile.txt", "1GFile.txt", "2GFile.txt"};
+        "512MFile.txt", "1GFile.txt", "2GFile.txt", "4GFile.txt"};
 
  vector<longVar> output;
  longVar start = 0, end = 0, tot = 0;
@@ -53865,12 +53866,12 @@ vector<longVar> measure_FileCacheSize(bool isCacheOn)
  return output;
 }
 
-vector<longVar> measure_FileReadTime()
+vector<longVar> measure_SeqFileReadTime()
 {
 
  const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
  const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
-        "512MFile.txt", "1GFile.txt", "2GFile.txt"};
+        "512MFile.txt", "1GFile.txt", "2GFile.txt", "4GFile.txt"};
 
  vector<longVar> output;
  longVar start = 0, end = 0, tot = 0;
@@ -53896,6 +53897,61 @@ vector<longVar> measure_FileReadTime()
 
   while (blocks < (fileStat.st_size / 4096) - 1)
   {
+
+   start = mach_absolute_time();
+   size = read(fid, BlockRead, 4096);
+   end = mach_absolute_time();
+   if (size == 0)
+    break;
+   tot += end - start;
+   blocks++;
+  }
+  close(fid);
+  cout<<"Time to read File: "<<FileNames[i]<<" - "<<tot<<endl;
+  output.push_back(tot / (float)blocks);
+ }
+ return output;
+}
+
+vector<longVar> measure_RandFileReadTime()
+{
+
+ const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
+ const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
+        "512MFile.txt", "1GFile.txt", "2GFile.txt", "4GFile.txt"};
+
+ vector<longVar> output;
+ longVar start = 0, end = 0, tot = 0;
+ cout<<"Measing Random file read: \n";
+
+ int fid;
+ int blocks = 0;
+ int size;
+
+ char BlockRead[4096];
+
+ struct stat fileStat;
+
+ for(int i = 0; i < 7; i++)
+ {
+  fid = open((BaseFile + FileNames[i]).c_str(), 0x0000);
+  stat((BaseFile + FileNames[i]).c_str(), &fileStat);
+
+  fcntl(fid, 48, 1);
+
+  tot = 0;
+  blocks = 0;
+
+
+  while (blocks < (fileStat.st_size / 4096) - 1)
+  {
+
+
+   int randomBlock = rand() % (fileStat.st_size / 4096) - 1;
+
+
+   lseek(fid, 0, 0);
+   lseek(fid, 4096 * randomBlock, 1);
 
    start = mach_absolute_time();
    size = read(fid, BlockRead, 4096);

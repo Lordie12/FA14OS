@@ -2,7 +2,6 @@
 
 /*---------------------------------------------------------------
 Kaushik Kalyanaraman, kkalyana@eng.ucsd.edu
-Priyanka Ganapathy, pganapat@eng.ucsd.edu
 
 Benchmarking code implemented
 ---------------------------------------------------------------*/
@@ -547,7 +546,7 @@ vector<longVar> measure_FileCacheSize(bool isCacheOn)
 	// The different files to be read to measure the file cache
 	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
 	const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
-								"512MFile.txt", "1GFile.txt", "2GFile.txt"};
+								"512MFile.txt", "1GFile.txt", "2GFile.txt", "4GFile.txt"};
 
 	vector<longVar> output;
 	longVar start = 0, end = 0, tot = 0;
@@ -606,7 +605,7 @@ vector<longVar> measure_SeqFileReadTime()
 	// The different files to be read to measure the file cache
 	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
 	const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
-								"512MFile.txt", "1GFile.txt", "2GFile.txt"};
+								"512MFile.txt", "1GFile.txt", "2GFile.txt", "4GFile.txt"};
 
 	vector<longVar> output;
 	longVar start = 0, end = 0, tot = 0;
@@ -653,10 +652,11 @@ vector<longVar> measure_RandFileReadTime()
 	// The different files to be read to measure the file cache
 	const string BaseFile = "/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/";
 	const string FileNames[] = {"2MFile.txt", "8MFile.txt", "32MFile.txt", "256MFile.txt",
-								"512MFile.txt", "1GFile.txt", "2GFile.txt"};
+								"512MFile.txt", "1GFile.txt", "2GFile.txt", "4GFile.txt"};
 
 	vector<longVar> output;
 	longVar start = 0, end = 0, tot = 0;
+	cout<<"Measing Random file read: \n";
 
 	int fid;
 	int blocks = 0;
@@ -679,7 +679,14 @@ vector<longVar> measure_RandFileReadTime()
 		// We read this many blocks from the disk
 		while (blocks < (fileStat.st_size / ALLOC_SIZE) - 1)
 		{
-			//Read the file backward
+			// Read a random block from the file, read the same number of 
+			// blocks as we read in the sequential case though
+			int randomBlock = rand() % (fileStat.st_size / ALLOC_SIZE) - 1;
+			// Set the file offset to the beginning of the file and seek
+			// to a random block
+			lseek(fid, 0, SEEK_SET);
+			lseek(fid, ALLOC_SIZE * randomBlock, SEEK_CUR);
+
 			start = mach_absolute_time();
 			size = read(fid, BlockRead, ALLOC_SIZE);
 			end = mach_absolute_time();
@@ -690,7 +697,7 @@ vector<longVar> measure_RandFileReadTime()
 		}
 		close(fid);
 		cout<<"Time to read File: "<<FileNames[i]<<" - "<<tot<<endl;
-		output.push_back(tot / (float)blocks);
+		output.push_back(tot);
 	}
 	return output;
 }

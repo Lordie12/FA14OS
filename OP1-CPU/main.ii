@@ -53252,7 +53252,8 @@ longVar measure_processContextSwitchOverhead();
 void measure_procCallOverhead(vector<longVar> &result);
 longVar measure_loopOverhead(uint iterations=250000);
 vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
-vector<longVar> measure_FileReadTime();
+vector<longVar> measure_SeqFileReadTime();
+vector<longVar> measure_RandFileReadTime();
 
 
 
@@ -53275,6 +53276,7 @@ int main()
 {
 # 120 "main.cpp"
  system("sudo purge");
- measure_FileReadTime();
+
+ measure_RandFileReadTime();
  return 0;
 }

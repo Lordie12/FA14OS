@@ -44,13 +44,13 @@ Ltmp4:
 Ltmp5:
 	callq	_system
 	leaq	-32(%rbp), %rdi
-	.loc	1 121 0                 ## main.cpp:121:0
+	.loc	1 122 0                 ## main.cpp:122:0
 	movl	%eax, -36(%rbp)         ## 4-byte Spill
-	callq	__Z20measure_FileReadTimev
+	callq	__Z24measure_RandFileReadTimev
 	leaq	-32(%rbp), %rdi
 	callq	__ZNSt3__16vectorIeNS_9allocatorIeEEED1Ev
 	movl	$0, %eax
-	.loc	1 122 0                 ## main.cpp:122:0
+	.loc	1 123 0                 ## main.cpp:123:0
 	addq	$48, %rsp
 	popq	%rbp
 	retq

@@ -2,7 +2,6 @@
 
 /*---------------------------------------------------------------
 Kaushik Kalyanaraman, kkalyana@eng.ucsd.edu
-Priyanka Ganapathy, pganapat@eng.ucsd.edu
 
 The primary driver program to test all benchmarks
 ---------------------------------------------------------------*/
@@ -118,7 +117,7 @@ int main()
 						Measuring File read time
 	-----------------------------------------------------------------*/
 	system("sudo purge");
-	measure_SeqFileReadTime();
-	// measure_RandFileReadTime();
+	// measure_SeqFileReadTime();
+	measure_RandFileReadTime();
 	return 0;
 }

@@ -3,7 +3,6 @@
 
 /*---------------------------------------------------------------
 Kaushik Kalyanaraman, kkalyana@eng.ucsd.edu
-Priyanka Ganapathy, pganapat@eng.ucsd.edu
 
 Essential benchmarking function prorotypes and constants declared
 here for easy access
@@ -35,7 +34,7 @@ void    measure_procCallOverhead(vector<longVar> &result);
 longVar measure_loopOverhead(uint iterations=NUM_ITERATIONS);
 vector<longVar> measure_FileCacheSize(bool isCacheOn = false);
 vector<longVar> measure_SeqFileReadTime();
-vector<longVar> measure_RandFileReadTime()
+vector<longVar> measure_RandFileReadTime();
 
 /*-------------------------------------------------------------
 Function prototypes for Memory operations, Part II of the OS

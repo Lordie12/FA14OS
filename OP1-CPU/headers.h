@@ -3,7 +3,6 @@
 
 /*---------------------------------------------------------------
 Kaushik Kalyanaraman, kkalyana@eng.ucsd.edu
-Priyanka Ganapathy, pganapat@eng.ucsd.edu
 
 Essential header files for all programs
 ---------------------------------------------------------------*/
