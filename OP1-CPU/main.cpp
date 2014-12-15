@@ -111,6 +111,8 @@ int main()
 						Measuring File cache size
 	-----------------------------------------------------------------*/
 	system("sudo purge");
+	//Create the files
+	system("cd Files; ./files.sh");
 	measure_FileCacheSize();
 	measure_FileCacheSize(true);
 
@@ -126,6 +128,8 @@ int main()
 						Measuring File contention read
 	-----------------------------------------------------------------*/
 	system("sudo purge");
+	//Create the thread contention files
+	system("cd ThreadFiles; ./tFiles.sh");
 	vector<longVar> result = measure_FileContentionRead();
 	for (auto it: result)
 		cout<<it<<' ';
