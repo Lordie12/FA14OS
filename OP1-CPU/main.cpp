@@ -27,9 +27,9 @@ int main()
 	longVar mesLoopOverhead = measure_loopOverhead();
 	cout<<"Overhead of a loop, over "<<NUM_ITERATIONS<<" iterations: "<<mesLoopOverhead<<"ns"<<endl;
 
-	// /*-----------------------------------------------------------------
-	//           Overhead in procedure calls of different lengths
-	// -----------------------------------------------------------------*/
+	/*-----------------------------------------------------------------
+	          Overhead in procedure calls of different lengths
+	-----------------------------------------------------------------*/
 	vector<longVar> procOverhead;
 	int count = 0;
 	measure_procCallOverhead(procOverhead);
@@ -100,12 +100,6 @@ int main()
 
 	//Terminate the server process once we are done
 	system("ps -ax | grep -i ./server| awk 'NR == 1 {print $1}' | tr -d '\n' | xargs -0 kill");
-
-	int fid = open("/Users/Lanfear/Desktop/Drive/FA 14/OS (CSE221)/FA14OS/OP1-CPU/Files/Sample.txt", O_CREAT | O_RDONLY);
-	char arr[4];
-	read(fid, arr, 3);
-	cout<<arr<<endl;
-	close(fid);
 
 	/*-----------------------------------------------------------------
 						Measuring File cache size
